@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail Gallery</title>
+    <link rel="stylesheet" href="Thumbnails.css">
+</head>
+<body>
+    <div class="gallery">
+        <div class="thumbnail">
+            <img src="Drop-shot-buy.jpg" alt="Image 1" onclick="enlargeImage(this)">
+            <div class="caption">Caption 1</div>
+        </div>
+        <div class="thumbnail">
+            <img src="Amaresa Marilao.png" alt="Image 2" onclick="enlargeImage(this)">
+            <div class="caption">Caption 2</div>
+        </div>
+        <div class="thumbnail">
+            <img src="image3.jpg" alt="Image 3" onclick="enlargeImage(this)">
+            <div class="caption">Caption 3</div>
+        </div>
+    </div>
+    <div id="overlay" onclick="closeImage()">
+        <img id="enlargedImage" src="" alt="Enlarged Image">
+    </div>
+
+    <script src="Thumbnails.js"></script>
+</body>
+</html>

@@ -271,7 +271,7 @@ button, a {transition: var(--transition);}
 	width: 83%;
 	color: black;
 	background: var(--head-foot-bg-amaresa);
-	box-shadow: 2px 2px 3px black;
+	box-shadow: -2px -2px 20px  inset black;
 	padding: 4rem;
 }
 .container{
@@ -312,19 +312,18 @@ button, a {transition: var(--transition);}
 	margin-inline: 16%;
 	margin-block: 1rem;
 	width: 83%;
-	background: var(--prussian-blue);
-	color: white;
+	background: var(--head-foot-bg-amaresa);
+	box-shadow: -5px -5px 5px inset black;
+	color: var(--prussian-blue);
 
 
 }
 .table{
-
-
   	border-collapse: collapse;
 	width: 100%;
-
+	margin: 1rem;
 	th{
-		border-bottom:1px solid white;
+		border-bottom:1px solid black;
 	}
 	td,th{
 		text-align: center;
@@ -336,16 +335,23 @@ button, a {transition: var(--transition);}
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	justify-content: space-evenly;
+	justify-content: center;
 }
 
 .td-action a{
 	font-size: var(--fs-2);
 	padding: 10px;
-	background: ghostwhite;
-	border-radius: 26px;
+	box-shadow: 2px 2px 3px black;
+	border-radius: 1rem;
+	transition:.2s;
+
 }
+
 .td-action a:nth-child(1){color: lightseagreen;}
 .td-action a:nth-child(2){color: darkblue;}
-.td-action a:is(:hover,:focus){color: var(--orange-soda);}
+.td-action a:is(:hover,:focus){ 
+	color: var(--orange-soda); 
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
 
