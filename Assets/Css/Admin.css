@@ -12,7 +12,6 @@
 	/*======================*\
 	# COLORS
 	\*======================*/
-
 	--dark-jungle-green: hsl(188, 63%, 7%);
 	--prussian-blue: hsl(200, 69%, 14%);
 	--raisin-black-1: hsl(227, 29%, 13%);
@@ -28,14 +27,14 @@
 	--white: hsl(0,0%, 100%);
 	--black:hsl(0,0%,0%);
 	--opal: hsl(180, 20%, 62%);
-	/*AMARESA COLORS*/
-	--amaresa-green: #7AAA84;	
 	/*======================*\
 	# AMARESA COLOR SCHEME SHESH
 	\*======================*/
 	--head-foot-bg-amaresa: rgba(255, 255, 255, 0.66);
 	--header-bg-amaresa-shadow:0 4px 30px rgba(0, 0, 0, 0.1);
-	--footer-bg-amaresa-shadow:0 -4px 30px rgba(0, 0, 0, 0.1);		
+	--footer-bg-amaresa-shadow:0 -4px 30px rgba(0, 0, 0, 0.1);
+	--amaresa-box-shadow: 2px 2px 2px black;
+	--amaresa-bg:#f0f0f0;	
 	/*======================*\
 	# TYPOGRAPHY
 	\*======================*/
@@ -273,8 +272,8 @@ button, a {transition: var(--transition);}
 	margin: 10px 0 0 16%;
 	width: 83%;
 	color: black;
-	background: var(--head-foot-bg-amaresa);
-	box-shadow: 2px 2px 3px black;
+	background: var(--amaresa-bg);
+	box-shadow: var(--amaresa-box-shadow);
 	padding: 4rem;
 }
 .container{
@@ -283,7 +282,6 @@ button, a {transition: var(--transition);}
 	justify-content: space-between;
 }
 .container-item{
-	box-shadow: 5px 5px 5px black;
 	border-radius: 16px;
 	display: flex;
 	flex-direction: column;
@@ -295,7 +293,6 @@ button, a {transition: var(--transition);}
 	padding: 2rem 0;
 }
 .container-title{
-
 	border-bottom: 2px solid var(--white);
 	margin-bottom: 1rem;
 	width: 100%;
@@ -303,36 +300,79 @@ button, a {transition: var(--transition);}
 	font-weight: var(--fw-600);
 	padding: .5rem;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	gap: 1rem;
 }
 /*======================*\
-	# MAIN SECTION
+	# ACCOUNT STYLE
 \*======================*/
-.Table-section{
-	display: block;
+.personal{
 	position: relative;
 	border-radius: 16px;
 	margin-inline: 16%;
 	margin-block: 1rem;
 	width: 83%;
-	background: var(--amaresa-green);
-	color: white;
-
+	background: var(--amaresa-bg);
+	box-shadow: var(--amaresa-box-shadow);
+	color: black;
 
 }
+.personal-details-list{
+	display: flex;
+	justify-content: space-between;
+}
+.left-container{
+	display: block;
+	padding: 1rem;
+	width: 50%;
+	border-right: 4px solid black;
+}
+.right-container{
+	padding: 1rem;
+	display: block;
+	width: 50%;
+}
+.personal-title{
+	color: var(--orange-soda);
+	font-size: var(--fs-1);
+}
+.personal-items{
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+/*======================*\
+	# TABLE STYLE
+\*======================*/
+.Table-section{
+	display: block;
+	position: relative;
+	margin-inline: 16%;
+	box-shadow: 2px 2px 2px black;
+	background: #f0f0f0;
+	margin-block: 1rem;
+	width: 83%;
+	max-height: 65vh;
+	overflow-x: hidden;
+	color: black;
+}
 .table{
-
-
-  	border-collapse: collapse;
+	border-collapse: collapse;
 	width: 100%;
-
 	th{
-		border-bottom:1px solid white;
+	position: sticky;
+	top: 5px;
+	color: whitesmoke;
+	background: var(--prussian-blue);
+	backdrop-filter: blur(10.4px);
+	-webkit-backdrop-filter: blur(10.4px);
+
 	}
 	td,th{
 		text-align: center;
 		padding: 1rem;
-	}
+	}	
 }
 
 .td-action{
@@ -345,26 +385,9 @@ button, a {transition: var(--transition);}
 .td-action a{
 	font-size: var(--fs-2);
 	padding: 10px;
-	background: ghostwhite;
+	background: var(--white);
+	box-shadow: var(--amaresa-box-shadow);
 	border-radius: 26px;
+	color: black;
 }
-.td-action a:nth-child(1){color: black;}
-.td-action a:nth-child(2){color: darkgreen;}
-.td-action a:nth-child(3){color: darkred;}
-.td-action a:is(:hover,:focus){color: var(--orange-soda);}
-
-/*======================*\
-	# ADD BUILDING
-\*======================*/
-.Building{
-	position: fixed;
-	right: 15px;
-	bottom: 10px;
-	border-radius: 15px;
-	background: var(--prussian-blue);
-	padding: 1rem;
-
-	a{color: whitesmoke;}
-
-	a:is(:hover,:focus){color: var(--orange-soda);}
-}
+.td-action a:is(:hover,:focus){color: var(--orange-soda); transform: scale(1.1);}

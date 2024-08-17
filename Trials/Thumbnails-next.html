@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thumbnail Gallery</title>
-    <link rel="stylesheet" href="Thumbnails.css">
+    <link rel="stylesheet" href="Thumbnails-next.css">
 </head>
 <body>
     <div class="gallery">
         <div class="thumbnail">
-            <img src="Drop-shot-buy.jpg" alt="Image 1" onclick="enlargeImage(this)">
+            <img src="Drop-shot-buy.jpg" alt="Image 1" onclick="enlargeImage(this, 0)">
             <div class="caption">Caption 1</div>
         </div>
         <div class="thumbnail">
-            <img src="Amaresa Marilao.png" alt="Image 2" onclick="enlargeImage(this)">
+            <img src="Amaresa Marilao.png" alt="Image 2" onclick="enlargeImage(this, 1)">
             <div class="caption">Caption 2</div>
         </div>
         <div class="thumbnail">
-            <img src="image3.jpg" alt="Image 3" onclick="enlargeImage(this)">
+            <img src="Amaresa about us .png" alt="Image 3" onclick="enlargeImage(this, 2)">
             <div class="caption">Caption 3</div>
         </div>
     </div>
-    <!-- FOR ENLARGEMENT EFFECT -->
-    <div id="overlay" onclick="closeImage()">
+    <div id="overlay">
+        <span class="close" onclick="closeImage()">&times;</span>
         <img id="enlargedImage" src="" alt="Enlarged Image">
+        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next" onclick="changeImage(1)">&#10095;</a>
     </div>
 
-    <script src="Thumbnails.js"></script>
+    <script src="Thumbnails-next.js"></script>
 </body>
 </html>
