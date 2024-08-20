@@ -15,12 +15,13 @@
 	                        if($row['Password'] == $Password && $row['Email'] == $Email ){
 	                        echo "<script>alert('login sucess: username or password')</script>";
 	                               header('location: Account.php');
+	                        }else{
+				                echo "<script>alert('login failed: username or password')</script>";
+				                header('index.php');	                        	
 	                        }
 
 	                }
-	                echo "<script>alert('login failed: username or password')</script>";
-	                
-	                header('index.php');
+
 	            }
 	        }
 	    ?>
