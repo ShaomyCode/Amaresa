@@ -1,9 +1,14 @@
+<?php
+
+	include './Assets/Php/Connection.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AMARESA - Account</title>
+	<title>AMARESA - Solds</title>
 	<!-- CUSTOM CSS  -->
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css">
 	<!-- WEBSITE ICON -->
@@ -15,7 +20,7 @@
 	<!-- SIDEBAR -->
 	<aside class="sidebar" id="sidebar"> 
 		<figure>
-			<img src="./Assets/Images/Amaresa-logo.png">
+			<img src="./Assets/Images/Amaresa-Logo.png">
 		</figure>
 
 		<div class="dashboard">
@@ -24,14 +29,14 @@
 			<ul class="dashboard-list">
 
 				<li>
-					<a href="./Account.php" class="dashboard-list-item active">
+					<a href="./Account.php" class="dashboard-list-item">
 						<i class="fa-solid fa-id-card-clip"></i>
 						<span>Account</span>
 					</a>
 				</li>				
 
 				<li>
-					<a href="./Pending.php" class="dashboard-list-item">
+					<a href="./Pending.php" class="dashboard-list-item ">
 						<i class="fa-solid fa-chalkboard-user"></i>
 						<span>Pendings</span>
 					</a>
@@ -49,14 +54,15 @@
 						<i class="fa-solid fa-users"></i>
 						<span>Management</span>
 					</a>
-				</li>
-					
+				</li>	
+
 				<li>
-					<a href="./Properties.php" class="dashboard-list-item">
+					<a href="Properties.php" class="dashboard-list-item ">
 						<i class="fa-solid fa-bars-progress"></i>
 						<span>Properties</span>
 					</a>
-				</li>				
+				</li>					
+
 				<li>
 					<a href="Message.php" class="dashboard-list-item">
 						<i class="fa-solid fa-envelope"></i>
@@ -64,19 +70,21 @@
 					</a>
 				</li>
 				<li>
-					<a href="./Archieve.php" class="dashboard-list-item">
+					<a href="Archieve.php" class="dashboard-list-item">
 						<i class="fa-solid fa-box-archive"></i>
 						<span>Archieve</span>
 					</a>
-				</li>				
+				</li>	
+
 				<li>
-					<a href="SoldProperties.html" class="dashboard-list-item">
+					<a href="SoldProperties.php" class="dashboard-list-item active">
 						<i class="fa-solid fa-rectangle-list"></i>
 						<span>Sales Log</span>
 					</a>
 				</li>	
+
 				<li>
-					<a href="Logut.html" class="dashboard-list-item">
+					<a href="Logout.html" class="dashboard-list-item">
 						<i class="fa-solid fa-right-from-bracket"></i>
 						<span>Logout</span>
 					</a>
@@ -132,20 +140,41 @@
 
 		</div>
 	</section>
-	<!-- MAIN DETAILS -->
-	<section class="personal" id="personal">
-		<div class="container">
-			<div class="personal-info">
-				<div class="personals personal-details-info">
-					<h3 class="h3 personal-title">Personal Details</h3>
-					<p></p>
-				</div>
-				<div class="personals personal-work-info">
-					<h3 class="h3 personal-title">Work Details</h3>
-				</div>
+	<!-- PROPERTIES Section -->
+		<section class="Table-section" id="Table-Section">
+			<div class="container">
+
+				<table class="table" id="table">
+					<tr>	
+						<th>Sales ID</th>
+						<th>Property</th>
+						<th>Owner</th>
+						<th>Date Purchased</th>
+
+						<th class="action-center">Actions</th>
+					</tr>	
+
+					<tr>
+						<td>1</td>
+						<td>Arya Prime</td>
+						<td>Jamandron</td>
+						<td>20/08/2024</td>
+
+						<td class="td-action"><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+					</tr>
+
+
+				</table>
+			</div>	
+		</section>
+
+		<!-- FOR POP UP ADD AND EDIT -->
+		<section class="Building">
+			<div class="wrapper">
+				<a href="#"> <i class="fa-solid fa-plus"></i> </a>
 			</div>
-		</div>
-	</section>
+
+		</section>
 	</main>
 
 

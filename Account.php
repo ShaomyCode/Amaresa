@@ -1,3 +1,8 @@
+<?php
+
+	include './Assets/Php/Connection.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +75,7 @@
 					</a>
 				</li>				
 				<li>
-					<a href="SoldProperties.html" class="dashboard-list-item">
+					<a href="SoldProperties.php" class="dashboard-list-item">
 						<i class="fa-solid fa-rectangle-list"></i>
 						<span>Sales Log</span>
 					</a>

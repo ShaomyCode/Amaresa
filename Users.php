@@ -29,14 +29,14 @@
 			<ul class="dashboard-list">
 
 				<li>
-					<a href="./Account.html" class="dashboard-list-item">
+					<a href="./Account.php" class="dashboard-list-item">
 						<i class="fa-solid fa-id-card-clip"></i>
 						<span>Account</span>
 					</a>
 				</li>				
 
 				<li>
-					<a href="./Pending.html" class="dashboard-list-item">
+					<a href="./Pending.php" class="dashboard-list-item">
 						<i class="fa-solid fa-chalkboard-user"></i>
 						<span>Pendings</span>
 					</a>
@@ -50,21 +50,21 @@
 				</li>				
 
 				<li>
-					<a href="./Management.html" class="dashboard-list-item">
+					<a href="./Management.php" class="dashboard-list-item">
 						<i class="fa-solid fa-users"></i>
 						<span>Management</span>
 					</a>
 				</li>				
 
 				<li>
-					<a href="./Properties.html" class="dashboard-list-item">
+					<a href="./Properties.php" class="dashboard-list-item">
 						<i class="fa-solid fa-bars-progress"></i>
 						<span>Properties</span>
 					</a>
 				</li>				
 
 				<li>
-					<a href="Archieve.html" class="dashboard-list-item">
+					<a href="Archieve.php" class="dashboard-list-item">
 						<i class="fa-solid fa-envelope"></i>
 						<span>Messages</span>
 					</a>
@@ -77,7 +77,7 @@
 				</li>		
 						
 				<li>
-					<a href="SoldProperties.html" class="dashboard-list-item">
+					<a href="SoldProperties.php" class="dashboard-list-item">
 						<i class="fa-solid fa-rectangle-list"></i>
 						<span>Sales Log</span>
 					</a>
@@ -183,7 +183,6 @@
 									<td>".$Date."</td>
 
 									<td class='td-action'>
-									
 										<a href='#'><i class='fa-solid fa-eye'></i></a>
 
 									</td>
