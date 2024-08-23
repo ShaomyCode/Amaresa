@@ -104,8 +104,22 @@
 					<span>Users</span>
 					<i class="fa-solid fa-users"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS total_users FROM user";
 
-				<span>Total of users</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$total_users = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $total_users = $row['total_users'];
+				}
+
+				echo "<span> ".$total_users." </span>";
+						
+			 ?>
 			</div>			
 
 			<div class="container-item">
@@ -114,8 +128,21 @@
 					<span>Properties</span>
 					<i class="fa-solid fa-house"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
 
-				<span>Total of properties</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$total_users = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TProperties = $row['TProperties'];
+				}
+
+				echo "<span> ".$TProperties." </span>";		
+			 ?>
 			</div>			
 
 			<div class="container-item">
@@ -124,8 +151,21 @@
 					<span>Pendings</span>
 					<i class="fa-solid fa-chalkboard-user"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TPendings FROM Pending";
 
-				<span>Total Pendings</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$TPendings = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TPendings = $row['TPendings'];
+				}
+				echo "<span> ".$TPendings." </span>";		
+			 ?>
+
 			</div>
 
 			<div class="container-item">
@@ -134,8 +174,20 @@
 					<span>Archieve</span>
 					<i class="fa-solid fa-box-archive"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TArchives FROM Archive";
 
-				<span>Total Archieves</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$TArchives = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TArchives = $row['TArchives'];
+				}
+				echo "<span> ".$TArchives." </span>";		
+			 ?>
 			</div>
 
 		</div>
@@ -162,6 +214,42 @@
 
 						<td class="td-action"><a href="#"><i class="fa-solid fa-eye"></i></a></td>
 					</tr>
+
+
+
+					<?php
+
+						$sql = "SELECT * FROM sales";
+						$rs = mysqli_query($conn, $sql);
+
+						if($rs){
+							while ($row = mysqli_fetch_assoc($rs)) {
+								// code...
+								$SaleID = $row['SaleID'];
+								$Property = $row['Property'];
+								$Owner = $row['Owner'];
+								$Date_Purchased = $row['Date_Purchased'];
+							
+
+								echo "
+
+								<tr>
+									<td>".$SaleID."</td>
+									<td>".$Property."</td>
+									<td>".$Owner."</td>
+									<td>".$Date_Purchased."</td>
+								
+								
+
+							<td class='td-action'><a href='#''><i class='fa-solid fa-eye'></i></a></td>
+						
+
+								</tr>
+
+								";
+							}
+						}
+					?>
 
 
 				</table>

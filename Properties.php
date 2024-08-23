@@ -76,7 +76,7 @@
 					</a>
 				</li>				
 				<li>
-					<a href="SoldProperties.html" class="dashboard-list-item">
+					<a href="SoldProperties.php" class="dashboard-list-item">
 						<i class="fa-solid fa-rectangle-list"></i>
 						<span>Sales Log</span>
 					</a>
@@ -102,8 +102,22 @@
 					<span>Users</span>
 					<i class="fa-solid fa-users"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS total_users FROM user";
 
-				<span>Total of users</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$total_users = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $total_users = $row['total_users'];
+				}
+
+				echo "<span> ".$total_users." </span>";
+						
+			 ?>
 			</div>			
 
 			<div class="container-item">
@@ -112,8 +126,21 @@
 					<span>Properties</span>
 					<i class="fa-solid fa-house"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
 
-				<span>Total of properties</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$total_users = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TProperties = $row['TProperties'];
+				}
+
+				echo "<span> ".$TProperties." </span>";		
+			 ?>
 			</div>			
 
 			<div class="container-item">
@@ -122,8 +149,21 @@
 					<span>Pendings</span>
 					<i class="fa-solid fa-chalkboard-user"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TPendings FROM Pending";
 
-				<span>Total Pendings</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$TPendings = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TPendings = $row['TPendings'];
+				}
+				echo "<span> ".$TPendings." </span>";		
+			 ?>
+
 			</div>
 
 			<div class="container-item">
@@ -132,8 +172,20 @@
 					<span>Archieve</span>
 					<i class="fa-solid fa-box-archive"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TArchives FROM Archive";
 
-				<span>Total Archieves</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$TArchives = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TArchives = $row['TArchives'];
+				}
+				echo "<span> ".$TArchives." </span>";		
+			 ?>
 			</div>
 
 		</div>
@@ -147,10 +199,13 @@
 						<th>Property ID</th>
 						<th>Property</th>
 						<th>Price</th>
+						<th>Description</th>
 						<th>Bedrooms</th>
 						<th>Bathrooms</th>
 						<th>Square Meters</th>
 						<th>Date Release</th>
+						<th>Status</th>
+						<th>Role</th>
 						<th class="action-center">Actions</th>
 					</tr>	
 
@@ -158,10 +213,13 @@
 						<td>1</td>
 						<td>Arya - prime</td>
 						<td>3,242,242.42</td>
+						<td>New</td>
 						<td>3</td>
 						<td>4</td>
 						<td>99 sqm</td>
 						<td>20/04/2024</td>
+						<td>Available</td>
+						<td>Property</td>
 
 						<td class="td-action">
 								<a href="#"> <i class="fa-solid fa-check"></i></a>
@@ -171,6 +229,56 @@
 						</td>
 					</tr>
 				
+					<?php
+
+						$sql = "SELECT * FROM properties";
+						$rs = mysqli_query($conn, $sql);
+
+						if($rs){
+							while ($row = mysqli_fetch_assoc($rs)) {
+								// code...
+								$PropertyID = $row['PropertyID'];
+								$Property = $row['Property'];
+								$Price = $row['Price'];
+								$Description = $row['Description'];
+								$Bedrooms = $row['Bedrooms'];
+								$Bathrooms = $row['Bathrooms'];
+								$Area_sqft = $row['Area_sqft'];
+								$Date = $row['Date'];
+								$Status = $row['Status'];	
+								$Role = $row['Role'];	
+							
+
+								echo "
+
+								<tr>
+									<td>".$PropertyID."</td>
+									<td>".$Property."</td>
+									<td>".$Price."</td>
+									<td>".$Description."</td>
+									<td>".$Bedrooms."</td>
+									<td>".$Bathrooms."</td>	
+									<td>".$Area_sqft."</td>	
+									<td>".$Area_sqft."</td>	
+									<td>".$Status."</td>
+									<td>".$Role."</td>
+								
+
+							<td class='td-action'>
+								<a href='#'> <i class='fa-solid fa-check'></i></a>
+								<a href='#'><i class='fa-solid fa-eye'></i></a>
+								<a href='#'><i class='fa-solid fa-pen-to-square'></i></a>
+								<a href='#'><i class='fa-solid fa-box-archive'></i></a> 
+							</td>
+						
+
+								</tr>
+
+								";
+							}
+						}
+					?>
+
 
 				</table>
 			</div>	

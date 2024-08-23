@@ -104,8 +104,22 @@
 					<span>Users</span>
 					<i class="fa-solid fa-users"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS total_users FROM user";
 
-				<span>Total of users</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$total_users = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $total_users = $row['total_users'];
+				}
+
+				echo "<span> ".$total_users." </span>";
+						
+			 ?>
 			</div>			
 
 			<div class="container-item">
@@ -114,8 +128,21 @@
 					<span>Properties</span>
 					<i class="fa-solid fa-house"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
 
-				<span>Total of properties</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$total_users = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TProperties = $row['TProperties'];
+				}
+
+				echo "<span> ".$TProperties." </span>";		
+			 ?>
 			</div>			
 
 			<div class="container-item">
@@ -124,8 +151,21 @@
 					<span>Pendings</span>
 					<i class="fa-solid fa-chalkboard-user"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TPendings FROM Pending";
 
-				<span>Total Pendings</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$TPendings = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TPendings = $row['TPendings'];
+				}
+				echo "<span> ".$TPendings." </span>";		
+			 ?>
+
 			</div>
 
 			<div class="container-item">
@@ -134,8 +174,20 @@
 					<span>Archieve</span>
 					<i class="fa-solid fa-box-archive"></i>
 				</div>
+			<?php
+				$sql = "SELECT COUNT(*) AS TArchives FROM Archive";
 
-				<span>Total Archieves</span>
+				// Execute the query
+				$result = $conn->query($sql);
+
+				// Fetch the result
+				$TArchives = 0;
+				if ($result->num_rows > 0) {
+				    $row = $result->fetch_assoc();
+				    $TArchives = $row['TArchives'];
+				}
+				echo "<span> ".$TArchives." </span>";		
+			 ?>
 			</div>
 
 		</div>
@@ -157,20 +209,50 @@
 						<th class="action-center">Actions</th>
 					</tr>	
 
-					<tr>
-						<td>001</td>
-						<td>Jamandron</td>
-						<td>johnsamueljamandron@gmail.com</td>
-						<td>09563326964</td>
-						<td>Kayla</td>
-						<td class="td-message">I would like to negotiate with this house.</td>
-						<td>Pending</td>
-						<td>20/08/2024</td>
-						<td class="td-action">
-								<a href="#"><i class="fa-solid fa-user-check"></i> </a>
-								<a href="#"><i class="fa-solid fa-box-archive"></i></a> 
-						</td>
-					</tr>
+				
+				
+				<?php
+
+						$sql = "SELECT * FROM pending";
+						$rs = mysqli_query($conn, $sql);
+
+						if($rs){
+							while ($row = mysqli_fetch_assoc($rs)) {
+								// code...
+								$PendingID = $row['PendingID'];
+								$Name = $row['Name'];
+								$Email = $row['Email'];
+								$Phone = $row['Phone'];
+								$Selected_Property = $row['Selected_Property'];
+								$Message = $row['Message'];
+								$Status = $row['Status'];
+								$Date = $row['Date'];
+								
+
+
+								echo "
+
+								<tr>
+									<td>".$PendingID."</td>
+									<td>".$Name."</td>
+									<td>".$Email."</td>
+									<td>".$Phone."</td>
+									<td>".$Selected_Property."</td>
+									<td>".$Message."</td>
+									<td>".$Status."</td>
+									<td>".$Date."</td>
+									
+
+								'<td class='td-action'>
+									<a href='#'><i class='fa-solid fa-user-check'></i> </a>
+									<a href='#'><i class='fa-solid fa-box-archive'></i></a> 
+								</td>
+								</tr>
+
+								";
+							}
+						}
+					?>
 
 
 				</table>
