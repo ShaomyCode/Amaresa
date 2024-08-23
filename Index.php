@@ -1,3 +1,10 @@
+<?php
+	
+	include './Assets/Php/Connection.php';
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -233,7 +240,7 @@
 		<dialog id="Login-Modal" class="dialog">
 			<button onclick="CloseLogin()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" action="./Assets/Php/Login.php" class="form login">
+				<form  method="POST" action="Login.php" class="form login">
 
 					<input type="email" name="Email" placeholder="Email Address" required>
 					<input type="password" name="Password" placeholder="Password" required>	

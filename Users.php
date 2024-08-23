@@ -1,6 +1,6 @@
 <?php
 
-	incl
+	include './Assets/Php/Connection.php';
 
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
 				</li>				
 
 				<li>
-					<a href="./Users.html" class="dashboard-list-item active">
+					<a href="./Users.php" class="dashboard-list-item active">
 						<i class="fa-solid fa-users"></i>
 						<span>Users</span>
 					</a>
@@ -153,20 +153,47 @@
 						<th>Address</th>
 						<th>Start Date</th>
 						<th class="action-center">Action</th>
-					</tr>	
+					</tr>		
+					<?php
 
-					<tr>
-						<td>001</td>
-						<td>David Joshua</td>
-						<td>Britania</td>
-						<td>davidjoshua3001@gmail.com</td>
-						<td>093633081790</td>
-						<td>San Jose Del Monte Bulacan</td>
-						<td>15/08/2024</td>
-						<td class="td-action">
-							<a href=""><i class="fa-solid fa-eye"></i> </a>
-						</td>
-					</tr>					
+						$sql = "SELECT * FROM user";
+						$rs = mysqli_query($conn, $sql);
+
+						if($rs){
+							while ($row = mysqli_fetch_assoc($rs)) {
+								// code...
+								$UserID = $row['UserID'];
+								$Firstname = $row['Firstname'];
+								$Lastname = $row['Lastname'];
+								$Email = $row['Email'];
+								$Phone = $row['Phone'];
+								$Address = $row['Address'];
+								$Date = $row['Date_Joined'];
+
+
+								echo "
+
+								<tr>
+									<td>".$UserID."</td>
+									<td>".$Firstname."</td>
+									<td>".$Lastname."</td>
+									<td>".$Email."</td>
+									<td>".$Phone."</td>
+									<td>".$Address."</td>
+									<td>".$Date."</td>
+
+									<td class='td-action'>
+									
+										<a href='#'><i class='fa-solid fa-eye'></i></a>
+
+									</td>
+								</tr>
+
+								";
+							}
+						}
+					?>
+
 				</table>
 			</div>	
 		</section>
