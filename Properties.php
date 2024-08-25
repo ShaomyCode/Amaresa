@@ -287,11 +287,43 @@
 				<button><i class="fa-solid fa-plus"></i> add</button>
 			</div>		
 	</main>
+	<!-- DIAGRAMS HERE -->
+	<section class="Dialog-Section"> 
 
+		<div class="float-diagram">
+			<button onclick="OpenDialog()"><i class="fa-solid fa-plus"></i> add</button>
+		</div>
+
+		<dialog id="Adding-users-modal" class="dialog">
+			<button onclick="CloseDialog()" class="closebtn" alt=""><i class="fa-solid fa-x"></i></button>	
+			<div class="container">
+				<form  method="POST" class="form adding">
+					<div class="form-items">
+						<input type="text" name="Firstname" placeholder="Property name" required>
+						<input type="text" name="Firstname" placeholder="Price" required> 												
+					</div>					
+
+					<div class="form-items">
+						<input type="text" name="Firstname" placeholder="Bedroom/s" required> 						
+						<input type="text" name="Firstname" placeholder="Bathrooms/s" required> 												
+					</div>
+					<!-- FORM FOR IMAGES -->
+					<div class="form-items">
+					    <label for="file-upload" class="custom-file-upload">Upload Exterior</label>
+					    <span id="show-text">Img here</span>
+					    <input id="file-upload" type="file">
+					</div>
+					<input type="text" name="Address" placeholder="Address" required>
+					<input type="submit" name="Add-Button" value="Add"> 
+				</form>
+
+			</div>
+		</dialog>		
+	</section>
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/Admin.js"></script>
+	<script src="./Assets/Js/Admins.js"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>

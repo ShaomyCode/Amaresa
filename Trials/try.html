@@ -3,35 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom File Input</title>
-    <style>
-        .custom-file-upload {
-            display: inline-block;
-            padding: 10px 15px;
-            cursor: pointer;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Dropdown with Input</title>
+    <link rel="stylesheet" href="try.css">
 </head>
 <body>
-    <label for="file-upload" class="custom-file-upload">
-        Upload Exterior
-    </label>
-    <span id="show-text">Img here </span>
-    <input id="file-upload" type="file" style="display: none;">
 
-    <script>
-        document.getElementById('file-upload').addEventListener('change', function() {
-            var fileInput = document.getElementById('file-upload');
-            var label = document.querySelector('#show-text');
-            if (fileInput.files.length > 0) {
-                label.textContent = fileInput.files[0].name;
-            } else {
-                label.textContent = 'Upload Exterior';
-            }
-        });
-    </script>
+<div class="dropdown-input">
+    <label for="dropdown">Choose an option:</label>
+    <input list="options" id="dropdown" name="dropdown" placeholder="Select an option...">
+    <datalist id="options">
+        <option value="Option 1">
+        <option value="Option 2">
+        <option value="Option 3">
+        <option value="Option 4">
+    </datalist>
+</div>
+
 </body>
 </html>

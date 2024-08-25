@@ -31,7 +31,7 @@
 				<li>
 					<a href="./Account.php" class="dashboard-list-item">
 						<i class="fa-solid fa-id-card-clip"></i>
-						<span>Account</span>
+						<span >Account</span>
 					</a>
 				</li>				
 
@@ -236,7 +236,6 @@
 
 									<td class='td-action'>
 										<a href='#'><i class='fa-solid fa-eye'></i></a>
-
 									</td>
 								</tr>
 
@@ -247,17 +246,42 @@
 
 				</table>
 			</div>	
-		</section>
-		
-			<div class="float-diagram">
-				<button><i class="fa-solid fa-plus"></i> add</button>
-			</div>		
+		</section>	
 	</main>
+	<!-- DIAGRAMS HERE -->
+	<section class="Dialog-Section"> 
 
+		<div class="float-diagram">
+			<button onclick="OpenDialog()"><i class="fa-solid fa-plus"></i> add</button>
+		</div>
+
+		<dialog id="Adding-users-modal" class="dialog">
+			<button onclick="CloseDialog()" class="closebtn" alt=""><i class="fa-solid fa-x"></i></button>	
+			<div class="container">
+				<form  method="POST" class="form adding">
+					<div class="form-items">
+						<input type="text" name="Firstname" placeholder="First Name" required>
+						<input type="text" name="Firstname" placeholder="Last Name" required> 						
+					</div>
+					
+					<div class="form-items">
+						<input type="email" name="Email" placeholder="Email Address" required>
+						<input type="phone" name="Phone" placeholder="Phone" required>	
+					</div>
+					<input type="text" name="Address" placeholder="Address" required>
+
+				
+
+					<input type="submit" name="Add-Button" value="Add"> 
+				</form>
+
+			</div>
+		</dialog>		
+	</section>
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/Admin.js"></script>
+	<script src="./Assets/Js/Admins.js"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>

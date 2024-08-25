@@ -413,7 +413,116 @@ button, a {transition: var(--transition);}
 	border-radius: 10px ;
 	color: white;
 	padding: 1rem;
-	display: block ;
-
 }
 .float-diagram button:is(:hover,:focus){color: var(--orange-soda); transform: scale(1.1);}
+/*======================*\
+	# DIAGRAM
+\*======================*/
+.dialog{
+	display: none;
+	opacity: 0;
+	translate: 0 25vh;
+	transition-property: overlay display opacity;
+	transition-duration: .5s;
+	transition-behavior:allow-discrete;
+	width: 40%;
+	margin: auto;
+	border-radius: 16px;
+	height:;
+	/* From https://css.glass */
+	background: rgba(0, 0, 0, 0.47);
+
+	border:none;
+	backdrop-filter: blur(9.8px);
+	-webkit-backdrop-filter: blur(9.8px);
+}
+.dialog[open]{
+	display: block;
+	translate: 0 0;
+	opacity: 1;
+
+	@starting-style{
+		opacity: 0;
+		translate:-25vh  0 ;
+	}
+
+}
+.form{
+	position: relative;
+	display: flex;
+	width: 90%;
+	margin:auto;
+	padding: 1rem;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.form input{
+	border:none;
+	outline: none;
+	color: white;
+	border-bottom: 1px solid white;
+	width: 100%;
+	background: transparent;
+	text-align: center;
+	padding: .5rem;
+	margin-block: 1rem;
+}
+.form input[type="submit"]{
+	background: var(--orange-soda);
+	color: whitesmoke;
+	border:none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: .4s;
+}
+.form input[type="submit"]:is(:hover,:focus){--orange-soda:hsl(7, 72%, 46%);}
+.form input::placeholder{
+	color: var(--seashell);
+	font-size: var(--fs-7);
+}
+.lowerbuttons{
+	color: white;
+	text-align: center;
+	border-bottom: 1px solid whitesmoke;
+	margin-inline: auto;
+	margin-block: 1rem;
+
+}
+.form-items{
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	
+}
+.closebtn{
+	font-size: var(--fs-7);
+	z-index: 1;
+	cursor: pointer;
+	position: absolute;
+	float: right;
+	color: whitesmoke;
+	padding: 5px;
+	top: 1rem;
+	right: 1rem;
+	display: block;
+}
+/*======================*\
+	# CSS FOR FILE UPLOADER
+\*======================*/
+.custom-file-upload {
+   display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+ }
+ #show-text{
+ 	color: white;
+ }
+ .form-items input[type="file"]{
+ 	display: none;
+ }

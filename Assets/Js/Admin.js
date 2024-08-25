@@ -1,19 +1,11 @@
 /*======================*\
-	# SIDEBAR
+# ADDING USERS
 \*======================*/
-var sidebarOpen = false;
-var sidebar = document.getElementById("sidebar");
-
-function OpenSideBar() {
-	if(!sidebarOpen){
-		sidebar.classList.add("sidebar-responsive");
-		sidebarOpen = true;
-	}
+function OpenDialog(){
+	alert('Building sucessfully added!');
+	document.getElementById('Adding-users-modal').showModal();
 }
-
-function CloseSideBar(){
-	if(sidebarOpen){
-		sidebar.classList.remove("sidebar-responsive");
-		sidebarOpen = false;
-	}
+function CloseDialog(){
+    document.getElementById('Adding-users-modal').close();
 }
+document.getElementById("demo").innerHTML = 5 + 6;
