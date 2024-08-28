@@ -91,7 +91,6 @@
 			</ul>
 		</div>
 	</aside>
-
 	<!-- TOP SECTION -->
 	<section class="displaylist" id="displaylist">
 		<div class="container">
@@ -190,7 +189,7 @@
 
 		</div>
 	</section>
-	<!-- PROPERTIES Section -->
+	<!-- MAIN SECTION -->
 		<section class="Table-section" id="Table-Section">
 			<div class="container">
 
@@ -205,29 +204,9 @@
 						<th>Square Meters</th>
 						<th>Date Release</th>
 						<th>Status</th>
-						<th>Role</th>
+
 						<th class="action-center">Actions</th>
 					</tr>	
-
-					<tr>
-						<td>1</td>
-						<td>Arya - prime</td>
-						<td>3,242,242.42</td>
-						<td>New</td>
-						<td>3</td>
-						<td>4</td>
-						<td>99 sqm</td>
-						<td>20/04/2024</td>
-						<td>Available</td>
-						<td>Property</td>
-
-						<td class="td-action">
-								<a href="#"> <i class="fa-solid fa-check"></i></a>
-								<a href="#"><i class="fa-solid fa-eye"></i></a>
-								<a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-								<a href="#"><i class="fa-solid fa-box-archive"></i></a> 
-						</td>
-					</tr>
 				
 					<?php
 
@@ -246,7 +225,7 @@
 								$Area_sqft = $row['Area_sqft'];
 								$Date = $row['Date'];
 								$Status = $row['Status'];	
-								$Role = $row['Role'];	
+	
 							
 
 								echo "
@@ -261,12 +240,12 @@
 									<td>".$Area_sqft."</td>	
 									<td>".$Area_sqft."</td>	
 									<td>".$Status."</td>
-									<td>".$Role."</td>
+
 								
 
 							<td class='td-action'>
-								<a href='#'> <i class='fa-solid fa-check'></i></a>
 								<a href='#'><i class='fa-solid fa-eye'></i></a>
+								<a href='#'> <i class='fa-solid fa-check'></i></a>
 								<a href='#'><i class='fa-solid fa-pen-to-square'></i></a>
 								<a href='#'><i class='fa-solid fa-box-archive'></i></a> 
 							</td>
@@ -307,21 +286,49 @@
 						<input type="text" name="Firstname" placeholder="Bedroom/s" required> 						
 						<input type="text" name="Firstname" placeholder="Bathrooms/s" required> 												
 					</div>
+					<input type="text" name="Address" placeholder="Address" required>
 					<!-- FORM FOR IMAGES -->
 					<div class="form-items images">
+
 						<div class="images-container">
-						    <label for="file-upload" class="custom-file-upload">Upload Exterior</label>
-						    <span id="show-text">Img here</span>
-						    <input id="file-upload" type="file">							
-						</div>						
+						    <label for="file-upload-exterior" class="custom-file-upload">Upload Exterior</label>
+						    <span id="show-text-exterior" class="show-text">Image here</span>
+						    <input id="file-upload-exterior" type="file">
+						</div>				
+
 						<div class="images-container">
-						    <label for="file-upload" class="custom-file-upload">Upload Exterior</label>
-						    <span id="show-text">Img here</span>
-						    <input id="file-upload" type="file">							
-						</div>
+						    <label for="file-upload-bedroom" class="custom-file-upload">Upload Bedroom</label>
+						    <span id="show-text-bedroom" class="show-text">Image here</span>
+						    <input id="file-upload-bedroom" type="file">	
+						</div>					
+					</div>					
+
+					<div class="form-items images">
+
+						<div class="images-container">
+						    <label for="file-upload-bathtoom" class="custom-file-upload">Upload Bathroom</label>
+						    <span id="show-text-bathtoom" class="show-text">Image here</span>
+						    <input id="file-upload-bathtoom" type="file">
+						</div>				
+
+						<div class="images-container">
+						    <label for="file-upload-Livingroom" class="custom-file-upload">Upload Livingroom</label>
+						    <span id="show-text-Livingroom" class="show-text">Image here</span>
+						    <input id="file-upload-Livingroom" type="file">
+						</div>					
 					</div>
-					<input type="text" name="Address" placeholder="Address" required>
-					<input type="submit" name="Add-Button" value="Add"> 
+
+
+					<div class="form-items images">
+						<div class="images-container">
+						    <label for="file-upload-Diningroom" class="custom-file-upload">Upload Diningroom</label>
+						    <span id="show-text-Diningroom" class="show-text">Image here</span>
+						    <input id="file-upload-Diningroom" type="file">
+						</div>	
+					
+					</div>
+					
+					<button type="submit" name="Submit" value="Property" class="Submit"><i class="fa-solid fa-house-circle-check"></i> Add Property </button>  
 				</form>
 
 			</div>
@@ -330,7 +337,7 @@
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/Admins.js"></script>
+	<script src="./Assets/Js/UpdateAdmin.js"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>

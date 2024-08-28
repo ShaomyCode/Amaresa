@@ -6,8 +6,10 @@
 		if($_POST['Submit'] == "User"){
 			adduser($conn);
 		}else if($_POST['Submit'] == "Admin"){
-			addmanagement($conn);	
-		}
+			addmanagement($conn);
+		}else{
+            
+        }   
 	}
 
 	function adduser($conn){
@@ -42,7 +44,7 @@
         $ConfirmPassword = $_POST['ConfirmPassword'];
         $Role = $_POST['Role'];
         $Hash = password_hash($Password, PASSWORD_DEFAULT);
-      
+      	
 
 
         $stmt = "INSERT INTO management(Lastname, Firstname, Email, Phone, Address, Password, Role)VALUES('$Lastname','$Firstname','$Email', '$Phone', '$Address', '$Hash','$Role')";
@@ -56,6 +58,10 @@
                     }, 50); 
                 </script>";          
 	}
+
+    function addProperties($conn){
+
+    }
 ?>
 
 <!-- 
