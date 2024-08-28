@@ -383,9 +383,7 @@ button, a {transition: var(--transition);}
 	}
 	td{
 		margin-block: 1rem;
-		max-width: 10%;
 		min-height: 5rem;
-		width: 100%;
 		text-overflow: ellipsis;
 		text-wrap: wrap;
 	}
@@ -480,12 +478,16 @@ button, a {transition: var(--transition);}
 .form button[type="submit"]{
 	background: var(--orange-soda);
 	color: whitesmoke;
+	width: 100%;
+	text-align: center;
+	display: block;
+	padding: .5rem;
 	border:none;
 	border-radius: 10px;
 	cursor: pointer;
 	transition: .4s;
 }
-.form input[type="submit"]:is(:hover,:focus){--orange-soda:hsl(7, 72%, 46%);}
+.form button[type="submit"]:is(:hover,:focus){--orange-soda:hsl(7, 72%, 46%);}
 .form input::placeholder{
 	color: var(--seashell);
 	font-size: var(--fs-7);

@@ -256,26 +256,31 @@
 
 			<div class="container">
 
-				<form class="form Inquiry">
+				<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php">
 					<div class="form-items">
 						<input type="text" name="Firstname" placeholder="First Name" required>
 						<input type="text" name="Lastname" placeholder="Last Name" required>		
 					</div>
 
+					<input type="number"  name="Phone" placeholder="Contact Number" required>
+					<div class="form-items">
+						<input type="text" name="Address" placeholder="Address" required>
+						<input list="options" id="Role" name="Property" placeholder="Select Property" required>
+					    <datalist id="options">
+					        <option value="Kalya House">
+					        <option value="Aria House">
+					    </datalist>	
+		 	
+					</div>	
 					<input type="email" name="Email" placeholder="Email Address" required>
 
-					<div class="form-items">
-						<input type="text" name="Password" placeholder="Select Property" required>
-						<input type="tel" name="Confirmpass" placeholder="Contact Number" required> 	
-					</div>	
-
 				    <div class="textarea-container">
-				        <textarea id="message" rows="5" placeholder="I'd like to inquire about this property..."></textarea>
+				        <textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>
 				    </div>
 						
 					<div class="inquiry-buttons">
 						<button id="flip">Requirements</button>
-						<button type="submit" name="Inquiry">Send Inquiry</button>
+						<button type="submit" name="SentInquiry">Send Inquiry</button>
 					</div>
 				</form>
 

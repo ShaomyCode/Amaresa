@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Management</title>
 	<!-- CUSTOM CSS  -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin1.css">
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 </head>
@@ -91,7 +91,6 @@
 			</ul>
 		</div>
 	</aside>
-
 	<!-- TOP SECTION -->
 	<section class="displaylist" id="displaylist">
 		<div class="container">
@@ -197,7 +196,8 @@
 				<table class="table" id="table">
 					<tr>	
 						<th>Employee ID</th>
-						<th>Name</th>
+						<th>Lastname</th>
+						<th>Firstname</th>
 						<th>Email</th>
 						<th>Phone</th>
 						<th>Address</th>
@@ -215,7 +215,8 @@
 							while ($row = mysqli_fetch_assoc($rs)) {
 								// code...
 								$ManagementID = $row['ManagementID'];
-								$Name = $row['Name'];
+								$Lastname = $row['Lastname'];
+								$Firstname = $row['Firstname'];
 								$Email = $row['Email'];
 								$Phone = $row['Phone'];
 								$Address = $row['Address'];
@@ -227,7 +228,8 @@
 
 								<tr>
 									<td>".$ManagementID."</td>
-									<td>".$Name."</td>
+									<td>".$Lastname."</td>
+									<td>".$Firstname."</td>
 									<td>".$Email."</td>
 									<td>".$Phone."</td>
 									<td>".$Address."</td>	
@@ -260,15 +262,20 @@
 		<dialog id="Adding-users-modal" class="dialog">
 			<button onclick="CloseDialog()" class="closebtn" alt=""><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" class="form adding">
+				<form  method="POST" class="form adding" enctype="multipart/form-data" action="./Assets/Php/Admin.php">
 					<div class="form-items">
 						<input type="text" name="Firstname" placeholder="First Name" required>
-						<input type="text" name="Firstname" placeholder="Last Name" required> 						
+						<input type="text" name="Lastname" placeholder="Last Name" required> 						
 					</div>
 					
 					<div class="form-items">
 						<input type="email" name="Email" placeholder="Email Address" required>
-						<input type="number" max="11" name="Phone" placeholder="Phone" required>	
+						<input type="number"  name="Phone" placeholder="Phone" required>	
+					</div>					
+
+					<div class="form-items">
+						<input type="password" name="Password" placeholder="Password" required>
+						<input type="password"  name="ConfirmPassword" placeholder="Confirm Password" required>	
 					</div>
 
 					<div class="form-items">
@@ -279,7 +286,7 @@
 					        <option value="Staff">
 					    </datalist>						
 					</div>
-					<input type="submit" name="Add-Button" value="Add"> 
+					<button type="submit" name="Submit" value="Admin" class="Submit"><i class="fa-solid fa-user-plus"></i> Add </button> 
 				</form>
 
 			</div>

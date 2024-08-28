@@ -213,7 +213,7 @@ button, a {transition: var(--transition);}
 	top: 0;
 	left: 0;
 	box-shadow: 0 2px 5px black;
-	width: 13%;
+	width: 10%;
 	height: 100vh;
 	background: var(--prussian-blue);
 }
@@ -275,8 +275,8 @@ button, a {transition: var(--transition);}
 	display: block;
 	position: relative;
 	border-radius: 16px;
-	margin: 10px 0 0 14%;
-	width: 85%;
+	margin: 10px 0 0 16%;
+	width: 83%;
 	color: black;
 	background: var(--amaresa-bg);
 	box-shadow: var(--amaresa-box-shadow);
@@ -355,11 +355,11 @@ button, a {transition: var(--transition);}
 .Table-section{
 	display: block;
 	position: relative;
-	margin-inline: 14%;
+	margin-inline: 16%;
 	box-shadow: 2px 2px 2px black;
 	background: #f0f0f0;
 	margin-block: 1rem;
-	width: 85%;
+	width: 83%;
 	max-height: 65vh;
 	overflow-x: hidden;
 	color: black;
@@ -368,7 +368,6 @@ button, a {transition: var(--transition);}
 	border-collapse: collapse;
 	width: 100%;
 	th{
-	font-size: var(--fs-4);
 	position: sticky;
 	top: 5px;
 	color: whitesmoke;
@@ -379,15 +378,8 @@ button, a {transition: var(--transition);}
 	}
 	td,th{
 		text-align: center;
+		font-size: var(--fs-6);
 		padding: 1rem;
-	}
-	td{
-		margin-block: 1rem;
-		max-width: 10%;
-		min-height: 5rem;
-		width: 100%;
-		text-overflow: ellipsis;
-		text-wrap: wrap;
 	}
 }
 .td-message{
@@ -477,7 +469,7 @@ button, a {transition: var(--transition);}
 	padding: .5rem;
 	margin-block: 1rem;
 }
-.form button[type="submit"]{
+.form input[type="submit"]{
 	background: var(--orange-soda);
 	color: whitesmoke;
 	border:none;

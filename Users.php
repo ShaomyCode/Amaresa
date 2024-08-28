@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Views</title>
 	<!-- CUSTOM CSS  -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin1.css">
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 </head>
@@ -93,7 +93,6 @@
 			</ul>
 		</div>
 	</aside>
-
 	<!-- TOP SECTION -->
 	<section class="displaylist" id="displaylist">
 		<div class="container">
@@ -258,21 +257,26 @@
 		<dialog id="Adding-users-modal" class="dialog">
 			<button onclick="CloseDialog()" class="closebtn" alt=""><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" class="form adding">
+				<form  method="POST" class="form adding" enctype="multipart/form-data" action="./Assets/Php/Admin.php">
 					<div class="form-items">
 						<input type="text" name="Firstname" placeholder="First Name" required>
-						<input type="text" name="Firstname" placeholder="Last Name" required> 						
+						<input type="text" name="Lastname" placeholder="Last Name" required> 						
 					</div>
 					
 					<div class="form-items">
 						<input type="email" name="Email" placeholder="Email Address" required>
 						<input type="phone" name="Phone" placeholder="Phone" required>	
+					</div>					
+
+					<div class="form-items">
+						<input type="password" name="Password" placeholder="Password" required>
+						<input type="password" name="ConfirmPassword" placeholder="Confirm Password" required>	
 					</div>
+
 					<input type="text" name="Address" placeholder="Address" required>
 
-				
-
-					<input type="submit" name="Add-Button" value="Add"> 
+					<!-- <input type="submit" name="Submit" value="Add"> -->
+					<button type="submit" name="Submit" value="User" class="Submit"><i class="fa-solid fa-user-plus"></i> Add User</button> 
 				</form>
 
 			</div>

@@ -199,12 +199,13 @@
 				<table class="table" id="table">
 					<tr>	
 						<th>Pending ID</th>
-						<th>Name</th>
+						<th>Lastname</th>
+						<th>Firstname</th>
 						<th>Email</th>
 						<th>Phone</th>
-						<th>Selected Property</th>
+						<th>Address</th>
+						<th>Property</th>
 						<th>Message</th>
-						<th>Status</th>
 						<th>Date</th>
 						<th class="action-center">Actions</th>
 					</tr>	
@@ -220,7 +221,9 @@
 							while ($row = mysqli_fetch_assoc($rs)) {
 								// code...
 								$PendingID = $row['PendingID'];
-								$Name = $row['Name'];
+								$Lastname = $row['Lastname'];
+								$Firstname = $row['Firstname'];
+								$Address = $row['Address'];
 								$Email = $row['Email'];
 								$Phone = $row['Phone'];
 								$Selected_Property = $row['Selected_Property'];
@@ -234,16 +237,17 @@
 
 								<tr>
 									<td>".$PendingID."</td>
-									<td>".$Name."</td>
+									<td>".$Lastname."</td>
+									<td>".$Firstname."</td>
 									<td>".$Email."</td>
 									<td>".$Phone."</td>
+									<td>".$Address."</td>
 									<td>".$Selected_Property."</td>
 									<td>".$Message."</td>
-									<td>".$Status."</td>
 									<td>".$Date."</td>
 									
 
-								'<td class='td-action'>
+								<td class='td-action'>
 									<a href='#'><i class='fa-solid fa-user-check'></i> </a>
 									<a href='#'><i class='fa-solid fa-box-archive'></i></a> 
 								</td>

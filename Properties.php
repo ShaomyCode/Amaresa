@@ -308,10 +308,17 @@
 						<input type="text" name="Firstname" placeholder="Bathrooms/s" required> 												
 					</div>
 					<!-- FORM FOR IMAGES -->
-					<div class="form-items">
-					    <label for="file-upload" class="custom-file-upload">Upload Exterior</label>
-					    <span id="show-text">Img here</span>
-					    <input id="file-upload" type="file">
+					<div class="form-items images">
+						<div class="images-container">
+						    <label for="file-upload" class="custom-file-upload">Upload Exterior</label>
+						    <span id="show-text">Img here</span>
+						    <input id="file-upload" type="file">							
+						</div>						
+						<div class="images-container">
+						    <label for="file-upload" class="custom-file-upload">Upload Exterior</label>
+						    <span id="show-text">Img here</span>
+						    <input id="file-upload" type="file">							
+						</div>
 					</div>
 					<input type="text" name="Address" placeholder="Address" required>
 					<input type="submit" name="Add-Button" value="Add"> 
