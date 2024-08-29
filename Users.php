@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Views</title>
 	<!-- CUSTOM CSS  -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin1.css">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>"> 
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 </head>
@@ -235,6 +235,9 @@
 
 									<td class='td-action'>
 										<a href='#'><i class='fa-solid fa-eye'></i></a>
+										<a href='./Assets/Php/Admin.php?deleteid=".$UserID."&value=User' onclick='return archiveConfirmation()''>
+
+										<i class='fa-solid fa-box-archive'></i></a> 
 									</td>
 								</tr>
 
@@ -285,7 +288,7 @@
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/Admins.js"></script>
+	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>

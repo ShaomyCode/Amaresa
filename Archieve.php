@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Archieve</title>
 	<!-- CUSTOM CSS  -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>"> 
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 </head>
@@ -225,12 +225,8 @@
 									<td>".$Name."</td>
 									<td>".$Description."</td>
 									<td>".$Date."</td>
-
-
 									<td class='td-action'>
-										<a href='#'><i class='fa-solid fa-rotate-left'></i> </a> 
 										<a href='#'><i class='fa-solid fa-trash'></i> </a> 
-
 									</td>
 								</tr>
 
@@ -250,7 +246,7 @@
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/Admin.js"></script>
+	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>

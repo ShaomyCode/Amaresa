@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Pendings</title>
 	<!-- CUSTOM CSS  -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>">
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 </head>
@@ -205,7 +205,7 @@
 						<th>Phone</th>
 						<th>Address</th>
 						<th>Property</th>
-						<th>Message</th>
+						<th>Notes</th>
 						<th>Date</th>
 						<th class="action-center">Actions</th>
 					</tr>	
@@ -271,7 +271,7 @@
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/Admin.js"></script>
+	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>

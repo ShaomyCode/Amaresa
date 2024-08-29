@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Properties</title>
 	<!-- CUSTOM CSS  -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>"> 
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 </head>
@@ -202,9 +202,8 @@
 						<th>Bedrooms</th>
 						<th>Bathrooms</th>
 						<th>Square Meters</th>
-						<th>Date Release</th>
 						<th>Status</th>
-
+						<th>Date Release</th>
 						<th class="action-center">Actions</th>
 					</tr>	
 				
@@ -238,15 +237,15 @@
 									<td>".$Bedrooms."</td>
 									<td>".$Bathrooms."</td>	
 									<td>".$Area_sqft."</td>	
-									<td>".$Area_sqft."</td>	
-									<td>".$Status."</td>
+									<td>".$Status."</td>	
+									<td>".$Date."</td>
 
 								
 
 							<td class='td-action'>
 								<a href='#'><i class='fa-solid fa-eye'></i></a>
-								<a href='#'> <i class='fa-solid fa-check'></i></a>
 								<a href='#'><i class='fa-solid fa-pen-to-square'></i></a>
+								<a href='#'> <i class='fa-solid fa-check'></i></a>
 								<a href='#'><i class='fa-solid fa-box-archive'></i></a> 
 							</td>
 						
@@ -292,13 +291,13 @@
 
 						<div class="images-container">
 						    <label for="file-upload-exterior" class="custom-file-upload">Upload Exterior</label>
-						    <span id="show-text-exterior" class="show-text">Image here</span>
+						    <span id="show-text-exterior" class="show-text">Exterior Image shows here</span>
 						    <input id="file-upload-exterior" type="file">
 						</div>				
 
 						<div class="images-container">
 						    <label for="file-upload-bedroom" class="custom-file-upload">Upload Bedroom</label>
-						    <span id="show-text-bedroom" class="show-text">Image here</span>
+						    <span id="show-text-bedroom" class="show-text">Bedroom Image shows here</span>
 						    <input id="file-upload-bedroom" type="file">	
 						</div>					
 					</div>					
@@ -307,13 +306,14 @@
 
 						<div class="images-container">
 						    <label for="file-upload-bathtoom" class="custom-file-upload">Upload Bathroom</label>
-						    <span id="show-text-bathtoom" class="show-text">Image here</span>
+						    <span id="show-text-bathtoom" class="show-text">Bathroom Image shows here</span>
 						    <input id="file-upload-bathtoom" type="file">
 						</div>				
 
 						<div class="images-container">
-						    <label for="file-upload-Livingroom" class="custom-file-upload">Upload Livingroom</label>
-						    <span id="show-text-Livingroom" class="show-text">Image here</span>
+						    <label for="file-upload-Livingroom" class="custom-file-upload">Upload Livingroom
+						    </label>
+						    <span id="show-text-Livingroom" class="show-text">Livingroom Image shows here</span>
 						    <input id="file-upload-Livingroom" type="file">
 						</div>					
 					</div>
@@ -322,7 +322,7 @@
 					<div class="form-items images">
 						<div class="images-container">
 						    <label for="file-upload-Diningroom" class="custom-file-upload">Upload Diningroom</label>
-						    <span id="show-text-Diningroom" class="show-text">Image here</span>
+						    <span id="show-text-Diningroom" class="show-text">Diningroom Image shows here</span>
 						    <input id="file-upload-Diningroom" type="file">
 						</div>	
 					
@@ -337,7 +337,7 @@
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/UpdateAdmin.js"></script>
+	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>
