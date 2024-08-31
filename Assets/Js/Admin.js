@@ -66,6 +66,9 @@ document.getElementById('file-upload-Diningroom').addEventListener('change', fun
 function archiveConfirmation(){
     return confirm('Are you sure you want to archive this record?');
 }
+function DeleteConfirmation(){
+    return confirm('Are you sure you want to Delete this record?');
+}
 function ViewData(){
     return confirm('Are you sure you want to view this record?');
 }

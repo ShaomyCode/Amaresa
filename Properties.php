@@ -206,7 +206,7 @@
 						<th>Date Release</th>
 						<th class="action-center">Actions</th>
 					</tr>	
-				
+					<!-- GETTING THE DATAS FROM PROPERTIES TO DISPLAY -->
 					<?php
 
 						$sql = "SELECT * FROM properties";
@@ -240,8 +240,6 @@
 									<td>".$Status."</td>	
 									<td>".$Date."</td>
 
-								
-
 							<td class='td-action'>
 								<a href='#'><i class='fa-solid fa-eye'></i></a>
 								<a href='#'><i class='fa-solid fa-pen-to-square'></i></a>
@@ -261,9 +259,7 @@
 				</table>
 			</div>	
 		</section>
-			<div class="float-diagram">
-				<button><i class="fa-solid fa-plus"></i> add</button>
-			</div>		
+	
 	</main>
 	<!-- DIAGRAMS HERE -->
 	<section class="Dialog-Section"> 

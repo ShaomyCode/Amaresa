@@ -91,7 +91,6 @@
 			</ul>
 		</div>
 	</aside>
-
 	<!-- TOP SECTION -->
 	<section class="displaylist" id="displaylist">
 		<div class="container">
@@ -226,7 +225,9 @@
 									<td>".$Description."</td>
 									<td>".$Date."</td>
 									<td class='td-action'>
-										<a href='#'><i class='fa-solid fa-trash'></i> </a> 
+										<a href='./Assets/Php/Admin.php?deleteid=".$ArchiveID."' onclick='return DeleteConfirmation()' '>
+										<i class='fa-solid fa-trash'></i>
+										</a>									
 									</td>
 								</tr>
 

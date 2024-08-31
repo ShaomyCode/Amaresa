@@ -209,9 +209,7 @@
 						<th>Date</th>
 						<th class="action-center">Actions</th>
 					</tr>	
-
-				
-				
+				<!-- GETTING THE DATAS FROM PENDING TO DISPLAY -->	
 				<?php
 
 						$sql = "SELECT * FROM pending";
@@ -231,8 +229,6 @@
 								$Status = $row['Status'];
 								$Date = $row['Date'];
 								
-
-
 								echo "
 
 								<tr>
@@ -243,13 +239,15 @@
 									<td>".$Phone."</td>
 									<td>".$Address."</td>
 									<td>".$Selected_Property."</td>
-									<td>".$Message."</td>
+									<td class='note'>".$Message."</td>
 									<td>".$Date."</td>
 									
 
 								<td class='td-action'>
 									<a href='#'><i class='fa-solid fa-user-check'></i> </a>
-									<a href='#'><i class='fa-solid fa-box-archive'></i></a> 
+									<a href='./Assets/Php/Admin.php?archiveID=".$PendingID."&value=Pending' onclick='return archiveConfirmation()' '>
+									<i class='fa-solid fa-box-archive' ></i>
+									</a>
 								</td>
 								</tr>
 
@@ -263,12 +261,7 @@
 			</div>	
 		</section>
 
-
-
-
 	</main>
-
-
 
 	<!-- Custom JS & JQUERY -->
 	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>

@@ -368,7 +368,7 @@ button, a {transition: var(--transition);}
 	border-collapse: collapse;
 	width: 100%;
 	th{
-	font-size: var(--fs-4);
+	font-size: var(--fs-5);
 	position: sticky;
 	top: 5px;
 	color: whitesmoke;
@@ -383,9 +383,12 @@ button, a {transition: var(--transition);}
 	}
 	td{
 		margin-block: 1rem;
-		min-height: 5rem;
-		text-overflow: ellipsis;
-		text-wrap: wrap;
+		font-size: var(--fs-5);
+	}
+	.note{
+		width: 10rem;
+		overflow-x: hidden;
+		text-align: justify;
 	}
 }
 .td-message{
@@ -555,3 +558,4 @@ button, a {transition: var(--transition);}
  .form-items input[type="file"]{
  	display: none;
  }
+

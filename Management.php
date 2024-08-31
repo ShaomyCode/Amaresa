@@ -292,9 +292,7 @@
 				</form>
 
 			</div>
-		</dialog>		
-	</section>
-
+		</dialog>	
 
 	<!-- Custom JS & JQUERY -->
 	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>

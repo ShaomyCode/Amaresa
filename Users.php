@@ -235,9 +235,8 @@
 
 									<td class='td-action'>
 										<a href='#'><i class='fa-solid fa-eye'></i></a>
-										<a href='./Assets/Php/Admin.php?deleteid=".$UserID."&value=User' onclick='return archiveConfirmation()''>
-
-										<i class='fa-solid fa-box-archive'></i></a> 
+									<a href='./Assets/Php/Admin.php?archiveID=".$UserID."&value=User' onclick='return archiveConfirmation()' '>
+									<i class='fa-solid fa-box-archive' ></i> 
 									</td>
 								</tr>
 
