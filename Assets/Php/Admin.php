@@ -9,8 +9,8 @@ if(isset($_POST['Submit'])){
 		AddUser($conn);
 	}elseif($_POST['Submit'] == "Admin"){
 		AddManagement($conn);
-	}elseif($_POST['Submit' == "Propety"]){
-            
+	}elseif($_POST['Submit' == "Property"]){
+        AddProperties($conn);    
     }   
 }
 /***********************************************
@@ -87,32 +87,61 @@ function AddManagement($conn){
 }
 
 function AddProperties($conn){
+    // List of input names 
     $Property = $_POST['Property'];
     $Price = $_POST['Price'];
     $Bedroom = $_POST['Bedroom'];
     $Bathroom = $_POST['Bathroom'];
     $Area = $_POST['Area'];
     $Message = $_POST['Message'];
-
-    // ARRAY: LIST OF NAME TO PROCESS
-    $inputNames = ['Exterior', 'Bedroom', 'Bathroom','Livingroom', 'Diningroom'];
     // List of input names and corresponding database columns
     $inputNamesToColumns = [
         'Exterior' => 'IExterior',
         'Bedroom' => 'IBedroom',
-        'Bathroom' => 'IBathroom'
+        'Bathroom' => 'IBathroom',
+        'Livingroom' => 'IAttic',
+        'Diningroom' => 'IDining',
     ];
-    // FOR IMPORTING IMAGE/S
-    $Filename = $_FILES[$inputNames]["name"];
-    $Tmpname = $_FILES[$inputNames]["tmp_name"];
-    $NewFile = uniqid() . "-" .$Filename;
-    $Uploadpath = "Images/" .$NewFile;
-    move_uploaded_file($Tmpname, $Uploadpath);
 
-    $Query = "
-        INSERT INTO Property(Property, Description, Price, Bedrooms, Bathrooms, Area_sqft, IExterior, IBedroom, IBathroom,IAttic, IDining)
-        VALUES('$Property','$Message','$Price','$Bedroom','$Bathroom','$Area','')
-    "
+    // Prepare an array to hold the image paths for each column
+    $imagePaths = [];
+
+    // Loop through each input name and handle the file upload
+    foreach ($inputNamesToColumns as $inputName => $columnName) {
+        if (isset($_FILES[$inputName]) && $_FILES[$inputName]['error'] === UPLOAD_ERR_OK) {
+            $filename = $_FILES[$inputName]["name"];
+            $tmpname = $_FILES[$inputName]["tmp_name"];
+            $newFile = uniqid() . "-" . $filename;
+            $uploadPath = "Images/" . $newFile;
+
+            // Move the uploaded file to the desired location
+            if (move_uploaded_file($tmpname, $uploadPath)) {
+                // Store the file path in the imagePaths array with the corresponding column name
+                $imagePaths[$columnName] = $uploadPath;
+            }
+        } else {    
+            // Handle cases where the file is not uploaded (optional)
+            $imagePaths[$columnName] = null;
+        }
+    }
+
+    // Prepare the SQL query dynamically
+    $query = "
+        INSERT INTO Property (Property, Description, Price, Bedrooms, Bathrooms, Area_sqft, IExterior, IBedroom, IBathroom, IAttic, IDining)
+        VALUES ('$Property', '$Message', '$Price', '$Bedroom', '$Bathroom', '$Area', 
+            '{$imagePaths['IExterior']}', 
+            '{$imagePaths['IBedroom']}', 
+            '{$imagePaths['IBathroom']}', 
+            '{$imagePaths['IAttic']}', 
+            '{$imagePaths['IDining']}')
+    ";
+
+    // Execute the query (assuming you have a connection to the database)
+    if (mysqli_query($connection, $query)) {
+        echo "Property data inserted successfully.";
+    } else {
+        echo "Error: " . mysqli_error($connection);
+    }
 
 }
 /***********************************************
