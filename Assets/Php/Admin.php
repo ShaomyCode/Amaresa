@@ -86,7 +86,33 @@ function AddManagement($conn){
                 </script>";          
 }
 
-function addProperties($conn){
+function AddProperties($conn){
+    $Property = $_POST['Property'];
+    $Price = $_POST['Price'];
+    $Bedroom = $_POST['Bedroom'];
+    $Bathroom = $_POST['Bathroom'];
+    $Area = $_POST['Area'];
+    $Message = $_POST['Message'];
+
+    // ARRAY: LIST OF NAME TO PROCESS
+    $inputNames = ['Exterior', 'Bedroom', 'Bathroom','Livingroom', 'Diningroom'];
+    // List of input names and corresponding database columns
+    $inputNamesToColumns = [
+        'Exterior' => 'IExterior',
+        'Bedroom' => 'IBedroom',
+        'Bathroom' => 'IBathroom'
+    ];
+    // FOR IMPORTING IMAGE/S
+    $Filename = $_FILES[$inputNames]["name"];
+    $Tmpname = $_FILES[$inputNames]["tmp_name"];
+    $NewFile = uniqid() . "-" .$Filename;
+    $Uploadpath = "Images/" .$NewFile;
+    move_uploaded_file($Tmpname, $Uploadpath);
+
+    $Query = "
+        INSERT INTO Property(Property, Description, Price, Bedrooms, Bathrooms, Area_sqft, IExterior, IBedroom, IBathroom,IAttic, IDining)
+        VALUES('$Property','$Message','$Price','$Bedroom','$Bathroom','$Area','')
+    "
 
 }
 /***********************************************

@@ -271,30 +271,33 @@
 		<dialog id="Adding-users-modal" class="dialog">
 			<button onclick="CloseDialog()" class="closebtn" alt=""><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" class="form adding">
+				<form  method="POST" class="form adding" enctype="multipart/form-data" action="./Assets/Php/Admin.php">
 					<div class="form-items">
-						<input type="text" name="Firstname" placeholder="Property name" required>
-						<input type="text" name="Firstname" placeholder="Price" required> 												
+						<input type="text" name="Property" placeholder="Property name" required>
+						<input type="text" name="Price" placeholder="Price" required> 												
 					</div>					
 
 					<div class="form-items">
-						<input type="text" name="Firstname" placeholder="Bedroom/s" required> 						
-						<input type="text" name="Firstname" placeholder="Bathrooms/s" required> 												
+						<input type="number" max="10" min="1" name="Bedroom" placeholder="Bedroom/s" required> 						
+						<input type="number" max="10" min="1" name="Bathroom" placeholder="Bathrooms/s" required> 												
 					</div>
-					<input type="text" name="Address" placeholder="Address" required>
+					<input type="text" name="Area" placeholder="Area sqft" required>
+				    <div class="textarea-container">
+				        <textarea id="message" rows="5" name="Message" placeholder="Property Description..."></textarea>
+				    </div>					
 					<!-- FORM FOR IMAGES -->
 					<div class="form-items images">
 
 						<div class="images-container">
 						    <label for="file-upload-exterior" class="custom-file-upload">Upload Exterior</label>
 						    <span id="show-text-exterior" class="show-text">Exterior Image shows here</span>
-						    <input id="file-upload-exterior" type="file">
+						    <input id="file-upload-exterior" type="file"  name="Exterior" accept="image/*" required>
 						</div>				
 
 						<div class="images-container">
 						    <label for="file-upload-bedroom" class="custom-file-upload">Upload Bedroom</label>
 						    <span id="show-text-bedroom" class="show-text">Bedroom Image shows here</span>
-						    <input id="file-upload-bedroom" type="file">	
+						    <input id="file-upload-bedroom" type="file" name="Bedroom" accept="image/*" required>	
 						</div>					
 					</div>					
 
@@ -303,14 +306,14 @@
 						<div class="images-container">
 						    <label for="file-upload-bathtoom" class="custom-file-upload">Upload Bathroom</label>
 						    <span id="show-text-bathtoom" class="show-text">Bathroom Image shows here</span>
-						    <input id="file-upload-bathtoom" type="file">
+						    <input id="file-upload-bathtoom" type="file" name="Bathroom" accept="image/*" required>
 						</div>				
 
 						<div class="images-container">
 						    <label for="file-upload-Livingroom" class="custom-file-upload">Upload Livingroom
 						    </label>
 						    <span id="show-text-Livingroom" class="show-text">Livingroom Image shows here</span>
-						    <input id="file-upload-Livingroom" type="file">
+						    <input id="file-upload-Livingroom" type="file" name="Livingroom" accept="image/*" required>
 						</div>					
 					</div>
 
@@ -319,7 +322,7 @@
 						<div class="images-container">
 						    <label for="file-upload-Diningroom" class="custom-file-upload">Upload Diningroom</label>
 						    <span id="show-text-Diningroom" class="show-text">Diningroom Image shows here</span>
-						    <input id="file-upload-Diningroom" type="file">
+						    <input id="file-upload-Diningroom" type="file" name="Diningroom" accept="image/*" required>
 						</div>	
 					
 					</div>

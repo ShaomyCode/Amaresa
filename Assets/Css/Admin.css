@@ -429,6 +429,7 @@ button, a {transition: var(--transition);}
 	# DIAGRAM
 \*======================*/
 .dialog{
+
 	display: none;
 	opacity: 0;
 	translate: 0 25vh;
@@ -438,7 +439,7 @@ button, a {transition: var(--transition);}
 	width: 40%;
 	margin: auto;
 	border-radius: 16px;
-	height:;
+	max-height: 95vh;
 	/* From https://css.glass */
 	background: rgba(0, 0, 0, 0.47);
 
@@ -527,7 +528,7 @@ button, a {transition: var(--transition);}
 	# CSS FOR FILE UPLOADER
 \*======================*/
 .custom-file-upload {
-   display: inline-block;
+    display: inline-block;
     padding: 10px 15px;
     cursor: pointer;
     background-color: #f0f0f0;
@@ -559,3 +560,65 @@ button, a {transition: var(--transition);}
  	display: none;
  }
 
+/*======================*\
+	# CSS FOR FILE UPLOADER
+\*======================*/
+.textarea-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+ 
+}
+
+.textarea-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    color: ;
+    outline: none;
+    max-height:40vh;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+	/* From https://css.glass */
+	background: rgba(255, 255, 255, 0.67);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(9.2px);
+	-webkit-backdrop-filter: blur(9.2px);   
+}	
+textarea::placeholder{
+	color: white;
+}
+textarea:focus {
+    border-color: #007bff;
+}
+.inquiry-buttons{
+	width: 100%;
+	margin-block: 1rem;
+	gap:1rem;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+.inquiry-buttons button{
+	width: 50%;
+	border-radius: 10px;
+	padding: 12px;
+	background: var(--orange-soda);
+	display: block;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	font-size: var(--fs-5);
+}
