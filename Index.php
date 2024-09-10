@@ -1,9 +1,5 @@
 <?php
-	
 	include './Assets/Php/Connection.php';
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,17 +9,19 @@
 	<title>AMARESA - Find your dream house</title>
 
 	<!-- Custom Css Link -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Index.css">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Index.css?v=<?php echo time(); ?>">
 	<!-- Google font link -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
 </head>
 <body>
 
-
+	<!-- HEADERS -->
 	<header class="header">
 			<div class="header-top"> 
 				<div class="container">
@@ -73,11 +71,8 @@
 				</div>
 
 			</div>
-
-		
 	</header>
-
-
+	<!-- MAIN CONTENT -->
 	<main>
 		<article>
 			<!-- HERO SECTION -->
@@ -207,13 +202,60 @@
 					<p class="section-subtitle"> Properties </p>
 					<h2 class="h2 section-title"> Featured Listing </h2>
 				<!-- PHP GOES HERE IMAGES & DETAILS CAME FROM DATABASE -->
-					
+				<div class="property-card-wrapper">
+					<div class="property-card-container">
+
+						<figure class="property-image">
+							<span class="property-feature"> featured </span>
+							<img src="./Assets/Images/Alexandria/Alexandria Exterior.png" alt="Interior Image">
+						</figure>
+
+						<div class="property-card-content">
+							<h3 class="h3 card-title"> Alexandria </h3>
+							<div class="property-card-items-wrapper">
+								<div class="property-card-items">
+									<i class="fa-regular fa-credit-card"></i>
+									<hr/>
+									<p class="card-item-display"> 24214124</p>	
+								</div>								
+
+								<div class="property-card-items">
+									<i class="fa-solid fa-bed"></i>
+									<hr/>
+									<p class="card-item-display"> 1</p>	
+								</div>								
+
+								<div class="property-card-items">
+									<i class="fa-solid fa-bath"></i>
+									<hr/>
+									<p class="card-item-display"> 2</p>	
+								</div>								
+
+								<div class="property-card-items">
+									<i class="fa-solid fa-chart-area"></i>
+									<hr/>
+									<p class="card-item-display">123sqm</p>	
+								</div>
+							</div>
+							<div class="property-card-button">
+								<button class="btn" onclick="ShowDetails()">View More</button>
+								<button class="btn" onclick="ShowInquiry()">Make an Inquiry</button>
+							</div>
+						</div>						
+					</div>
+				</div>
 
 				</div>
 			</section>
 		</article>
 	</main>
 
+
+	<div class="Dialog-display">
+		<div class=""> Hello </div>
+	</div>
+
+	<!-- DIALOG SECTIONS -->
 	<section class="Dialogs">
 		<!-- DIALOGS GOES HERE -->
 		<!-- FOR SIGN UP -->
@@ -225,12 +267,15 @@
 						<input type="text" name="Firstname" placeholder="First Name" required>
 						<input type="text" name="Firstname" placeholder="Last Name" required> 						
 					</div>
-					<input type="email" name="Email" placeholder="Email Address" required>
+					<div class="form-items">
+						<input type="email" name="Email" placeholder="Email Address" required>
+						<input type="phone" name="Email" placeholder="Phone number" required>
+					</div>
 					<div class="form-items">
 						<input type="password" name="Password" placeholder="Password" required>
 						<input type="password" name="Confirmpass" placeholder="Confirm Password" required> 	
 					</div>	
-					<input type="submit" name="SignupBTN" value="Sign up">		
+					<input type="submit" name="Signin-btn" value="Sign up">		
 				</form>
 				<button onclick="ShowLogin()" class="lowerbuttons">Already have an account</button>
 			</div>
@@ -240,12 +285,11 @@
 		<dialog id="Login-Modal" class="dialog">
 			<button onclick="CloseLogin()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" action="Login.php" class="form login">
+				<form  method="POST" action="Index.php" class="form login">
 
-					<input type="email" name="Email" placeholder="Email Address" required>
-					<input type="password" name="Password" placeholder="Password" required>	
-					<input type="submit" name="Login-btn" value="Login">		
-						
+					<input type="email" name="email" placeholder="Email Address" required>
+					<input type="password" name="password" placeholder="Password" required>	
+					<input type="submit" name="login-btn" value="Login">
 				</form>
 				<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
 			</div>
@@ -279,19 +323,21 @@
 				    </div>
 						
 					<div class="inquiry-buttons">
-						<button id="flip">Requirements</button>
+						<div id="panel">
+							<span>requirements shows here</span>
+						</div>
+						<div id="requirements">Requirements</div>
 						<button type="submit" name="SentInquiry">Send Inquiry</button>
+						
 					</div>
 				</form>
 
 			</div>
 		</dialog>
-
 	</section>
-
+	<!-- FOOTERS -->
 	<footer class="footer">
 		<div class="footer-top">
-
 			<ul class="footer-list">
 				<li>
 					<figure class="footer-top-list-logo">
@@ -304,7 +350,6 @@
 
 			<ul class="footer-list help">
 				<h3 class="h3 list-title"> Get Help </h3>
-				<li><a href="#"> FAQ </a></li>
 				<li><a href="#"> Payment Process </a></li>
 				<li><a href="#"> Pending Process </a></li>
 
@@ -373,7 +418,9 @@
 						We are a real estate development company established in 2010 with a vision to become a significant player in the mid-end Philippine housing industry. We aim to develop quality and value-added communities that exceed our clients’ expectations and enhance the quality of their lives.
 					</p>
 				</div>
-			</div>			<div class="footer-bottom-card">
+			</div>			
+
+			<div class="footer-bottom-card">
 				<figure class="card-logo">
 					<img src="./Assets/Images/RedOak.png" alt="Partnership">
 				</figure>
@@ -384,7 +431,9 @@
 						We are a real estate development company established in 2010 with a vision to become a significant player in the mid-end Philippine housing industry. We aim to develop quality and value-added communities that exceed our clients’ expectations and enhance the quality of their lives.
 					</p>
 				</div>
-			</div>			<div class="footer-bottom-card">
+			</div>			
+
+			<div class="footer-bottom-card">
 				<figure class="card-logo">
 					<img src="./Assets/Images/RedOak.png" alt="Partnership">
 				</figure>
@@ -397,14 +446,16 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="terms">
 			<button > <span>Terms of Service</span></button>
 			<button >Privacy Polocy</button>
 		</div>
 	</footer>
 
+
 	<!-- Custom Js Link -->
-	<script src="./Assets/Js/script.js"></script>
+	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
 

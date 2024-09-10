@@ -27,3 +27,11 @@ function ShowInquiry(){
 function CloseInquiry(){
     document.getElementById('Inquiry-Modal').close();
 }
+/*======================*\
+# TOGGLE
+\*======================*/
+$(document).ready(function(){
+  $("#requirements").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});

@@ -1,11 +1,18 @@
 <?php
     
     include('Connection.php');
-
+/***********************************************
+    CALLING FOR FUNCTIONS
+************************************************/
     if(isset($_POST['SentInquiry'])){
         inquiry($conn);
     }
-
+    if(isset($_POST['login-btn'])){
+        Login($conn);
+    }
+/***********************************************
+    ADDING INQUIRY
+************************************************/
     function inquiry($conn){
         $Lastname = $_POST['Lastname'];
         $Firstname = $_POST['Firstname'];
@@ -28,8 +35,9 @@
                     }, 1500); 
                 </script>";   
     }
-
-?>
-<!-- 
-
- -->
+/***********************************************
+    SIGN UP
+************************************************/
+function signup($conn){
+    
+}

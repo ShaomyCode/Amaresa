@@ -1,8 +1,6 @@
 /*======================*\
 	# STYLE CSS
 \*======================*/
-
-
 /*======================*\
 	# CUSTOM PROPERTY
 \*======================*/
@@ -467,7 +465,65 @@ button, a {transition: var(--transition);}
 	background: var(--cultured-2);
 	padding-block: var(--section-padding);
 }
-
+.property-card-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 2rem;
+	max-height: 100vh;
+	height: 95vh;
+	overflow-x: hidden;
+}
+.property-card-container{
+	width: 25%;
+	padding: 1rem;
+	background: white;
+	border-radius: 16px;
+	box-shadow: 5px 5px 5px black;
+}
+.property-image{
+	width: 95%;
+	margin:auto;
+	margin-block:1rem;
+	img{
+		width: 100%;
+		maax-height: 40vh;
+		border-radius: 16px;
+	}
+}
+.property-card-content{
+	text-align: center;
+}
+.property-card-content .card-title{
+	margin-bottom: 1rem;
+}
+.property-card-items-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+.property-card-items{
+	width: 30%;
+	margin:0.5rem;
+}
+.property-card-button{
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	align-items: center;
+	padding: 1rem;
+}
+.property-feature{
+	font-weight: var(--fw-600);
+	position: absolute;
+	padding: .5rem;
+	background: var(--orange-soda);
+	color: white;
+	width: 5rem;
+	border-top-left-radius: 16px ;
+}
 /*======================*\
 	DIALOG MODAL HERE
 \*======================*/
@@ -487,7 +543,6 @@ button, a {transition: var(--transition);}
 	height:;
 	/* From https://css.glass */
 	background: rgba(0, 0, 0, 0.47);
-
 	border:none;
 	backdrop-filter: blur(9.8px);
 	-webkit-backdrop-filter: blur(9.8px);
@@ -622,7 +677,8 @@ textarea:focus {
 	display: flex;
 	justify-content: space-between;
 }
-.inquiry-buttons button{
+.inquiry-buttons button,
+#requirements{
 	width: 50%;
 	border-radius: 10px;
 	padding: 12px;
@@ -632,6 +688,31 @@ textarea:focus {
 	color: white;
 	text-align: center;
 	font-size: var(--fs-5);
+}
+
+/*PANEL FOR REQUIREMENTS*/
+#panel{
+	/* From https://css.glass */
+	background: rgba(0, 0, 0, 0.47);
+	border:none;
+	backdrop-filter: blur(9.8px);
+	-webkit-backdrop-filter: blur(9.8px); 
+	border-radius: 16px	; 
+	text-align: center;
+	position: absolute;
+	display: block;
+	top: 1rem;
+	width: 100%;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+  max-height: 80%;
+  overflow-x: hidden;
+}
+#panel span{
+	color: white;
 }
 /*======================*\
 	#FOOTER
@@ -685,6 +766,7 @@ textarea:focus {
 	gap: .4rem;
 }
 .footer-list a:is(:hover,:focus){color: var(--orange-soda); font-weight: var(--fw-600);}
+/*FOOTER BOTTOM*/
 .footer-bottom{
 	padding: var(--section-spacing);
 	display: flex;
@@ -696,11 +778,12 @@ textarea:focus {
 	display: flex;
 	padding: 1rem;
 	gap: 5px;
-	background: black;
-	color: white;
+	background:whitesmoke;
+	box-shadow: 4px 4px 5px black;
+	color: black;
 	align-items: center;
 	border-radius: 16px;
-	box-shadow: var(--shadow-1);
+
 	width: 30%;
 
 	img{
@@ -708,6 +791,14 @@ textarea:focus {
 		margin-inline: 1rem;
 	}
 }
+.card-description .card-title{
+/*	color: white;*/
+	margin-bottom: 1rem;
+}
+.card-description .card-subtitle{
+	text-align: justify;
+}
+/*TERMS*/
 .terms{
 	padding: 1rem;
 	gap: 1rem;
