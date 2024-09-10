@@ -9,6 +9,11 @@
     }
     if(isset($_POST['login-btn'])){
         Login($conn);
+
+    }    
+    if(isset($_POST['Signin-btn'])){
+        Signup($conn);
+
     }
 /***********************************************
     ADDING INQUIRY
@@ -36,8 +41,90 @@
                 </script>";   
     }
 /***********************************************
-    SIGN UP
+    ADDING SIGNUP
 ************************************************/
-function signup($conn){
-    
+function Signup($conn){
+    $Firstname = $_POST['Firstname'];
+    $Lastname = $_POST['Lastname'];
+    $Email = $_POST['Email'];
+    $Phone = $_POST['Phone'];
+    $Address = $_POST['Address'];
+    $Password = $_POST['Password'];
+    $Role = "User";
+    // SQL HERE
+    $query = "
+
+    INSERT INTO User(Firstname, Lastname, Email, Phone, Address, Password, Role)
+    VALUES('$Firstname','$Lastname','$Email','$Phone','$Address','$Password','$Role');
+    ";
+   mysqli_query($conn,$query);
+
+         echo "<script>
+                    alert('Your account has been created successfully');
+                    setTimeout(function(){
+                        window.location.href = '../../index.php';
+                    }, 500); 
+                </script>";        
+}
+/***********************************************
+    FILTER: LOGIN
+************************************************/
+function Login($conn){
+    $Email = $_POST['email'];
+    $Password = $_POST['password'];
+
+    $query = "
+    SELECT * 
+    FROM Management
+    WHERE Email = ?
+    UNION
+    SELECT * 
+    FROM User
+    WHERE Email = ?
+    ";
+
+    $stmt = $conn->prepare($query);
+    $stmt -> bind_param("ss",$Email,$Email);
+    $stmt -> execute();
+    $result = $stmt -> get_result();
+
+     if($result -> num_rows > 0){
+           $row = $result->fetch_assoc();
+           $Role = $row['Role'];
+           // Verify password
+           if ($row['Password'] === $Password){
+            
+            if($Role === 'Admin'){
+             echo "<script>
+                        alert('Welcome, ".$row['Lastname']."! You have successfully logged in. ' );
+                        setTimeout(function(){
+                            window.location.href = '../../Account.php';
+                        }, 500); 
+                    </script>";   
+            }elseif($Role === 'User'){
+             echo "<script>
+                        alert('Welcome, ".$row['Lastname']." ! You have successfully logged in. ' );
+                        setTimeout(function(){
+                            window.location.href = '../../index.php';
+                        }, 500); 
+                    </script>";                
+            }
+
+           
+           }else{
+                     echo "<script>
+                        alert('Wrong password' );
+                        setTimeout(function(){
+                            window.location.href = '../../index.php';
+                        }, 500); 
+                    </script>";
+           }
+        }else{
+             echo "<script>
+                        alert('No user found with that email');
+                        setTimeout(function(){
+                            window.location.href = '../../index.php';
+                        }, 500); 
+                    </script>";
+        }   
 }

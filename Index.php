@@ -251,9 +251,7 @@
 	</main>
 
 
-	<div class="Dialog-display">
-		<div class=""> Hello </div>
-	</div>
+
 
 	<!-- DIALOG SECTIONS -->
 	<section class="Dialogs">
@@ -262,14 +260,16 @@
 		<dialog id="Signup-Modal" class="dialog">
 			<button onclick="CloseSignup()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" class="form signup">
+				<form  method="POST" class="form signup" enctype="multipart/form-data" action="./Assets/Php/Index.php">
 					<div class="form-items">
 						<input type="text" name="Firstname" placeholder="First Name" required>
-						<input type="text" name="Firstname" placeholder="Last Name" required> 						
+						<input type="text" name="Lastname" placeholder="Last Name" required> 						
 					</div>
+					<input type="email" name="Email" placeholder="Email Address" required>
 					<div class="form-items">
-						<input type="email" name="Email" placeholder="Email Address" required>
-						<input type="phone" name="Email" placeholder="Phone number" required>
+						
+						<input type="phone" name="Phone" placeholder="Phone number" required>
+						<input type="text" name="Address" placeholder="Address" required>
 					</div>
 					<div class="form-items">
 						<input type="password" name="Password" placeholder="Password" required>
@@ -285,7 +285,7 @@
 		<dialog id="Login-Modal" class="dialog">
 			<button onclick="CloseLogin()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" action="Index.php" class="form login">
+				<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
 
 					<input type="email" name="email" placeholder="Email Address" required>
 					<input type="password" name="password" placeholder="Password" required>	
@@ -301,11 +301,23 @@
 			<div class="container">
 
 				<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-					<div class="form-items">
-						<input type="text" name="Firstname" placeholder="First Name" required>
-						<input type="text" name="Lastname" placeholder="Last Name" required>		
-					</div>
+					<?php 
 
+						$query = "SELECT *
+						FROM USER;
+						";
+						$result = $conn->query($query);
+						$row = $result->fetch_assoc();
+
+
+						echo "
+						<div class='form-items'>
+							<input type='text' name='Firstname' placeholder='First Name' required>
+							<input type='text' name='Lastname' placeholder='Last Name'  required>		
+						</div>
+						";
+					
+					?>
 					<input type="number"  name="Phone" placeholder="Contact Number" required>
 					<div class="form-items">
 						<input type="text" name="Address" placeholder="Address" required>

@@ -845,8 +845,10 @@ textarea:focus {
 \*======================*/
 @media only screen and (min-width: 1024px) {
   .hero-logo {
-    min-width: 15%;
+    min-width: 10%;
     width: 20%;
+    height: 20vh;
+
   }
    .service-card{
   	width: 55%;
@@ -856,6 +858,12 @@ textarea:focus {
   }
   .dialog{
   	width: 45%;
+  }
+  .property-card-container{
+  
+  }
+  .footer-bottom-card{
+
   }
 }
 /*======================*\
