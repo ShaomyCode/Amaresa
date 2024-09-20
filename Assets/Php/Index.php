@@ -1,6 +1,7 @@
 <?php
     
     include('Connection.php');
+    session_start();
 /***********************************************
     CALLING FOR FUNCTIONS
 ************************************************/
@@ -90,6 +91,7 @@ function Login($conn){
 
      if($result -> num_rows > 0){
            $row = $result->fetch_assoc();
+  
            $Role = $row['Role'];
            // Verify password
            if ($row['Password'] === $Password){
@@ -102,16 +104,21 @@ function Login($conn){
                         }, 500); 
                     </script>";   
             }elseif($Role === 'User'){
+
+            $_SESSION['lastname'] = $row['Lastname'];
+            $_SESSION['email'] = $row['Email'];
+
              echo "<script>
                         alert('Welcome, ".$row['Lastname']." ! You have successfully logged in. ' );
                         setTimeout(function(){
-                            window.location.href = '../../index.php';
+                            window.location.href = '../../login.php';
                         }, 500); 
                     </script>";                
             }
 
            
            }else{
+            // WRONG PASS
                      echo "<script>
                         alert('Wrong password' );
                         setTimeout(function(){
@@ -120,6 +127,7 @@ function Login($conn){
                     </script>";
            }
         }else{
+            // WRONG EMAIL
              echo "<script>
                         alert('No user found with that email');
                         setTimeout(function(){

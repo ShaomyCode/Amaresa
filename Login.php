@@ -1,12 +1,17 @@
 <?php
 	include './Assets/Php/Connection.php';
+	session_start();
+	$user = $_SESSION['lastname'];
+	$email = $_SESSION['email'];
+
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AMARESA - Find your dream house</title>
+	<title>AMARESA - Welcome </title>
 
 	<!-- Custom Css Link -->
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Index.css?v=<?php echo time(); ?>">
@@ -66,7 +71,24 @@
 							</li>																							
 						</ul>
 
-						<button class="header-top-btn" onclick="ShowSignup()" > <i class="fa-solid fa-user-tie"></i> <span> Sign out </span></button>
+						<button class="header-top-btn" onclick="ShowSignup()" > 
+							<i class="fa-solid fa-user-tie"></i> 
+							<span> Sign out </span>
+						</button>
+
+						<button class="header-top-btn">
+							<i class="fa-solid fa-clock-rotate-left"></i>
+							<span> Pending </span>
+						</button>
+
+						<div class="header-user-display">
+							<i class="fa-solid fa-user-tie"></i> 
+							<?php
+							
+							echo $email;
+
+							?>
+						</div>
 					</div>
 				</div>
 
@@ -304,31 +326,44 @@
 					<?php 
 
 						$query = "SELECT *
-						FROM USER;
+						FROM USER 
+						WHERE Email = ?
 						";
-						$result = $conn->query($query);
+
+						$stmt = $conn->prepare($query);
+						$stmt -> bind_param("s",$email);
+						$stmt -> execute();
+						$result = $stmt -> get_result();
 						$row = $result->fetch_assoc();
 
 
 						echo "
+
 						<div class='form-items'>
-							<input type='text' name='Firstname' placeholder='First Name' required>
-							<input type='text' name='Lastname' placeholder='Last Name'  required>		
+							<input type='text' name='Firstname'  value='".$row['Firstname']."' required>
+							<input type='text' name='Lastname' value='".$row['Lastname']."'   required>
 						</div>
+
+						<input type='number' name='Phone' value='".$row['Phone']."' required >
+
+						<div class='form-items'>
+
+						<input type='text' name='Address' value='".$row['Address']."' required>
+
+						<input list='options' id='Role' name='Property' placeholder='Select Property' required>
+					    <datalist id='options'>
+					        <option value='Kalya House'>
+					        <option value='Aria House'>
+					    </datalist>		
+
+						</div>
+
+						<input type='email' name='Email' value='".$row['Email']."' required>
 						";
 					
 					?>
-					<input type="number"  name="Phone" placeholder="Contact Number" required>
-					<div class="form-items">
-						<input type="text" name="Address" placeholder="Address" required>
-						<input list="options" id="Role" name="Property" placeholder="Select Property" required>
-					    <datalist id="options">
-					        <option value="Kalya House">
-					        <option value="Aria House">
-					    </datalist>	
-		 	
-					</div>	
-					<input type="email" name="Email" placeholder="Email Address" required>
+
+					
 
 				    <div class="textarea-container">
 				        <textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>

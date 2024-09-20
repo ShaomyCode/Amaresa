@@ -266,6 +266,32 @@ button, a {transition: var(--transition);}
 	align-items: center;
 }
 .header-top-btn:is(:hover,:focus){--orange-soda:hsl(7, 72%, 46%);}
+.header-user-display{
+	background: var(--orange-soda);
+	color: var(--white);
+	font-size: var(--fs-6);
+	font-weight: var(--fw-700);
+	padding: 4px 16px;
+	border-radius: 8px;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	span{
+		color: var(--white);
+		font-weight: var(--fw-700);
+	}
+}
+.header-pending{
+	background: var(--orange-soda);
+	color: var(--white);
+	font-size: var(--fs-6);
+	font-weight: var(--fw-700);
+	padding: 4px 16px;
+	border-radius: 8px;
+	display: flex;
+	gap: 5px;
+	align-items: center;	
+}
 /*======================*\
 	# HERO
 \*======================*/
