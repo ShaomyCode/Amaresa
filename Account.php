@@ -16,9 +16,12 @@
 </head>
 <body>
 
-	<main>
+
 	<!-- SIDEBAR -->
-	<aside class="sidebar" id="sidebar"> 
+	<nav class="sidebar close" id="sidebar"> 
+		<button class="toggle">
+			<i class="fa-solid fa-angles-right "></i>
+		 </button>
 		<figure>
 			<img src="./Assets/Images/Amaresa-logo.png">
 		</figure>
@@ -89,8 +92,8 @@
 
 			</ul>
 		</div>
-	</aside>
-
+	</nav>
+	<main>
 	<!-- TOP SECTION -->
 	<section class="displaylist" id="displaylist">
 		<div class="container">
@@ -205,6 +208,7 @@
 	</section>
 	</main>
 
+	
 
 
 	<!-- Custom JS & JQUERY -->

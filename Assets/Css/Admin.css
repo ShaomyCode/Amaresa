@@ -27,6 +27,7 @@
 	--white: hsl(0,0%, 100%);
 	--black:hsl(0,0%,0%);
 	--opal: hsl(180, 20%, 62%);
+
 	/*======================*\
 	# AMARESA COLOR SCHEME SHESH
 	\*======================*/
@@ -35,6 +36,12 @@
 	--footer-bg-amaresa-shadow:0 -4px 30px rgba(0, 0, 0, 0.1);
 	--amaresa-box-shadow: 2px 2px 2px black;
 	--amaresa-bg:#f0f0f0;	
+
+	--body-color: #E4E9F7;
+	--sidebar-color: #FFF;
+	--sidebar-text-color: #707070;
+	--sidebar-toggle-color: #DDD;
+
 	/*======================*\
 	# TYPOGRAPHY
 	\*======================*/
@@ -73,7 +80,9 @@
 	# RESET
 \*======================*/
 
-*,*::before, *::after{
+*,
+*::before, 
+*::after{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -105,7 +114,7 @@ html{
 	scroll-behavior: smooth;
 }
 body{
-	background: var(--seashell);
+	background: var(--body-color);
 	overflow-x: hidden;
 }
 ::-webkit-scrollbar{
@@ -205,6 +214,7 @@ button, a {transition: var(--transition);}
 
 .card-badge.orange { background: var(--orange-soda); }
 
+
 /*======================*\
 	# SIDEBAR
 \*======================*/
@@ -213,9 +223,27 @@ button, a {transition: var(--transition);}
 	top: 0;
 	left: 0;
 	box-shadow: 0 2px 5px black;
-	width: 13%;
+	width: 250px;
 	height: 100vh;
+	background: var(--sidebar-color);
+}
+.sidebar.close{
+	width: 70px;
+}
+.sidebar .toggle{
+	position: absolute;
+	top: 10%;
+	color: var(--prussian-blue);
+	right: -15px;
+	font-size: var(--fs-4);
+	width: 40px;
+	border-radius: 50%;
+	height: 40px;
+	color: var(--white);
 	background: var(--prussian-blue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .sidebar figure{
 	width: 100%;
@@ -226,16 +254,15 @@ button, a {transition: var(--transition);}
 	object-fit: contain;
 	height: 100%;
 	padding: 1rem;
-	border-bottom: 5px solid white;
+	border-bottom: 5px solid var(--prussian-blue);
 }
 .dashboard{
 	height: 100%;
-
 	h3{
 		padding: 1rem;
 		text-align: center;
 		font-size: var(--fs-1);
-		color: var(--white);
+		color: var(--prussian-blue);
 	}
 }
 .dashboard-list{
@@ -247,27 +274,32 @@ button, a {transition: var(--transition);}
 
 }
 .dashboard-list-item{
-	color: white;
-	display: flex ;
+	color: var(--black);
+	display: flex;
+	align-items: center;
 	gap: 1rem;
 	padding: 1rem;
 	justify-content: left;
 
 	span{
 		font-size: var(--fs-4);
+		transition: 0.1s ease;
 	}
-}
-.dashboard-list-item::last-child(){
-	background: red;
 }
 .active{
 	background: var(--orange-soda);
 	border-top-right-radius: 15px;
+	color: var(--white);
 }
 .dashboard-list-item:is(:hover,:focus){
 	background: var(--orange-soda);
 	border-top-right-radius: 15px;
+	width: 100%;
+	padding: 1rem;
+	color: var(--white);
+	transition: var(--transition);
 }
+
 /*======================*\
 	# TOP SECTION
 \*======================*/
@@ -281,6 +313,7 @@ button, a {transition: var(--transition);}
 	background: var(--amaresa-bg);
 	box-shadow: var(--amaresa-box-shadow);
 	padding: 4rem;
+	z-index: -1;
 }
 .container{
 	display: flex;

@@ -32,6 +32,8 @@
 	--head-foot-bg-amaresa: rgba(255, 255, 255, 0.66);
 	--header-bg-amaresa-shadow:0 4px 30px rgba(0, 0, 0, 0.1);
 	--footer-bg-amaresa-shadow:0 -4px 30px rgba(0, 0, 0, 0.1);
+
+	--body-color: #E4E9F7;
 	/*======================*\
 	# TYPOGRAPHY
 	\*======================*/
@@ -102,7 +104,7 @@ html{
 	scroll-behavior: smooth;
 }
 body{
-	background: var(--seashell);
+	background: var(--body-color);
 	overflow-x: hidden;
 	width: 98%;
 	min-width: 425px;
