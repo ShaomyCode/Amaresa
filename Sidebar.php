@@ -97,11 +97,59 @@
 		</div>
 	</nav>
 
-	<main class="home">
-		<div class="text"> <h3>Dashboard</h3> </div>
+	<main class="main">
+
+		<section class="profile">
+
+			<div class="container">
+
+			</div>
+			
+		</section>
+
+		<section class="activity" id="activity">
+			<div class="container">
+				<h3 class="h3 activity-title">Recent Activity</h3>
+				<div class="activity-wrapper">
+					<div class="activity-items">
+						<figure>
+							<img src="./Assets/Images/User.gif">
+						</figure>
+						<h3 class="activity-card-title"> New User Registration</h3>
+						<button> Pending Approval </button>
+					</div><div class="activity-items">
+						<figure>
+							<img src="./Assets/Images/house.gif">
+						</figure>
+						<h3 class="activity-card-title"> New Property Listing</h3>
+						<button> Pending Reviews </button>
+					</div><div class="activity-items">
+						<figure>
+							<img src="./Assets/Images/message.gif">
+						</figure>
+						<h3 class="activity-card-title"> Messages</h3>
+						<button> 3 Unread Messages</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="matrics" id="matrics">
+			<div class="container">
+
+			</div>
+		</section>
+
+		<section class="testimonial">
+			<div class="container">
+				
+			</div>
+		</section>
 	</main>
 	
-
+	<footer>
+		
+	</footer>
 		
 
 
@@ -111,7 +159,7 @@
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 	<!-- NO TURNING BACk -->
 	<script language="javascript" type="text/javascript">	
-            window.history.forward();
+            // window.history.forward();
 	</script>
 </body>
 </html>
