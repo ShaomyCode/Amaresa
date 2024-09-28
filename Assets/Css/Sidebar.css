@@ -228,6 +228,7 @@ button, a {transition: var(--transition);}
 	height: 100vh;
 	background: var(--sidebar-color);
 	transition: .5s ease;
+	z-index: 100;
 }
 .sidebar.close{
 	width: 70px;
@@ -305,4 +306,29 @@ button, a {transition: var(--transition);}
 	background: var(--orange-soda);
 	color: white;
 	border-top-right-radius: 20px;
+}
+
+/*======================*\
+	#MAIN CONTENT
+\*======================*/
+
+.home{
+	position: relative;
+	height: 100vh;
+	left: 250px;
+	width: calc(100% - 250px);
+	
+	transition: .5s ease;
+}
+
+.home .text { 
+	font-size: 30px;
+	font-weight: 500px;
+	color: black;
+	padding: 8px 40px;
+ }
+
+.sidebar.close ~ .home{
+	left: 71px;
+	width: calc(100% - 70px);
 }

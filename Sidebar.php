@@ -96,9 +96,13 @@
 			</div>
 		</div>
 	</nav>
+
+	<main class="home">
+		<div class="text"> <h3>Dashboard</h3> </div>
+	</main>
 	
 
-	
+		
 
 
 	<!-- Custom JS & JQUERY -->
