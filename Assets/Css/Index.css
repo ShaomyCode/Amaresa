@@ -193,20 +193,6 @@ button, a {transition: var(--transition);}
 	margin-bottom: var(--margin-bottom, 50px);
 }
 
-.card-badge {
-	background: var(--black);
-	color: var(--white);
-	font-size: var(--fs-7);
-	text-transform: uppercase;
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	padding: 4px 10px;
-}
-
-.card-badge.green { background: var(--yellow-green); }
-
-.card-badge.orange { background: var(--orange-soda); }
 
 /*======================*\
 	# HEADER
@@ -569,7 +555,6 @@ button, a {transition: var(--transition);}
 	margin: auto;
 	border-radius: 16px;
 	height:;
-	/* From https://css.glass */
 	background: rgba(0, 0, 0, 0.47);
 	border:none;
 	backdrop-filter: blur(9.8px);
@@ -626,7 +611,6 @@ button, a {transition: var(--transition);}
 	border-bottom: 1px solid whitesmoke;
 	margin-inline: auto;
 	margin-block: 1rem;
-
 }
 .form-items{
 	display: flex;
@@ -635,7 +619,6 @@ button, a {transition: var(--transition);}
 	width: 100%;
 	align-items: center;
 	justify-content: center;
-	
 }
 .closebtn{
 	font-size: var(--fs-7);
@@ -720,7 +703,6 @@ textarea:focus {
 
 /*PANEL FOR REQUIREMENTS*/
 #panel{
-	/* From https://css.glass */
 	background: rgba(0, 0, 0, 0.47);
 	border:none;
 	backdrop-filter: blur(9.8px);

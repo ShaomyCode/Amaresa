@@ -16,83 +16,87 @@
 </head>
 <body>
 
-	<main>
-	<!-- SIDEBAR -->
-	<aside class="sidebar" id="sidebar"> 
-		<figure>
-			<img src="./Assets/Images/Amaresa-logo.png">
-		</figure>
+	
+	<nav class="sidebar close" id="sidebar">
+		<header>
+			<figure class="image-container">
+				<img src="./Assets/Images/Amaresa-logo.png" alt="Amaresa Logo">
+			</figure>
+			<button class="toggle">
+				<i class="fa-solid fa-angles-right"></i>
+			</button>
+		</header>
 
-		<div class="dashboard">
-			<h3 class="h2 dashboard-title">DASHBOARD</h3>
+		<div class="menu-bar">
+			<div class="menu">
 
-			<ul class="dashboard-list">
+				<ul class="menu-links">
+					<li class="nav-link">
+						<a href="#"> 
+							<i class="fa-solid fa-id-card-clip"></i>
+							<span class="text nav-text">Dashboard</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Account.php" class="dashboard-list-item">
-						<i class="fa-solid fa-id-card-clip"></i>
-						<span >Account</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="#">
+							<i class="fa-solid fa-chalkboard-user"></i>
+							<span class="text nav-text">Pendings</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Pending.php" class="dashboard-list-item">
-						<i class="fa-solid fa-chalkboard-user"></i>
-						<span>Pendings</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="./Users.php" class="dashboard-list-item">
+							<i class="fa-solid fa-users"></i>
+							<span class="text nav-text">Users</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Users.php" class="dashboard-list-item active">
-						<i class="fa-solid fa-users"></i>
-						<span>Users</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="./Management.php" class="dashboard-list-item">
+							<i class="fa-solid fa-user-tie"></i>
+							<span class="text nav-text">Management</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Management.php" class="dashboard-list-item">
-						<i class="fa-solid fa-users"></i>
-						<span>Management</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="./Properties.php" class="dashboard-list-item">
+							<i class="fa-solid fa-bars-progress"></i>
+							<span class="text nav-text">Properties</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Properties.php" class="dashboard-list-item">
-						<i class="fa-solid fa-bars-progress"></i>
-						<span>Properties</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="Message.php" class="dashboard-list-item">
+							<i class="fa-solid fa-envelope"></i>
+							<span class="text nav-text">Messages</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="Message.php" class="dashboard-list-item">
-						<i class="fa-solid fa-envelope"></i>
-						<span>Messages</span>
-					</a>
-				</li>
-				<li>
-					<a href="Archieve.php" class="dashboard-list-item">
-						<i class="fa-solid fa-box-archive"></i>
-						<span>Archieve</span>
-					</a>
-				</li>		
-						
-				<li>
-					<a href="SoldProperties.php" class="dashboard-list-item">
-						<i class="fa-solid fa-rectangle-list"></i>
-						<span>Sales Log</span>
-					</a>
-				</li>		
+					<li class="nav-link">
+						<a href="./Archieve.php" class="dashboard-list-item">
+							<i class="fa-solid fa-box-archive"></i>
+							<span class="text nav-text">Archieve</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="#" class="dashboard-list-item">
-						<i class="fa-solid fa-right-from-bracket"></i>
-						<span>Logout</span>
-					</a>
-				</li>
+					<li class="nav-link">
+						<a href="SoldProperties.php" class="dashboard-list-item">
+							<i class="fa-solid fa-rectangle-list"></i>
+							<span class="text nav-text">Sales Log</span>
+						</a>
+					</li>					
 
-			</ul>
+					<li class="nav-link">
+						<a href="./Assets/Php/Logout.php" class="dashboard-list-item">
+							<i class="fa-solid fa-right-from-bracket"></i>
+							<span class="text nav-text">Logout</span>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-	</aside>
+	</nav>
 	<!-- TOP SECTION -->
 	<section class="displaylist" id="displaylist">
 		<div class="container">

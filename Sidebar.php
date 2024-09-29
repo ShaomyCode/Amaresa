@@ -103,6 +103,24 @@
 
 			<div class="container">
 
+				<div class="profile-wrapper">
+
+					<div class="admin-display-status">
+						<figure class="admin-profile-img">
+							<img src="./Assets/Images/User.gif" alt="Admin profile picture">
+						</figure>
+						<div class="admin-texts">
+							<span class="admin-name">Admin name here</span>
+							<span class="admin-role">Admin</span>
+							<span class="admin-subtitle">Manage properties and users.</span>
+						</div>
+					</div>
+
+					<div class="admin-view-profile">
+						<button class="btn">View Profile</button>
+					</div>
+				</div>
+
 			</div>
 			
 		</section>

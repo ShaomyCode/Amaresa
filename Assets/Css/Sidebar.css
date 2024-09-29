@@ -154,12 +154,12 @@ button, a {transition: var(--transition);}
 
 .btn{
 	position: relative;
-	background: var(--orange-soda);
+	background: var(--prussian-blue);
 	color: var(--white);
 	font-family: var(--ff-poppins);
 	font-size: var(--fs-5);
 	text-transform: var(--text-transform, capitalize);
-	border: 1px solid var(--orange-soda);
+	border: 1px solid var(--prussian-blue);
 	padding:10px 20px;
 	z-index: 1;
 }
@@ -223,7 +223,7 @@ button, a {transition: var(--transition);}
 	top: 0;
 	left: 0;
 	box-shadow: 0 5px 20px var(--orange-soda);
-	border-bottom-right-radius: 80px;
+	border-bottom-right-radius: 100px;
 	width: 250px;
 	height: 100vh;
 	background: var(--sidebar-color);
@@ -335,9 +335,34 @@ button, a {transition: var(--transition);}
 	# PROFILE
 \*======================*/
 .profile{
-	margin-block: var(--section-spacing);
 	background: var(--sidebar-color);
-	padding: var(--section-spacing);	
+	padding: 50px 100px;	
+}
+.profile-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+.admin-display-status{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+.admin-display-status figure {
+	width: 100px;
+	box-shadow: 3px 3px 10px black;
+	border-radius: 100%;
+}
+.admin-display-status figure img{
+	width: 100%;
+	border-radius: 100%;
+	object-fit: cover;
+}
+
+.admin-view-profile button{
+	padding: 1rem;
 }
 /*======================*\
 	# ACTIVITY
@@ -369,6 +394,7 @@ button, a {transition: var(--transition);}
 }
 .activity figure img{
 	margin: auto;
+	box-shadow: 3px 3px 10px black;
 	margin-block: 1rem;
 	width: 100%;
 	height: 250px;
