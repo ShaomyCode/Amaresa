@@ -7,9 +7,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AMARESA - Working</title>
+	<title>AMARESA - Account</title>
 	<!-- CUSTOM CSS  -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/Sidebar.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>">
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 
@@ -27,18 +27,19 @@
 		</header>
 
 		<div class="menu-bar">
+			
 			<div class="menu">
 
 				<ul class="menu-links">
 					<li class="nav-link">
-						<a href="#"> 
+						<a href="./Account.php" class="active">  
 							<i class="fa-solid fa-id-card-clip"></i>
 							<span class="text nav-text">Dashboard</span>
 						</a>
 					</li>					
 
 					<li class="nav-link">
-						<a href="#">
+						<a href="./Pending.php">
 							<i class="fa-solid fa-chalkboard-user"></i>
 							<span class="text nav-text">Pendings</span>
 						</a>
@@ -129,24 +130,96 @@
 			<div class="container">
 				<h3 class="h3 activity-title">Recent Activity</h3>
 				<div class="activity-wrapper">
+
 					<div class="activity-items">
 						<figure>
 							<img src="./Assets/Images/User.gif">
 						</figure>
 						<h3 class="activity-card-title"> New User Registration</h3>
-						<button> Pending Approval </button>
-					</div><div class="activity-items">
+						<span class="activity-subtitle">Manage and Track All Users</span>
+						<?php
+							$sql = "SELECT COUNT(*) AS total_users FROM user";
+
+							// Execute the query
+							$result = $conn->query($sql);
+
+							// Fetch the result
+							$total_users = 0;
+							if ($result->num_rows > 0) {
+							    $row = $result->fetch_assoc();
+							    $total_users = $row['total_users'];
+							}
+
+							echo "<span class='total-display'> ".$total_users." </span>";
+									
+						 ?>
+					</div>
+
+					<div class="activity-items">
 						<figure>
 							<img src="./Assets/Images/house.gif">
 						</figure>
 						<h3 class="activity-card-title"> New Property Listing</h3>
-						<button> Pending Reviews </button>
-					</div><div class="activity-items">
+						<span class="activity-subtitle">Tracking Your Real Estate Assets</span>
+						<?php
+							$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
+
+							// Execute the query
+							$result = $conn->query($sql);
+
+							// Fetch the result
+							$total_users = 0;
+							if ($result->num_rows > 0) {
+							    $row = $result->fetch_assoc();
+							    $TProperties = $row['TProperties'];
+							}
+
+							echo "<span class='total-display'> ".$TProperties." </span>";		
+						 ?>						
+					</div>
+					
+					<div class="activity-items">
 						<figure>
 							<img src="./Assets/Images/message.gif">
 						</figure>
 						<h3 class="activity-card-title"> Messages</h3>
-						<button> 3 Unread Messages</button>
+						<span class="activity-subtitle">Essential Alerts and Conversations</span>
+						<?php
+							$sql = "SELECT COUNT(*) AS TPMessages FROM Message";
+
+							// Execute the query
+							$result = $conn->query($sql);
+
+							// Fetch the result
+							$Total_Message = 0;
+							if ($result->num_rows > 0) {
+							    $row = $result->fetch_assoc();
+							    $Total_Message = $row['TPMessages'];
+							}
+							echo "<span class='total-display'> ".$Total_Message." </span>";		
+						 ?>
+					</div>					
+
+					<div class="activity-items">
+						<figure>
+							<img src="./Assets/Images/Archive.gif">
+						</figure>
+						<h3 class="activity-card-title"> Archive</h3>
+						<span class="activity-subtitle">Past Records</span>
+						<?php
+							$sql = "SELECT COUNT(*) AS GroupArchive FROM Archive";
+
+							// Execute the query
+							$result = $conn->query($sql);
+
+							// Fetch the result
+							$TArchives = 0;
+							if ($result->num_rows > 0) {
+							    $row = $result->fetch_assoc();
+							    $TArchives = $row['GroupArchive'];
+							}
+							echo "<span class='total-display'> ".$TArchives." </span>";		
+						 ?>
 					</div>
 				</div>
 			</div>
@@ -172,7 +245,7 @@
 
 
 	<!-- Custom JS & JQUERY -->
-	<script src="./Assets/Js/Sidebar.js?v=<?php echo time(); ?>"></script>
+	<script src="./Assets/Js/admin.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 	<!-- NO TURNING BACk -->

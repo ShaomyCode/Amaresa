@@ -16,186 +16,94 @@
 </head>
 <body>
 
-	<main>
-	<!-- SIDEBAR -->
-	<aside class="sidebar" id="sidebar"> 
-		<figure>
-			<img src="./Assets/Images/Amaresa-logo.png">
-		</figure>
+	<nav class="sidebar close" id="sidebar">
+		<header>
+			<figure class="image-container">
+				<img src="./Assets/Images/Amaresa-logo.png" alt="Amaresa Logo">
+			</figure>
+			<button class="toggle">
+				<i class="fa-solid fa-angles-right"></i>
+			</button>
+		</header>
 
-		<div class="dashboard">
-			<h3 class="h2 dashboard-title">DASHBOARD</h3>
+		<div class="menu-bar">
+			<div class="menu">
 
-			<ul class="dashboard-list">
+				<ul class="menu-links">
+					<li class="nav-link">
+						<a href="./Account.php" >  
+							<i class="fa-solid fa-id-card-clip"></i>
+							<span class="text nav-text">Dashboard</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Account.php" class="dashboard-list-item">
-						<i class="fa-solid fa-id-card-clip"></i>
-						<span>Account</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="./Pending.php">
+							<i class="fa-solid fa-chalkboard-user"></i>
+							<span class="text nav-text">Pendings</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Pending.php" class="dashboard-list-item ">
-						<i class="fa-solid fa-chalkboard-user"></i>
-						<span>Pendings</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="./Users.php" class="dashboard-list-item " >
+							<i class="fa-solid fa-users"></i>
+							<span class="text nav-text">Users</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Users.php" class="dashboard-list-item">
-						<i class="fa-solid fa-users"></i>
-						<span>Users</span>
-					</a>
-				</li>		
+					<li class="nav-link">
+						<a href="./Management.php" class="dashboard-list-item ">
+							<i class="fa-solid fa-user-tie"></i>
+							<span class="text nav-text">Management</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="./Management.php" class="dashboard-list-item">
-						<i class="fa-solid fa-users"></i>
-						<span>Management</span>
-					</a>
-				</li>	
+					<li class="nav-link">
+						<a href="./Properties.php" class="dashboard-list-item active">
+							<i class="fa-solid fa-bars-progress"></i>
+							<span class="text nav-text">Properties</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="Properties.php" class="dashboard-list-item active">
-						<i class="fa-solid fa-bars-progress"></i>
-						<span>Properties</span>
-					</a>
-				</li>				
+					<li class="nav-link">
+						<a href="Message.php" class="dashboard-list-item">
+							<i class="fa-solid fa-envelope"></i>
+							<span class="text nav-text">Messages</span>
+						</a>
+					</li>					
 
-				<li>
-					<a href="Message.php" class="dashboard-list-item">
-						<i class="fa-solid fa-envelope"></i>
-						<span>Messages</span>
-					</a>
-				</li>
-				<li>
-					<a href="Archieve.html" class="dashboard-list-item">
-						<i class="fa-solid fa-box-archive"></i>
-						<span>Archieve</span>
-					</a>
-				</li>				
-				<li>
-					<a href="SoldProperties.php" class="dashboard-list-item">
-						<i class="fa-solid fa-rectangle-list"></i>
-						<span>Sales Log</span>
-					</a>
-				</li>
-				<li>
-					<a href="Logout.html" class="dashboard-list-item">
-						<i class="fa-solid fa-right-from-bracket"></i>
-						<span>Logout</span>
-					</a>
-				</li>
+					<li class="nav-link">
+						<a href="./Archieve.php" class="dashboard-list-item">
+							<i class="fa-solid fa-box-archive"></i>
+							<span class="text nav-text">Archieve</span>
+						</a>
+					</li>					
 
-			</ul>
-		</div>
-	</aside>
-	<!-- TOP SECTION -->
-	<section class="displaylist" id="displaylist">
-		<div class="container">
+					<li class="nav-link">
+						<a href="SoldProperties.php" class="dashboard-list-item">
+							<i class="fa-solid fa-rectangle-list"></i>
+							<span class="text nav-text">Sales Log</span>
+						</a>
+					</li>					
 
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Users</span>
-					<i class="fa-solid fa-users"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS total_users FROM user";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$total_users = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $total_users = $row['total_users'];
-				}
-
-				echo "<span> ".$total_users." </span>";
-						
-			 ?>
-			</div>			
-
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Properties</span>
-					<i class="fa-solid fa-house"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$total_users = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $TProperties = $row['TProperties'];
-				}
-
-				echo "<span> ".$TProperties." </span>";		
-			 ?>
-			</div>			
-
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Pendings</span>
-					<i class="fa-solid fa-chalkboard-user"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS TPendings FROM Pending";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$TPendings = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $TPendings = $row['TPendings'];
-				}
-				echo "<span> ".$TPendings." </span>";		
-			 ?>
-
+					<li class="nav-link">
+						<a href="./Assets/Php/Logout.php" class="dashboard-list-item">
+							<i class="fa-solid fa-right-from-bracket"></i>
+							<span class="text nav-text">Logout</span>
+						</a>
+					</li>
+				</ul>
 			</div>
-
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Archieve</span>
-					<i class="fa-solid fa-box-archive"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS TArchives FROM Archive";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$TArchives = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $TArchives = $row['TArchives'];
-				}
-				echo "<span> ".$TArchives." </span>";		
-			 ?>
-			</div>
-
 		</div>
-	</section>
+	</nav>
+	<main class="main">
 	<!-- MAIN SECTION -->
 		<section class="Table-section" id="Table-Section">
 			<div class="container">
 
 				<table class="table" id="table">
 					<tr>	
-						<th>Property ID</th>
+
 						<th>Property</th>
 						<th>Price</th>
 						<th>Description</th>
@@ -230,7 +138,6 @@
 								echo "
 
 								<tr>
-									<td>".$PropertyID."</td>
 									<td>".$Property."</td>
 									<td>".$Price."</td>
 									<td>".$Description."</td>
@@ -265,7 +172,7 @@
 	<section class="Dialog-Section"> 
 
 		<div class="float-diagram">
-			<button onclick="OpenDialog()"><i class="fa-solid fa-plus"></i> add</button>
+			<button onclick="OpenDialog()"><i class="fa-solid fa-circle-plus"></i></button>
 		</div>
 
 		<dialog id="Adding-users-modal" class="dialog">

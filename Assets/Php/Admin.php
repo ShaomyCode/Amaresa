@@ -37,6 +37,10 @@ if(isset($_GET['archiveID']) && isset($_GET['value'])){
      }
 }
 /***********************************************
+FOR SORTING
+************************************************/
+
+/***********************************************
 FUNCTION FOR ADDING
 ************************************************/
 function AddUser($conn){
@@ -153,6 +157,7 @@ FUNCTION FOR DELETING
 ************************************************/ 
 function DeleteArchive($conn){
     if(isset($_GET['deleteid'])){
+
         $ID = $_GET['deleteid'];
 
         $sql = "DELETE FROM Archive WHERE ArchiveId = $ID";
@@ -283,4 +288,10 @@ function ArchiveUser($conn){
     $stmtInsert->close(); 
     $stmtDelete->close(); 
 }
+/***********************************************
+SORT 
+************************************************/
+
+
+
 

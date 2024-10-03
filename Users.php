@@ -16,7 +16,6 @@
 </head>
 <body>
 
-	
 	<nav class="sidebar close" id="sidebar">
 		<header>
 			<figure class="image-container">
@@ -32,21 +31,21 @@
 
 				<ul class="menu-links">
 					<li class="nav-link">
-						<a href="#"> 
+						<a href="./Account.php" >  
 							<i class="fa-solid fa-id-card-clip"></i>
 							<span class="text nav-text">Dashboard</span>
 						</a>
 					</li>					
 
 					<li class="nav-link">
-						<a href="#">
+						<a href="./Pending.php">
 							<i class="fa-solid fa-chalkboard-user"></i>
 							<span class="text nav-text">Pendings</span>
 						</a>
 					</li>					
 
 					<li class="nav-link">
-						<a href="./Users.php" class="dashboard-list-item">
+						<a href="./Users.php" class="dashboard-list-item active" >
 							<i class="fa-solid fa-users"></i>
 							<span class="text nav-text">Users</span>
 						</a>
@@ -97,110 +96,15 @@
 			</div>
 		</div>
 	</nav>
-	<!-- TOP SECTION -->
-	<section class="displaylist" id="displaylist">
-		<div class="container">
 
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Users</span>
-					<i class="fa-solid fa-users"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS total_users FROM user";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$total_users = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $total_users = $row['total_users'];
-				}
-
-				echo "<span> ".$total_users." </span>";
-						
-			 ?>
-			</div>			
-
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Properties</span>
-					<i class="fa-solid fa-house"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$total_users = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $TProperties = $row['TProperties'];
-				}
-
-				echo "<span> ".$TProperties." </span>";		
-			 ?>
-			</div>			
-
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Pendings</span>
-					<i class="fa-solid fa-chalkboard-user"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS TPendings FROM Pending";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$TPendings = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $TPendings = $row['TPendings'];
-				}
-				echo "<span> ".$TPendings." </span>";		
-			 ?>
-
-			</div>
-
-			<div class="container-item">
-
-				<div class="container-title">
-					<span>Archieve</span>
-					<i class="fa-solid fa-box-archive"></i>
-				</div>
-			<?php
-				$sql = "SELECT COUNT(*) AS TArchives FROM Archive";
-
-				// Execute the query
-				$result = $conn->query($sql);
-
-				// Fetch the result
-				$TArchives = 0;
-				if ($result->num_rows > 0) {
-				    $row = $result->fetch_assoc();
-				    $TArchives = $row['TArchives'];
-				}
-				echo "<span> ".$TArchives." </span>";		
-			 ?>
-			</div>
-
-		</div>
+	<main class="main">
 	</section>
 	<!-- Main Section -->
 		<section class="Table-section" id="Table-Section">
 			<div class="container">
 				<table class="table" id="table">
 					<tr>	
-						<th>User ID</th>
+
 						<th>First Name</th>
 						<th>Last Name</th>
 						<th>Email</th>
@@ -229,7 +133,7 @@
 								echo "
 
 								<tr>
-									<td>".$UserID."</td>
+
 									<td>".$Firstname."</td>
 									<td>".$Lastname."</td>
 									<td>".$Email."</td>
@@ -257,7 +161,9 @@
 	<section class="Dialog-Section"> 
 
 		<div class="float-diagram">
-			<button onclick="OpenDialog()"><i class="fa-solid fa-plus"></i> add</button>
+			<button onclick="OpenDialog()">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+			</button>
 		</div>
 
 		<dialog id="Adding-users-modal" class="dialog">
