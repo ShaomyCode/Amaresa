@@ -82,3 +82,18 @@ const body = document.querySelector("body"),
     toggle.addEventListener("click", () =>{
         sidebar.classList.toggle("close");
     });
+
+/*======================*\
+# SWIPPER
+\*======================*/
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,  // Enables infinite loop
+      autoplay: {
+        delay: 2000,  // Slide transition delay (2 seconds)
+        disableOnInteraction: false,  // Keep autoplaying even after interaction
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });

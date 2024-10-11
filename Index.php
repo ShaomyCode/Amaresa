@@ -17,7 +17,10 @@
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
 	<!-- JQUERY -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
+	<!-- Swiper CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
 </head>
 <body>
 
@@ -201,12 +204,27 @@
 				<div class="container"> 
 					<p class="section-subtitle"> Properties </p>
 					<h2 class="h2 section-title"> Featured Listing </h2>
+
+			
+					<ul class="property-features">
+
+						<li class="property-features-card">
+							<figure>
+								<img src="./Assets/Images/Alexandria/Alexandria Exterior.png" alt="Interior features" /> 
+									
+							</figure>
+						
+						</li>
+
+					</ul>
+			
+
 				<!-- PHP GOES HERE IMAGES & DETAILS CAME FROM DATABASE -->
 				<div class="property-card-wrapper">
 					<div class="property-card-container">
 
 						<figure class="property-image">
-							<span class="property-feature"> featured </span>
+							<span class="property-featured"> featured </span>
 							<img src="./Assets/Images/Alexandria/Alexandria Exterior.png" alt="Interior Image">
 						</figure>
 
@@ -243,8 +261,7 @@
 							</div>
 						</div>						
 					</div>
-				</div>
-
+				</div> 
 				</div>
 			</section>
 		</article>
@@ -329,6 +346,7 @@
 		 	
 					</div>	
 					<input type="email" name="Email" placeholder="Email Address" required>
+					<input type="text" name="Payment" placeholder="Payment">
 
 				    <div class="textarea-container">
 				        <textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>
@@ -339,7 +357,7 @@
 							<span>requirements shows here</span>
 						</div>
 						<div id="requirements">Requirements</div>
-						<button type="submit" name="SentInquiry">Send Inquiry</button>
+						<button onclick="ShowSignup()">Send Inquiry</button>
 						
 					</div>
 				</form>
@@ -470,6 +488,7 @@
 	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
-
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>

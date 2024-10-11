@@ -98,8 +98,6 @@
 	
 
 	<main class="main">
-
-
 	<!-- Main Section -->
 		<section class="Table-section" id="Table-Section">
 			<div class="container">
@@ -110,7 +108,7 @@
 						<th>Firstname</th>
 						<th>Email</th>
 						<th>Phone</th>
-						<th>Address</th>
+						<th>Payment</th>
 						<th>Property</th>
 						<th>Notes</th>
 						<th>Date</th>
@@ -128,12 +126,11 @@
 								$PendingID = $row['PendingID'];
 								$Lastname = $row['Lastname'];
 								$Firstname = $row['Firstname'];
-								$Address = $row['Address'];
 								$Email = $row['Email'];
 								$Phone = $row['Phone'];
 								$Selected_Property = $row['Selected_Property'];
 								$Message = $row['Message'];
-								$Status = $row['Status'];
+								$Payment = $row['Payment'];
 								$Date = $row['Date'];
 								
 								echo "
@@ -144,13 +141,14 @@
 									<td>".$Firstname."</td>
 									<td>".$Email."</td>
 									<td>".$Phone."</td>
-									<td>".$Address."</td>
+									<td>".$Payment."</td>
 									<td>".$Selected_Property."</td>
 									<td class='note'>".$Message."</td>
 									<td>".$Date."</td>
 									
 
 								<td class='td-action'>
+									<a href='#'><i class='fa-solid fa-money-check-dollar'></i></a>
 									<a href='#'><i class='fa-solid fa-user-check'></i> </a>
 									<a href='./Assets/Php/Admin.php?archiveID=".$PendingID."&value=Pending' onclick='return archiveConfirmation()' '>
 									<i class='fa-solid fa-box-archive' ></i>

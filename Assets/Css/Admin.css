@@ -421,16 +421,36 @@ button, a {transition: var(--transition);}
 /*======================*\
 	# MATRICS
 \*======================*/
-.matrics{
+/*.matrics{
 	margin-block: var(--section-spacing);
 	background: var(--sidebar-color);
 	padding-block: var(--section-spacing);	
 }
-/*======================*\
+*//*======================*\
 	# ACTIVITY
 \*======================*/
-
-
+/*======================*\
+	# TESTIMONIAL
+\*======================*/
+.testimonial{
+	margin-block: var(--section-spacing);
+	background: var(--sidebar-color);
+	padding-block: var(--section-spacing);	
+}
+.mySwiper{
+	width: 100%;
+	background: red;
+}
+.swiper-slide{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #4caf50;
+	color: white;
+}
+.swiper-pagination-bullet{
+	background: white;
+}
 /*==================================================*\
 				ACCOUNT PHP : ENDS
 \*==================================================*/
@@ -721,3 +741,7 @@ textarea:focus {
 	text-align: center;
 	font-size: var(--fs-5);
 }
+
+/*======================*\
+	# CSS CLASS SLIDER
+\*======================*/

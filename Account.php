@@ -12,6 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>">
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
+	<!-- Swiper CSS -->
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />	 -->
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/swiper-bundle.min.css">
 
 </head>
 <body>
@@ -100,7 +103,7 @@
 
 	<main class="main">
 
-		<section class="profile">
+		<section class="profile" id="profile">
 
 			<div class="container">
 
@@ -231,11 +234,7 @@
 			</div>
 		</section>
 
-		<section class="testimonial">
-			<div class="container">
-				
-			</div>
-		</section>
+		
 	</main>
 	
 	<footer>
@@ -252,5 +251,22 @@
 	<script language="javascript" type="text/javascript">	
             // window.history.forward();
 	</script>
+	
+	<!-- Swiper JS -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>	 -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,  // Enables infinite loop
+      autoplay: {
+        delay: 2000,  // Slide transition delay (2 seconds)
+        disableOnInteraction: false,  // Keep autoplaying even after interaction
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+
 </body>
 </html>

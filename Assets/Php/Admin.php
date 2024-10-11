@@ -243,7 +243,7 @@ function ArchivePending($conn){
     echo "<script>
             alert('Archive Successfully');
             setTimeout(function(){
-                 window.location.href = '../../Archieve.php';
+                 window.location.href = '../../Pending.php';
             }, 50); 
         </script>";     
 

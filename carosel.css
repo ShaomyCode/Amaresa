@@ -1,0 +1,46 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Carousel Container */
+.carousel {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+/* Inner Carousel */
+.carousel-inner {
+  display: flex;
+  width: 300%;
+  animation: slide 9s infinite; /* Animation for automatic sliding */
+}
+
+/* Individual Carousel Item */
+.carousel-item {
+  width: 100%;
+  flex: 1 0 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Keyframes for the sliding effect */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(0); }
+  36% { transform: translateX(-100%); }
+  66% { transform: translateX(-100%); }
+  69% { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}

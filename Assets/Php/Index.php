@@ -28,10 +28,18 @@
         $Message = $_POST['Message'];
         $SelectedProperty = $_POST['Property'];
         $Address = $_POST['Address'];
-        $Status = 'Pending';
+        $payment = $_POST['Payment'];
+
+        $status = "Pending";
+
+        if(!empty($payment)){
+            $payment = 'Paid';
+        }else{
+            $payment = 'Unpaid';
+        }
         
-        $stmt = "INSERT INTO Pending(Lastname, Firstname, Email, Phone, Message, Address, Selected_Property, Status) 
-        VALUES('$Lastname','$Firstname', '$Email', '$Phone', '$Message','$Address', '$SelectedProperty', '$Status') ";
+        $stmt = "INSERT INTO Pending(Lastname, Firstname, Email, Phone, Message, Address, Selected_Property, Status , Payment) 
+        VALUES('$Lastname','$Firstname', '$Email', '$Phone', '$Message','$Address', '$SelectedProperty', '$status','$payment') ";
         mysqli_query($conn, $stmt); 
 
          echo "<script>
