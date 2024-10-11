@@ -13,7 +13,6 @@ function ShowLogin(){
 }
 function CloseSignup(){
     document.getElementById('Signup-Modal').close();
-
 }
 function CloseLogin(){
     document.getElementById('Login-Modal').close();
@@ -38,3 +37,14 @@ $(document).ready(function(){
 /*======================*\
 # SWIPPER
 \*======================*/
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

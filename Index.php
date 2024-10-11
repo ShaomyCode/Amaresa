@@ -19,7 +19,7 @@
 	<!-- JQUERY -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
 	<!-- Swiper CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 <body>
@@ -211,57 +211,50 @@
 						<li class="property-features-card">
 							<figure>
 								<img src="./Assets/Images/Alexandria/Alexandria Exterior.png" alt="Interior features" /> 
-									
 							</figure>
-						
+						</li>						
+
+						<li class="property-features-card">
+							<figure>
+								<img src="./Assets/Images/Amara Expanded/Amara Exterior.png" alt="Interior features" /> 
+							</figure>
+						</li>						
+
+						<li class="property-features-card">
+							<figure>
+								<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
+							</figure>
+						</li>						
+
+						<li class="property-features-card">
+							<figure>
+								<img src="./Assets/Images/Kayla Prime/Kayla Prime.png" alt="Interior features" /> 
+							</figure>
 						</li>
 
 					</ul>
-			
+					
+					<!-- Slider main container -->
+	<div class="Main-Container">
+	  <div class="swiper mySwiper">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">Slide 1</div>
+	      <div class="swiper-slide">Slide 2</div>
+	      <div class="swiper-slide">Slide 3</div>
+	      <div class="swiper-slide">Slide 4</div>
+	      <div class="swiper-slide">Slide 5</div>
+	      <div class="swiper-slide">Slide 6</div>
+	      <div class="swiper-slide">Slide 7</div>
+	      <div class="swiper-slide">Slide 8</div>
+	      <div class="swiper-slide">Slide 9</div>
+	    </div>
+	    <div class="swiper-button-next"></div>
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-pagination"></div>
+	  </div>		
+	</div>
 
-				<!-- PHP GOES HERE IMAGES & DETAILS CAME FROM DATABASE -->
-				<div class="property-card-wrapper">
-					<div class="property-card-container">
-
-						<figure class="property-image">
-							<span class="property-featured"> featured </span>
-							<img src="./Assets/Images/Alexandria/Alexandria Exterior.png" alt="Interior Image">
-						</figure>
-
-						<div class="property-card-content">
-							<h3 class="h3 card-title"> Alexandria </h3>
-							<div class="property-card-items-wrapper">
-								<div class="property-card-items">
-									<i class="fa-regular fa-credit-card"></i>
-									<hr/>
-									<p class="card-item-display"> 24214124</p>	
-								</div>								
-
-								<div class="property-card-items">
-									<i class="fa-solid fa-bed"></i>
-									<hr/>
-									<p class="card-item-display"> 1</p>	
-								</div>								
-
-								<div class="property-card-items">
-									<i class="fa-solid fa-bath"></i>
-									<hr/>
-									<p class="card-item-display"> 2</p>	
-								</div>								
-
-								<div class="property-card-items">
-									<i class="fa-solid fa-chart-area"></i>
-									<hr/>
-									<p class="card-item-display">123sqm</p>	
-								</div>
-							</div>
-							<div class="property-card-button">
-								<button class="btn" onclick="ShowDetails()">View More</button>
-								<button class="btn" onclick="ShowInquiry()">Make an Inquiry</button>
-							</div>
-						</div>						
-					</div>
-				</div> 
+ 
 				</div>
 			</section>
 		</article>
@@ -486,9 +479,12 @@
 
 	<!-- Custom Js Link -->
 	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
+	<script type="text/javascript" src="./Assets/Js/swiper.js"></script>
+
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
 	<!-- Swiper JS -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>	
+
 </body>
 </html>

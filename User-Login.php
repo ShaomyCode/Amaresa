@@ -22,7 +22,8 @@
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
 	<!-- JQUERY -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />	
 </head>
 <body>
 
@@ -221,49 +222,25 @@
 			<!-- PROPERTY SECTION -->
 			<section class="property" id ="property">
 				<div class="container"> 
-					<p class="section-subtitle"> Properties </p>
-					<h2 class="h2 section-title"> Featured Listing </h2>
-				<!-- PHP GOES HERE IMAGES & DETAILS CAME FROM DATABASE -->
-				<div class="property-card-wrapper">
-					<div class="property-card-container">
-
-						<figure class="property-image">
-							<span class="property-feature"> featured </span>
-							<img src="./Assets/Images/Alexandria/Alexandria Exterior.png" alt="Interior Image">
-						</figure>
-
-						<div class="property-card-content">
-							<h3 class="h3 card-title"> Alexandria </h3>
-							<div class="property-card-items-wrapper">
-								<div class="property-card-items">
-									<i class="fa-regular fa-credit-card"></i>
-									<hr/>
-									<p class="card-item-display"> 24214124</p>	
-								</div>								
-
-								<div class="property-card-items">
-									<i class="fa-solid fa-bed"></i>
-									<hr/>
-									<p class="card-item-display"> 1</p>	
-								</div>								
-
-								<div class="property-card-items">
-									<i class="fa-solid fa-bath"></i>
-									<hr/>
-									<p class="card-item-display"> 2</p>	
-								</div>								
-
-								<div class="property-card-items">
-									<i class="fa-solid fa-chart-area"></i>
-									<hr/>
-									<p class="card-item-display">123sqm</p>	
-								</div>
-							</div>
-							<div class="property-card-button">
-								<button class="btn" onclick="ShowDetails()">View More</button>
-								<button class="btn" onclick="ShowInquiry()">Make an Inquiry</button>
-							</div>
-						</div>						
+<!-- Swiper -->
+	<div class="Main-Container">
+	  <div class="swiper mySwiper">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">Slide 1</div>
+	      <div class="swiper-slide">Slide 2</div>
+	      <div class="swiper-slide">Slide 3</div>
+	      <div class="swiper-slide">Slide 4</div>
+	      <div class="swiper-slide">Slide 5</div>
+	      <div class="swiper-slide">Slide 6</div>
+	      <div class="swiper-slide">Slide 7</div>
+	      <div class="swiper-slide">Slide 8</div>
+	      <div class="swiper-slide">Slide 9</div>
+	    </div>
+	    <div class="swiper-button-next"></div>
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-pagination"></div>
+	  </div>		
+	</div>						
 					</div>
 				</div>
 
@@ -505,6 +482,8 @@
 	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>	
 
 </body>
 </html>

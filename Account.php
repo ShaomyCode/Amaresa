@@ -14,7 +14,7 @@
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
 	<!-- Swiper CSS -->
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />	 -->
-	<link rel="stylesheet" type="text/css" href="./Assets/Css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 <body>
@@ -228,11 +228,25 @@
 			</div>
 		</section>
 
-		<section class="matrics" id="matrics">
-			<div class="container">
-
-			</div>
-		</section>
+<!-- Swiper -->
+	<div class="Main-Container">
+	  <div class="swiper mySwiper">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">Slide 1</div>
+	      <div class="swiper-slide">Slide 2</div>
+	      <div class="swiper-slide">Slide 3</div>
+	      <div class="swiper-slide">Slide 4</div>
+	      <div class="swiper-slide">Slide 5</div>
+	      <div class="swiper-slide">Slide 6</div>
+	      <div class="swiper-slide">Slide 7</div>
+	      <div class="swiper-slide">Slide 8</div>
+	      <div class="swiper-slide">Slide 9</div>
+	    </div>
+	    <div class="swiper-button-next"></div>
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-pagination"></div>
+	  </div>		
+	</div>		
 
 		
 	</main>
@@ -245,6 +259,9 @@
 
 	<!-- Custom JS & JQUERY -->
 	<script src="./Assets/Js/admin.js?v=<?php echo time(); ?>"></script>
+<script type="text/javascript" src="swiper.js"></script>
+	<!-- SWIPER HERE -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>	
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 	<!-- NO TURNING BACk -->
@@ -252,21 +269,8 @@
             // window.history.forward();
 	</script>
 	
-	<!-- Swiper JS -->
-	<!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>	 -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,  // Enables infinite loop
-      autoplay: {
-        delay: 2000,  // Slide transition delay (2 seconds)
-        disableOnInteraction: false,  // Keep autoplaying even after interaction
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+
+
 
 </body>
 </html>
