@@ -1,5 +1,5 @@
 <?php
-	include './Assets/Php/Connection.php';
+include './Assets/Php/Connection.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +10,7 @@
 
 	<!-- Custom Css Link -->
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Index.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" type="text/css" href="check.css">
 	<!-- Google font link -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,63 +18,60 @@
 	<!-- WEBSITE ICON -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
 	<!-- JQUERY -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
-	<!-- Swiper CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
 </head>
 <body>
 
 	<!-- HEADERS -->
 	<header class="header">
-			<div class="header-top"> 
-				<div class="container">
-					<ul class="header-top-list">
+		<div class="header-top"> 
+			<div class="container">
+				<ul class="header-top-list">
 
+					<li>
+						<a href="https://www.amaresa.ph/" class="header-top-link">
+							<i class="fa-solid fa-paper-plane"></i>
+							<span>amaresa.ph</span>
+						</a>
+					</li>						
+
+					<li> 
+						<a href="https://www.google.com/maps/dir//Amaresa+Marilao,+3019+M.+Villarica+Rd,+Marilao,+3019+Bulacan/@14.7950949,121.0162162,17z/data=!4m17!1m7!3m6!1s0x3397b38da5906293:0x8b01e358c47a7685!2sAmaresa+Marilao!8m2!3d14.7950897!4d121.0187911!16s%2Fg%2F11gpnfmdlb!4m8!1m0!1m5!1m1!1s0x3397b38da5906293:0x8b01e358c47a7685!2m2!1d121.0188034!2d14.7951434!3e2?entry=ttu"  class="header-top-link">
+							<i class="fa-solid fa-map-location-dot"></i>
+							<span>3019 M. Villarica Rd, Marilao, 3019 Bulacan</span>
+						</a>
+					</li>
+				</ul>
+				<div class="wrapper">
+
+					<ul class="header-top-social-list">
 						<li>
-							<a href="https://www.amaresa.ph/" class="header-top-link">
-								<i class="fa-solid fa-paper-plane"></i>
-								<span>amaresa.ph</span>
-							</a>
-						</li>						
-
-						<li> 
-							<a href="https://www.google.com/maps/dir//Amaresa+Marilao,+3019+M.+Villarica+Rd,+Marilao,+3019+Bulacan/@14.7950949,121.0162162,17z/data=!4m17!1m7!3m6!1s0x3397b38da5906293:0x8b01e358c47a7685!2sAmaresa+Marilao!8m2!3d14.7950897!4d121.0187911!16s%2Fg%2F11gpnfmdlb!4m8!1m0!1m5!1m1!1s0x3397b38da5906293:0x8b01e358c47a7685!2m2!1d121.0188034!2d14.7951434!3e2?entry=ttu"  class="header-top-link">
-								<i class="fa-solid fa-map-location-dot"></i>
-								<span>3019 M. Villarica Rd, Marilao, 3019 Bulacan</span>
+							<a href="#" class="header-top-social-link">
+								<i class="fa-brands fa-facebook"></i>
 							</a>
 						</li>
+						<li>
+							<a href="#" class="header-top-social-link">
+								<i class="fa-brands fa-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="header-top-social-link">
+								<i class="fa-brands fa-x-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="header-top-social-link">
+								<i class="fa-brands fa-linkedin"></i>
+							</a>
+						</li>																							
 					</ul>
-					<div class="wrapper">
 
-						<ul class="header-top-social-list">
-							<li>
-								<a href="#" class="header-top-social-link">
-									<i class="fa-brands fa-facebook"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="header-top-social-link">
-									<i class="fa-brands fa-instagram"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="header-top-social-link">
-									<i class="fa-brands fa-x-twitter"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="header-top-social-link">
-									<i class="fa-brands fa-linkedin"></i>
-								</a>
-							</li>																							
-						</ul>
-
-						<button class="header-top-btn" onclick="ShowSignup()" > <i class="fa-solid fa-user-tie"></i> <span> Sign in </span></button>
-					</div>
+					<button class="header-top-btn" onclick="ShowSignup()" > <i class="fa-solid fa-user-tie"></i> <span> Sign in </span></button>
 				</div>
-
 			</div>
+
+		</div>
 	</header>
 	<!-- MAIN CONTENT -->
 	<main>
@@ -84,22 +82,22 @@
 					<div class="hero-logo">
 						<img src="./Assets/Images/Amaresa-Logo.png" alt="Amaresa Logo" >
 					</div>
-						<h2 class="h1 hero-title">Find Your Dream House By Us!</h2>
-						<p class="hero-text">
-							Discover your perfect home with our expert guidance and curated property listings. From cozy apartments to spacious estates, we’ll help you find a place that truly feels like yours. Start your journey today!
-						</p>						
-					</div>
-					<button class="btn" onclick="ShowInquiry()">Make an Inquiry</button>
-					<figure class="hero-banner">
-						<img src="./Assets/Images/Amaresa Marilao.png" alt="Amaresa Marilao" class="w-100">
-					</figure>
+					<h2 class="h1 hero-title">Find Your Dream House By Us!</h2>
+					<p class="hero-text">
+						Discover your perfect home with our expert guidance and curated property listings. From cozy apartments to spacious estates, we’ll help you find a place that truly feels like yours. Start your journey today!
+					</p>						
+				
+				<button class="btn" onclick="ShowInquiry()">Make an Inquiry</button>
+				<figure class="hero-banner">
+					<img src="./Assets/Images/Amaresa Marilao.png" alt="Amaresa Marilao" class="w-100">
+				</figure>
 				</div>
 			</section>
 			<!-- ABOUT SECTION -->
 			<section class="about" id="about">
-			        <figure class="about-banner">
-		            	<img src="./assets/images/Amaresa about us .png" alt="House interior">
-		        	</figure>
+				<figure class="about-banner">
+					<img src="./assets/images/Amaresa about us .png" alt="House interior">
+				</figure>
 				<div class="container"> 
 					<div class="about-content"> 
 
@@ -117,7 +115,7 @@
 
 								<p class="about-item-text"> Smart Home Design </p>
 							</li>							
-					
+
 
 							<li class="about-item">
 								<div class="about-item-icon">
@@ -142,7 +140,7 @@
 
 								<p class="about-item-text"> Complete 24/7 Security </p>
 							</li>
-							
+
 						</ul>
 						<p class="callout">
 							Discover the passion and expertise that make your home search special.
@@ -154,15 +152,15 @@
 			</section>
 			<!-- LOCATION SECTION -->
 			<section class="location" id="location">
-		
+
 				<div class="container">
 					<p class="section-subtitle"> Location </p>
 					<h2 class="h2 section-title"> Family-Friendly Neighborhood </h2>
 					<p class="locale-text"> Set in the welcoming community of Marilao Bulacan, our homes are ideal for families. Benefit from nearby parks, excellent schools, and a variety of family-friendly amenities. It’s a safe and nurturing environment where you can watch your family grow and thrive. </p>
 				</div>
-					<figure class="location-banner">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.5369070803104!2d121.01621617574362!3d14.795094872284029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1720251535908!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						
-					</figure>		
+				<figure class="location-banner">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.5369070803104!2d121.01621617574362!3d14.795094872284029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1720251535908!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						
+				</figure>		
 			</section>
 			<!-- SERVICE SECTION -->
 			<section class="service" id="service">
@@ -191,7 +189,7 @@
 									<i class="fa-solid fa-arrow-right-long"></i>
 								</a>								
 							</div>
-				
+
 						</li>						
 
 					</ul>
@@ -204,8 +202,8 @@
 				<div class="container"> 
 					<p class="section-subtitle"> Properties </p>
 					<h2 class="h2 section-title"> Featured Listing </h2>
+					<p class="locale-text"> Step into the finest homes available right now. Our featured listings offer a blend of exceptional design, prime locations, and unparalleled value. Don’t miss out on these standout properties </p>
 
-			
 					<ul class="property-features">
 
 						<li class="property-features-card">
@@ -233,28 +231,9 @@
 						</li>
 
 					</ul>
-					
-					<!-- Slider main container -->
-	<div class="Main-Container">
-	  <div class="swiper mySwiper">
-	    <div class="swiper-wrapper">
-	      <div class="swiper-slide">Slide 1</div>
-	      <div class="swiper-slide">Slide 2</div>
-	      <div class="swiper-slide">Slide 3</div>
-	      <div class="swiper-slide">Slide 4</div>
-	      <div class="swiper-slide">Slide 5</div>
-	      <div class="swiper-slide">Slide 6</div>
-	      <div class="swiper-slide">Slide 7</div>
-	      <div class="swiper-slide">Slide 8</div>
-	      <div class="swiper-slide">Slide 9</div>
-	    </div>
-	    <div class="swiper-button-next"></div>
-	    <div class="swiper-button-prev"></div>
-	    <div class="swiper-pagination"></div>
-	  </div>		
-	</div>
 
- 
+
+
 				</div>
 			</section>
 		</article>
@@ -263,100 +242,163 @@
 
 
 
-	<!-- DIALOG SECTIONS -->
-	<section class="Dialogs">
-		<!-- DIALOGS GOES HERE -->
-		<!-- FOR SIGN UP -->
-		<dialog id="Signup-Modal" class="dialog">
-			<button onclick="CloseSignup()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
-			<div class="container">
-				<form  method="POST" class="form signup" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-					<div class="form-items">
-						<input type="text" name="Firstname" placeholder="First Name" required>
-						<input type="text" name="Lastname" placeholder="Last Name" required> 						
-					</div>
-					<input type="email" name="Email" placeholder="Email Address" required>
-					<div class="form-items">
-						
-						<input type="phone" name="Phone" placeholder="Phone number" required>
-						<input type="text" name="Address" placeholder="Address" required>
-					</div>
-					<div class="form-items">
-						<input type="password" name="Password" placeholder="Password" required>
-						<input type="password" name="Confirmpass" placeholder="Confirm Password" required> 	
-					</div>	
-					<input type="submit" name="Signin-btn" value="Sign up">		
-				</form>
-				<button onclick="ShowLogin()" class="lowerbuttons">Already have an account</button>
-			</div>
-		</dialog>		
+<!-- DIALOG SECTIONS -->
+<section class="Dialogs">
+	<!-- FOR SIGN UP -->
+	<dialog id="Signup-Modal" class="dialog">
+		<button onclick="CloseSignup()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
+		<div class="container">
+			<form  method="POST" class="form signup" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+				<div class="form-items">
+					<input type="text" name="Firstname" placeholder="First Name" required>
+					<input type="text" name="Lastname" placeholder="Last Name" required> 						
+				</div>
+				<input type="email" name="Email" placeholder="Email Address" required>
+				<div class="form-items">
 
-		<!-- FOR LOGIN UP -->
-		<dialog id="Login-Modal" class="dialog">
-			<button onclick="CloseLogin()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
-			<div class="container">
-				<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+					<input type="phone" name="Phone" placeholder="Phone number" required>
+					<input type="text" name="Address" placeholder="Address" required>
+				</div>
+				<div class="form-items">
+					<input type="password" name="Password" placeholder="Password" required>
+					<input type="password" name="Confirmpass" placeholder="Confirm Password" required> 	
+				</div>	
+				<input type="submit" name="Signin-btn" value="Sign up">		
+			</form>
+			<button onclick="ShowLogin()" class="lowerbuttons">Already have an account</button>
+		</div>
+	</dialog>		
 
-					<input type="email" name="email" placeholder="Email Address" required>
-					<input type="password" name="password" placeholder="Password" required>	
-					<input type="submit" name="login-btn" value="Login">
-				</form>
-				<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
-			</div>
-		</dialog>
-		<!-- FOR INQUIRY -->
-		<dialog id="Inquiry-Modal" class="dialog">
-			<button onclick="CloseInquiry()" class="closebtn">X</button>	
+	<!-- FOR LOGIN UP -->
+	<dialog id="Login-Modal" class="dialog">
+		<button onclick="CloseLogin()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
+		<div class="container">
+			<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
 
-			<div class="container">
+				<input type="email" name="email" placeholder="Email Address" required>
+				<input type="password" name="password" placeholder="Password" required>	
+				<input type="submit" name="login-btn" value="Login">
+			</form>
+			<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
+		</div>
+		<div class="container">
+			<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
 
-				<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-					<?php 
-
-						$query = "SELECT *
-						FROM USER;
-						";
-						$result = $conn->query($query);
-						$row = $result->fetch_assoc();
+				<input type="email" name="email" placeholder="Email Address" required>
+				<input type="password" name="password" placeholder="Password" required>	
+				<input type="submit" name="login-btn" value="Login">
+			</form>
+			<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
+		</div>
 
 
-						echo "
-						<div class='form-items'>
-							<input type='text' name='Firstname' placeholder='First Name' required>
-							<input type='text' name='Lastname' placeholder='Last Name'  required>		
-						</div>
-						";
-					
-					?>
-					<input type="number"  name="Phone" placeholder="Contact Number" required>
+	</dialog>
+
+
+	<!-- FOR INQUIRY -->
+	<dialog id="Inquiry-Modal" class="dialog">
+		<button onclick="CloseInquiry()" class="closebtn">X</button>	
+
+		<div class="container">
+
+			<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+				<?php 
+
+				$query = "SELECT *
+				FROM USER;
+				";
+				$result = $conn->query($query);
+				$row = $result->fetch_assoc();
+
+
+				echo "
+				<div class='form-items'>
+				<input type='text' name='Firstname' placeholder='First Name' required>
+				<input type='text' name='Lastname' placeholder='Last Name'  required>		
+				</div>
+				";
+
+				?>
+				<input type="number"  name="Phone" placeholder="Contact Number" required>
 					<div class="form-items">
 						<input type="text" name="Address" placeholder="Address" required>
 						<input list="options" id="Role" name="Property" placeholder="Select Property" required>
-					    <datalist id="options">
-					        <option value="Kalya House">
-					        <option value="Aria House">
-					    </datalist>	
-		 	
+						<datalist id="options">
+							<option value="Kalya House">
+							<option value="Aria House">
+						</datalist>	
 					</div>	
-					<input type="email" name="Email" placeholder="Email Address" required>
-					<input type="text" name="Payment" placeholder="Payment">
+						<input type="email" name="Email" placeholder="Email Address" required>
+						<div class="textarea-container">
+							<textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>
+						</div>
 
-				    <div class="textarea-container">
-				        <textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>
-				    </div>
-						
+
+						<div class="form-items">
+
+						</div>
+						<div>
+							<input type="checkbox" id="cbx2" onclick="ShowReservation()" style="display: none;"> 
+							<label for="cbx2" class="check">
+								<svg width="18px" height="18px" viewBox="0 0 18 18">
+									<path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+									<polyline points="1 9 7 14 15 4"></polyline>
+								</svg>
+								Reservation Fee (optional)
+							</label>
+
+
+							<div class="payments" id="payments">
+								<h3 class="h3 payment-title"> Gcash </h3>
+								<img id="paymentImg" src="./Assets/Images/payment.png" >
+
+								<div class="payment-upload" >
+									<label for="file-upload" class="custom-file-upload btn">
+										Upload Here
+									</label>
+									<input id="file-upload" type="file" name="file" accept="image/*">
+								</div>
+
+							</div>
+
+
+							<script>
+								const checkbox = document.getElementById('cbx2');
+								const div = document.getElementById('payments');
+
+								checkbox.addEventListener('change', function() {
+									if (this.checked) {
+										div.style.display = 'block'; 
+									} else {
+										div.style.display = 'none';
+									}
+								});
+							</script>
+						</div>
+					</div>
+
 					<div class="inquiry-buttons">
 						<div id="panel">
 							<span>requirements shows here</span>
 						</div>
-						<div id="requirements">Requirements</div>
-						<button onclick="ShowSignup()">Send Inquiry</button>
-						
+						<span id="requirements" class="btn">Requirements</span>
+						<button type="submit" name="SentInquiry" class="btn">Send Inquiry</button>
 					</div>
 				</form>
 
 			</div>
 		</dialog>
+		<!-- RESERVATION MODAL -->
+		<dialog id="Reservation-Modal" class="dialog">
+			<button onclick="CloseReservation()" class="closebtn">X</button>	
+			<form>
+				<div class="container">
+					<button type="submit" name="SentInquiry">Send Inquiry</button>
+				</div>
+			</form>
+		</dialog>
+
+
 	</section>
 	<!-- FOOTERS -->
 	<footer class="footer">
@@ -383,7 +425,7 @@
 				<li><a href="#"> About us </a></li>
 				<li><a href="#"> Service </a></li>
 				<li><a href="#"> Privacy Policy </a></li>
-			
+
 
 			</ul>					
 
@@ -393,28 +435,28 @@
 					<a href="#" class="list-item"> 
 						<i class="fa-brands fa-facebook"></i>
 						<span>Facebook </span>
-					 </a>
+					</a>
 				</li>				
 
 				<li>
 					<a href="#" class="list-item"> 
 						<i class="fa-brands fa-instagram"></i>
 						<span>Instagram </span>
-					 </a>
+					</a>
 				</li>				
 
 				<li>
 					<a href="#" class="list-item"> 
 						<i class="fa-brands fa-x-twitter"></i>
 						<span>Twitter </span>
-					 </a>
+					</a>
 				</li>				
 
 				<li>
 					<a href="#" class="list-item"> 
 						<i class="fa-brands fa-linkedin"></i>
 						<span>LinkIn </span>
-					 </a>
+					</a>
 				</li>
 
 
@@ -479,12 +521,8 @@
 
 	<!-- Custom Js Link -->
 	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
-	<script type="text/javascript" src="./Assets/Js/swiper.js"></script>
-
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
-	<!-- Swiper JS -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>	
 
 </body>
 </html>
