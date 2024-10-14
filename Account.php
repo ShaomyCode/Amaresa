@@ -8,17 +8,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Account</title>
-	<!-- CUSTOM CSS  -->
+	<!-- Link: Custom css  -->
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>">
-	<!-- WEBSITE ICON -->
+	<!-- Link: Web icon -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
-	<!-- Swiper CSS -->
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />	 -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
 </head>
 <body>
-
+	<!-- Section: Sidebar -->
 	<nav class="sidebar close" id="sidebar">
 		<header>
 			<figure class="image-container">
@@ -100,11 +96,10 @@
 			</div>
 		</div>
 	</nav>
-
+	<!-- Section: Main -->
 	<main class="main">
-
+		<!-- Section: Profile -->
 		<section class="profile" id="profile">
-
 			<div class="container">
 
 				<div class="profile-wrapper">
@@ -126,13 +121,13 @@
 				</div>
 
 			</div>
-			
 		</section>
+		<!-- Section: Activity -->
 		<section class="activity" id="activity">
 			<div class="container">
 				<h3 class="h3 activity-title">Recent Activity</h3>
 				<div class="activity-wrapper">
-
+					<!-- Items: Users -->
 					<div class="activity-items">
 						<figure>
 							<img src="./Assets/Images/User.gif">
@@ -140,23 +135,23 @@
 						<h3 class="activity-card-title"> New User Registration</h3>
 						<span class="activity-subtitle">Manage and Track All Users</span>
 						<?php
-							$sql = "SELECT COUNT(*) AS total_users FROM user";
+						$sql = "SELECT COUNT(*) AS total_users FROM user";
 
 							// Execute the query
-							$result = $conn->query($sql);
+						$result = $conn->query($sql);
 
 							// Fetch the result
-							$total_users = 0;
-							if ($result->num_rows > 0) {
-							    $row = $result->fetch_assoc();
-							    $total_users = $row['total_users'];
-							}
+						$total_users = 0;
+						if ($result->num_rows > 0) {
+							$row = $result->fetch_assoc();
+							$total_users = $row['total_users'];
+						}
 
-							echo "<span class='total-display'> ".$total_users." </span>";
-									
-						 ?>
+						echo "<span class='total-display'> ".$total_users." </span>";
+
+						?>
 					</div>
-
+					<!-- Items: Property Listing -->
 					<div class="activity-items">
 						<figure>
 							<img src="./Assets/Images/house.gif">
@@ -164,22 +159,22 @@
 						<h3 class="activity-card-title"> New Property Listing</h3>
 						<span class="activity-subtitle">Tracking Your Real Estate Assets</span>
 						<?php
-							$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
+						$sql = "SELECT COUNT(*) AS TProperties FROM Properties";
 
 							// Execute the query
-							$result = $conn->query($sql);
+						$result = $conn->query($sql);
 
 							// Fetch the result
-							$total_users = 0;
-							if ($result->num_rows > 0) {
-							    $row = $result->fetch_assoc();
-							    $TProperties = $row['TProperties'];
-							}
+						$total_users = 0;
+						if ($result->num_rows > 0) {
+							$row = $result->fetch_assoc();
+							$TProperties = $row['TProperties'];
+						}
 
-							echo "<span class='total-display'> ".$TProperties." </span>";		
-						 ?>						
+						echo "<span class='total-display'> ".$TProperties." </span>";		
+						?>						
 					</div>
-					
+					<!-- Items: Messages -->
 					<div class="activity-items">
 						<figure>
 							<img src="./Assets/Images/message.gif">
@@ -187,21 +182,21 @@
 						<h3 class="activity-card-title"> Messages</h3>
 						<span class="activity-subtitle">Essential Alerts and Conversations</span>
 						<?php
-							$sql = "SELECT COUNT(*) AS TPMessages FROM Message";
+						$sql = "SELECT COUNT(*) AS TPMessages FROM Message";
 
 							// Execute the query
-							$result = $conn->query($sql);
+						$result = $conn->query($sql);
 
 							// Fetch the result
-							$Total_Message = 0;
-							if ($result->num_rows > 0) {
-							    $row = $result->fetch_assoc();
-							    $Total_Message = $row['TPMessages'];
-							}
-							echo "<span class='total-display'> ".$Total_Message." </span>";		
-						 ?>
+						$Total_Message = 0;
+						if ($result->num_rows > 0) {
+							$row = $result->fetch_assoc();
+							$Total_Message = $row['TPMessages'];
+						}
+						echo "<span class='total-display'> ".$Total_Message." </span>";		
+						?>
 					</div>					
-
+					<!-- Items: Archive -->
 					<div class="activity-items">
 						<figure>
 							<img src="./Assets/Images/Archive.gif">
@@ -209,34 +204,24 @@
 						<h3 class="activity-card-title"> Archive</h3>
 						<span class="activity-subtitle">Past Records</span>
 						<?php
-							$sql = "SELECT COUNT(*) AS GroupArchive FROM Archive";
+						$sql = "SELECT COUNT(*) AS GroupArchive FROM Archive";
 
 							// Execute the query
-							$result = $conn->query($sql);
+						$result = $conn->query($sql);
 
 							// Fetch the result
-							$TArchives = 0;
-							if ($result->num_rows > 0) {
-							    $row = $result->fetch_assoc();
-							    $TArchives = $row['GroupArchive'];
-							}
-							echo "<span class='total-display'> ".$TArchives." </span>";		
-						 ?>
+						$TArchives = 0;
+						if ($result->num_rows > 0) {
+							$row = $result->fetch_assoc();
+							$TArchives = $row['GroupArchive'];
+						}
+						echo "<span class='total-display'> ".$TArchives." </span>";		
+						?>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		
-
 	</main>
-	
-	<footer>
-		
-	</footer>
-		
-
-
 	<!-- Custom JS & JQUERY -->
 	<script src="./Assets/Js/admin.js?v=<?php echo time(); ?>"></script>
 <script type="text/javascript" src="swiper.js"></script>

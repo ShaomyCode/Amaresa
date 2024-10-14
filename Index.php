@@ -7,22 +7,19 @@ include './Assets/Php/Connection.php';
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AMARESA - Find your dream house</title>
-
-	<!-- Custom Css Link -->
+	<!-- Link: Custom -->
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Index.css?v=<?php echo time(); ?>">
-	<link rel="stylesheet" type="text/css" href="check.css">
-	<!-- Google font link -->
+	<!-- Link: Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<!-- WEBSITE ICON -->
+	<!-- Link: Web Icon -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
-	<!-- JQUERY -->
+	<!-- Script: JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
 </head>
 <body>
-
-	<!-- HEADERS -->
+	<!-- Section: Header -->
 	<header class="header">
 		<div class="header-top"> 
 			<div class="container">
@@ -73,10 +70,10 @@ include './Assets/Php/Connection.php';
 
 		</div>
 	</header>
-	<!-- MAIN CONTENT -->
+	<!-- Section: Main Contents -->
 	<main>
 		<article>
-			<!-- HERO SECTION -->
+			<!-- Section: Hero -->
 			<section class="hero" id="home">
 				<div class="container">
 					<div class="hero-logo">
@@ -93,7 +90,7 @@ include './Assets/Php/Connection.php';
 				</figure>
 				</div>
 			</section>
-			<!-- ABOUT SECTION -->
+			<!-- Section: About -->
 			<section class="about" id="about">
 				<figure class="about-banner">
 					<img src="./assets/images/Amaresa about us .png" alt="House interior">
@@ -150,7 +147,7 @@ include './Assets/Php/Connection.php';
 					</div>
 				</div>
 			</section>
-			<!-- LOCATION SECTION -->
+			<!-- Section: Locale -->
 			<section class="location" id="location">
 
 				<div class="container">
@@ -162,7 +159,7 @@ include './Assets/Php/Connection.php';
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.5369070803104!2d121.01621617574362!3d14.795094872284029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1720251535908!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						
 				</figure>		
 			</section>
-			<!-- SERVICE SECTION -->
+			<!-- Section: Service -->
 			<section class="service" id="service">
 				<div class="container"> 
 
@@ -197,7 +194,7 @@ include './Assets/Php/Connection.php';
 
 				</div>
 			</section>
-			<!-- PROPERTY SECTION -->
+			<!-- Section: Property -->
 			<section class="property" id ="property">
 				<div class="container"> 
 					<p class="section-subtitle"> Properties </p>
@@ -238,169 +235,158 @@ include './Assets/Php/Connection.php';
 			</section>
 		</article>
 	</main>
-
-
-
-
-<!-- DIALOG SECTIONS -->
-<section class="Dialogs">
-	<!-- FOR SIGN UP -->
-	<dialog id="Signup-Modal" class="dialog">
-		<button onclick="CloseSignup()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
-		<div class="container">
-			<form  method="POST" class="form signup" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-				<div class="form-items">
-					<input type="text" name="Firstname" placeholder="First Name" required>
-					<input type="text" name="Lastname" placeholder="Last Name" required> 						
-				</div>
-				<input type="email" name="Email" placeholder="Email Address" required>
-				<div class="form-items">
-
-					<input type="phone" name="Phone" placeholder="Phone number" required>
-					<input type="text" name="Address" placeholder="Address" required>
-				</div>
-				<div class="form-items">
-					<input type="password" name="Password" placeholder="Password" required>
-					<input type="password" name="Confirmpass" placeholder="Confirm Password" required> 	
-				</div>	
-				<input type="submit" name="Signin-btn" value="Sign up">		
-			</form>
-			<button onclick="ShowLogin()" class="lowerbuttons">Already have an account</button>
-		</div>
-	</dialog>		
-
-	<!-- FOR LOGIN UP -->
-	<dialog id="Login-Modal" class="dialog">
-		<button onclick="CloseLogin()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
-		<div class="container">
-			<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-
-				<input type="email" name="email" placeholder="Email Address" required>
-				<input type="password" name="password" placeholder="Password" required>	
-				<input type="submit" name="login-btn" value="Login">
-			</form>
-			<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
-		</div>
-		<div class="container">
-			<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-
-				<input type="email" name="email" placeholder="Email Address" required>
-				<input type="password" name="password" placeholder="Password" required>	
-				<input type="submit" name="login-btn" value="Login">
-			</form>
-			<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
-		</div>
-
-
-	</dialog>
-
-
-	<!-- FOR INQUIRY -->
-	<dialog id="Inquiry-Modal" class="dialog">
-		<button onclick="CloseInquiry()" class="closebtn">X</button>	
-
-		<div class="container">
-
-			<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-				<?php 
-
-				$query = "SELECT *
-				FROM USER;
-				";
-				$result = $conn->query($query);
-				$row = $result->fetch_assoc();
-
-
-				echo "
-				<div class='form-items'>
-				<input type='text' name='Firstname' placeholder='First Name' required>
-				<input type='text' name='Lastname' placeholder='Last Name'  required>		
-				</div>
-				";
-
-				?>
-				<input type="number"  name="Phone" placeholder="Contact Number" required>
+	<!-- Section: Dialogs -->
+	<section class="Dialogs">
+		<!-- Dialog: Sign up -->
+		<dialog id="Signup-Modal" class="dialog">
+			<button onclick="CloseSignup()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
+			<div class="container">
+				<form  method="POST" class="form signup" enctype="multipart/form-data" action="./Assets/Php/Index.php">
 					<div class="form-items">
+						<input type="text" name="Firstname" placeholder="First Name" required>
+						<input type="text" name="Lastname" placeholder="Last Name" required> 						
+					</div>
+					<input type="email" name="Email" placeholder="Email Address" required>
+					<div class="form-items">
+
+						<input type="phone" name="Phone" placeholder="Phone number" required>
 						<input type="text" name="Address" placeholder="Address" required>
-						<input list="options" id="Role" name="Property" placeholder="Select Property" required>
-						<datalist id="options">
-							<option value="Kalya House">
-							<option value="Aria House">
-						</datalist>	
+					</div>
+					<div class="form-items">
+						<input type="password" name="Password" placeholder="Password" required>
+						<input type="password" name="Confirmpass" placeholder="Confirm Password" required> 	
 					</div>	
-						<input type="email" name="Email" placeholder="Email Address" required>
-						<div class="textarea-container">
-							<textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>
-						</div>
+					<input type="submit" name="Signin-btn" value="Sign up">		
+				</form>
+				<button onclick="ShowLogin()" class="lowerbuttons">Already have an account</button>
+			</div>
+		</dialog>		
+		<!-- Dialog: Login  -->
+		<dialog id="Login-Modal" class="dialog">
+			<button onclick="CloseLogin()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
+			<div class="container">
+				<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+
+					<input type="email" name="email" placeholder="Email Address" required>
+					<input type="password" name="password" placeholder="Password" required>	
+					<input type="submit" name="login-btn" value="Login">
+				</form>
+				<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
+			</div>
+			<div class="container">
+				<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+
+					<input type="email" name="email" placeholder="Email Address" required>
+					<input type="password" name="password" placeholder="Password" required>	
+					<input type="submit" name="login-btn" value="Login">
+				</form>
+				<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
+			</div>
+		</dialog>
+		<!-- Dialog: Inquiry -->
+		<dialog id="Inquiry-Modal" class="dialog">
+			<button onclick="CloseInquiry()" class="closebtn">X</button>	
+
+			<div class="container">
+
+				<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+					<?php 
+
+					$query = "SELECT *
+					FROM USER;
+					";
+					$result = $conn->query($query);
+					$row = $result->fetch_assoc();
 
 
+					echo "
+					<div class='form-items'>
+					<input type='text' name='Firstname' placeholder='First Name' required>
+					<input type='text' name='Lastname' placeholder='Last Name'  required>		
+					</div>
+					";
+
+					?>
+					<input type="number"  name="Phone" placeholder="Contact Number" required>
 						<div class="form-items">
-
-						</div>
-						<div>
-							<input type="checkbox" id="cbx2" onclick="ShowReservation()" style="display: none;"> 
-							<label for="cbx2" class="check">
-								<svg width="18px" height="18px" viewBox="0 0 18 18">
-									<path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
-									<polyline points="1 9 7 14 15 4"></polyline>
-								</svg>
-								Reservation Fee (optional)
-							</label>
-
-
-							<div class="payments" id="payments">
-								<h3 class="h3 payment-title"> Gcash </h3>
-								<img id="paymentImg" src="./Assets/Images/payment.png" >
-
-								<div class="payment-upload" >
-									<label for="file-upload" class="custom-file-upload btn">
-										Upload Here
-									</label>
-									<input id="file-upload" type="file" name="file" accept="image/*">
-								</div>
-
+							<input type="text" name="Address" placeholder="Address" required>
+							<input list="options" id="Role" name="Property" placeholder="Select Property" required>
+							<datalist id="options">
+								<option value="Kalya House">
+								<option value="Aria House">
+							</datalist>	
+						</div>	
+							<input type="email" name="Email" placeholder="Email Address" required>
+							<div class="textarea-container">
+								<textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>
 							</div>
 
 
-							<script>
-								const checkbox = document.getElementById('cbx2');
-								const div = document.getElementById('payments');
+							<div class="form-items">
 
-								checkbox.addEventListener('change', function() {
-									if (this.checked) {
-										div.style.display = 'block'; 
-									} else {
-										div.style.display = 'none';
-									}
-								});
-							</script>
-						</div>
-					</div>
+							</div>
+							<div>
+								<input type="checkbox" id="cbx2" onclick="ShowReservation()" style="display: none;"> 
+								<label for="cbx2" class="check">
+									<svg width="18px" height="18px" viewBox="0 0 18 18">
+										<path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+										<polyline points="1 9 7 14 15 4"></polyline>
+									</svg>
+									Reservation Fee (optional)
+								</label>
 
-					<div class="inquiry-buttons">
-						<div id="panel">
-							<span>requirements shows here</span>
+
+								<div class="payments" id="payments">
+									<h3 class="h3 payment-title"> Gcash </h3>
+									<img id="paymentImg" src="./Assets/Images/payment.png" >
+
+									<div class="payment-upload" >
+										<label for="file-upload" class="custom-file-upload btn">
+											Upload Here
+										</label>
+										<input id="file-upload" type="file" name="file" accept="image/*">
+									</div>
+
+								</div>
+
+
+								<script>
+									const checkbox = document.getElementById('cbx2');
+									const div = document.getElementById('payments');
+
+									checkbox.addEventListener('change', function() {
+										if (this.checked) {
+											div.style.display = 'block'; 
+										} else {
+											div.style.display = 'none';
+										}
+									});
+								</script>
+							</div>
 						</div>
-						<span id="requirements" class="btn">Requirements</span>
-						<button type="submit" name="SentInquiry" class="btn">Send Inquiry</button>
+
+						<div class="inquiry-buttons">
+							<div id="panel">
+								<span>requirements shows here</span>
+							</div>
+							<span id="requirements" class="btn">Requirements</span>
+							<button type="submit" name="SentInquiry" class="btn">Send Inquiry</button>
+						</div>
+					</form>
+
+				</div>
+			</dialog>
+			<!-- RESERVATION MODAL -->
+			<dialog id="Reservation-Modal" class="dialog">
+				<button onclick="CloseReservation()" class="closebtn">X</button>	
+				<form>
+					<div class="container">
+						<button type="submit" name="SentInquiry">Send Inquiry</button>
 					</div>
 				</form>
-
-			</div>
-		</dialog>
-		<!-- RESERVATION MODAL -->
-		<dialog id="Reservation-Modal" class="dialog">
-			<button onclick="CloseReservation()" class="closebtn">X</button>	
-			<form>
-				<div class="container">
-					<button type="submit" name="SentInquiry">Send Inquiry</button>
-				</div>
-			</form>
-		</dialog>
-
-
-	</section>
-	<!-- FOOTERS -->
+			</dialog>
+		</section>
+	<!-- Section: Footer -->
 	<footer class="footer">
 		<div class="footer-top">
 			<ul class="footer-list">
@@ -517,12 +503,10 @@ include './Assets/Php/Connection.php';
 			<button >Privacy Polocy</button>
 		</div>
 	</footer>
-
-
-	<!-- Custom Js Link -->
+	<!-- Script: Custom -->
 	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
-	<!-- Fontawesome Link -->
+	<!-- Script: Fontawesome -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
-
+	
 </body>
 </html>
