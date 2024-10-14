@@ -440,21 +440,16 @@ button, a {transition: var(--transition);}
 	font-weight: var(--fw-700);
 }
 .Testimonial-Container{
-<<<<<<< Updated upstream
 	padding: 5rem;
 	position: relative;
 	width: 80%;
 	margin-inline: auto;
-=======
 	height: 250px;
 	position: relative;
-	background: #eee;
->>>>>>> Stashed changes
 }
 .Testimonial-swiper{
 	padding: 1rem;
 	width: 100%;
-<<<<<<< Updated upstream
 	overflow-x: hidden;
 	margin-inline: auto;
 	height: 100%;
@@ -464,48 +459,19 @@ button, a {transition: var(--transition);}
 	width: 100%;
 	height: 100%;
 	margin-inline: auto;
+
 }
 .Testimonial-card{
 	width:100%;
-=======
-	border:2px solid black;
 	height: 100%;
 }
-.Testimonial-wrapper{
 
-}
 .Testimonial-card{
 	width: 350px; 
-	border:5px solid black;
->>>>>>> Stashed changes
 	height: 100%;
 	text-align: center;
 }
-/*    .swiper {
-      width: 100%;
-      height: 100%;
-    }
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper {
-      margin-left: auto;
-      margin-right: auto;
-    }*/
 /*==================================================*\
 				ACCOUNT PHP : ENDS
 \*==================================================*/
@@ -727,21 +693,18 @@ tr:hover td{
 	background-color: #f0f0f0;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-/*    border:5px solid greenyellow;*/
-text-align: center;
+	text-align: center;
 }
 .images-container{
 	width: 50%;
-/* 	border:2px solid red;*/
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
 }
 .images{
 	padding: 1rem;
-/* 	border:10px solid black;*/
 }
 .show-text{
 	color: white;

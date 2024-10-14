@@ -293,15 +293,7 @@ include './Assets/Php/Connection.php';
 				</form>
 				<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
 			</div>
-			<div class="container">
-				<form  method="POST" class="form login" enctype="multipart/form-data" action="./Assets/Php/Index.php">
-
-					<input type="email" name="email" placeholder="Email Address" required>
-					<input type="password" name="password" placeholder="Password" required>	
-					<input type="submit" name="login-btn" value="Login">
-				</form>
-				<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
-			</div>
+			
 		</dialog>
 		<!-- Dialog: Inquiry -->
 		<dialog id="Inquiry-Modal" class="dialog">
@@ -408,7 +400,7 @@ include './Assets/Php/Connection.php';
 		</section>
 		<!-- Dialog: House-Details -->
 		<dialog  id="House-Modal" class="House-Modal">	
-		<button onclick="CloseHouse()" class="closebtn"><i class="fa-solid fa-x"></i></button>		
+			<button onclick="CloseHouse()" class="closebtn"><i class="fa-solid fa-x"></i></button>		
 			<!-- Section: Images -->
 			<section class="Image-Container">
 				<div class="Image-interior">

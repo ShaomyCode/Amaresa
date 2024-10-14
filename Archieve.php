@@ -172,16 +172,7 @@
 			</div>	
 
 		</section>
-		<form method="POST"> 
-<!-- 			<select name="Sort-Option">
-				<option value="All">Default</option>
-				<option value="Admin">Admins</option>
-				<option value="User">Users</option>
-				<option value="Pending">Pendings</option>
-				<option value="Property">Property</option>
-			</select> -->
-	
-		
+		<form method="POST"> 		
 			<div class="float-diagram">
 				<div class="form-items">
 					<input type="search" list="Options" name="Sort-Option" placeholder="Find specific results...">

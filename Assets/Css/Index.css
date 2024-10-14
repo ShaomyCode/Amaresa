@@ -1097,7 +1097,7 @@ input[type="file"] {
 	width: 100%;
 	margin: auto;
 	border-radius: 16px;
-	background: rgba(0, 0, 0, 0.47);
+	background: var(--prussian-blue);
 	border:none;
 	backdrop-filter: blur(9.8px);
 	-webkit-backdrop-filter: blur(9.8px);

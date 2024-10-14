@@ -61,7 +61,7 @@ function CloseDialog(){
 //     }
 // });   
 /*======================*\
-# CONFIRMATION
+    CONFIRMATION
 \*======================*/
 function archiveConfirmation(){
     return confirm('Are you sure you want to archive this record?');
@@ -76,7 +76,7 @@ function AddConfirmation(){
     return confirm('Confirm if the data is accurate.');
 }
 /*======================*\
-# SIDEBAR
+    SIDEBAR
 \*======================*/
 const body = document.querySelector("body"),
     sidebar = document.querySelector(".sidebar"),
@@ -87,19 +87,13 @@ const body = document.querySelector("body"),
     });
 
 /*======================*\
-# SWIPPER
+    SWIPPER
 \*======================*/
 document.addEventListener("DOMContentLoaded", function() {
   new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 30,
-<<<<<<< Updated upstream
-      
       loop: true,
-    
-=======
-      loop: true,
->>>>>>> Stashed changes
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -110,7 +104,10 @@ document.addEventListener("DOMContentLoaded", function() {
       },
   });
 });
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+/*======================*\
+    Validation: Phone Number
+\*======================*/
+phoneInput = document.getElementById('phoneInput');
+phoneInput.addEventListener('input', function(e){
+    e.target.value = e.target.value.replace(/\D/g, '');
+});

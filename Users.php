@@ -178,7 +178,7 @@
 					
 					<div class="form-items">
 						<input type="email" name="Email" placeholder="Email Address" required>
-						<input type="phone" name="Phone" placeholder="Phone" required>	
+						<input type="tel" maxlength="11" name="Phone" id="phoneInput" placeholder="Phone" required>	
 					</div>					
 
 					<div class="form-items">

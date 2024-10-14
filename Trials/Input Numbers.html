@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact numbers</title>
+</head>
+<body>
+<input type="tel" maxlength="11" name="phone" id="phoneInput" placeholder="Enter your phone number">
+<script>
+  const phoneInput = document.getElementById('phoneInput');
+  phoneInput.addEventListener('input', function (e) {
+    // Remove any non-digit characters
+    e.target.value = e.target.value.replace(/\D/g, '');
+  });
+</script>
+
+</body>
+</html>
