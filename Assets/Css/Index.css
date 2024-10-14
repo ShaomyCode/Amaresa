@@ -24,6 +24,8 @@
 	--white: hsl(0,0%, 100%);
 	--black:hsl(0,0%,0%);
 	--opal: hsl(180, 20%, 62%);
+	--text-color-hover: #fff;
+	--box-shadow-color: rgba(206, 178, 252, 0.48);
 
 	/*======================*\
 	# AMARESA COLOR SCHEME SHESH
@@ -561,6 +563,220 @@ padding-block: var(--section-spacing);
 }
 
 /*======================*\
+	Featured Card
+\*======================*/
+
+.card-container {
+	display: flex;                   
+	justify-content: center;     
+	align-items: center;         
+	flex-wrap: wrap;                 
+	margin: 20px; 
+	cursor: pointer;
+
+}
+
+.card {
+	width: 320px;                   
+	height: 321px;                  
+	background: #fff;              
+	border-radius: 10px;           
+	margin: 15px;                   
+	overflow: hidden;               
+	display: flex;                  
+	flex-direction: column;        
+	justify-content: center;        
+	align-items: center;            
+	position: relative;             
+	box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.705); 
+	transition: all 0.4s;     
+}
+
+.card:hover {
+	z-index: 1;
+	cursor: pointer;
+	border-radius: 15px;
+	transform: scale(1.2);
+	box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11), 
+	0 24px 46px var(--box-shadow-color);
+}
+
+.first-content {
+	height: 100%;
+	width: 100%;
+	transition: all 0.4s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	border-radius: 15px;
+}
+
+.card:hover .first-content {
+	height: 0px;
+	opacity: 0;
+}
+.third-content{
+	
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: var(--prussian-blue);
+	color: #fff;
+	height: 3em;
+	width: 100%;
+	transition: all 80ms;
+	font-weight: 600;
+	text-transform: uppercase;
+	display: none;	
+}
+.third-content button{
+	display: flex;
+	align-items: center;
+	gap:10px;
+	margin-left: 10px;
+
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+.card:hover .third-content{
+	display: block;
+
+	span{
+		color: white;
+	}
+}
+
+.second-content {
+	height: 0%;
+	width: 100%;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	transition: all 0.4s;
+	font-size: 0px;
+	transform: rotate(90deg) scale(-1);
+}
+
+.card:hover .second-content {
+	opacity: 1;
+	height: 100%;
+	font-size: 1.8rem;
+	transform: rotate(0deg);
+}
+
+.card:hover::after {
+	bottom: 0;
+	opacity: 1;
+}
+
+.card:active {
+	transform: scale(0.98);
+}
+
+.card:active::after {
+	content: "Viewing";
+	height: 3.125em;
+}
+
+.card:hover .overlay {
+	transform: scale(4) translateZ(0);
+}
+
+.card:hover .circle {
+	border-color: var(--prussian-blue);
+	background: var(--white);
+}
+
+.card:hover .circle:after {
+
+}
+
+.card:hover p {
+	color: var(--text-color-hover);
+}
+
+.card p {
+	font-size: 17px;
+	color: #4c5656;
+	margin: 10px;
+	z-index: 1000;
+	transition: color 0.3s ease-out;
+}
+
+.card:hover h1 {
+	color: var(--text-color-hover);
+}
+
+.card h1 {
+	font-size: 17px;
+	color: #4c5656;
+	margin-top: -80px;
+	margin-bottom: 20px;
+	z-index: 1000;
+	transition: color 0.3s ease-out;
+}
+
+
+.circle {
+	width: 131px;
+	height: 131px;
+	border-radius: 60%;
+	background: #fff;
+	border: 2px solid var(--orange-soda);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	transition: all 0.3s ease-out;
+	overflow: hidden;
+}
+
+.circle img {
+	width: 100%; 
+	height: 100%; 
+	object-fit: cover; 
+	border-radius: 50%;
+}
+
+.circle:after {
+	content: "";
+	width: 118px;
+	height: 118px;
+	display: block;
+	position: absolute;
+
+	border-radius: 50%;
+	top: 7px;
+	left: 7px;
+	transition: opacity 0.3s ease-out;
+}
+
+.circle svg {
+	z-index: 10000;
+	transform: translateZ(0);
+}
+
+.overlay {
+	width: 125px;
+	position: absolute;
+	height: 120px;
+	border-radius:60%;
+	background: var(--orange-soda);
+	top: 120px;
+	left: 100px;
+	z-index: 0;
+	transition: transform 0.3s ease-out;
+}
+
+
+
+/*======================*\
 	DIALOG MODAL HERE
 \*======================*/
 .form{
@@ -867,7 +1083,9 @@ input[type="file"] {
 	color: white;
 	vertical-align: bottom;
 }
-
+/*======================*\
+	Dialog: House
+\*======================*/
 /*======================*\
 	#FOOTER
 \*======================*/

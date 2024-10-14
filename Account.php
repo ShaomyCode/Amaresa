@@ -11,7 +11,9 @@
 	<!-- Link: Custom css  -->
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Admin.css?v=<?php echo time(); ?>">
 	<!-- Link: Web icon -->
-	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">	
+	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
+	<!-- Link: Swiper -->
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/swiper-bundle.min.css">
 </head>
 <body>
 	<!-- Section: Sidebar -->
@@ -221,12 +223,46 @@
 				</div>
 			</div>
 		</section>
+		<!-- Section: Testimonial -->
+		<section class="Testimonial" id="Testimonial">
+			<div class="container">
+				<h3 class="h3 Testimonial-title"> Testimonial </h3>
+				<div class="Testimonial-Container">
+					<div class="Testimonial-swiper mySwiper">
+						<div class="Testimonial-wrapper swiper-wrapper">
+
+							<div class="Testimonial-card swiper-slide">
+								<div class="testimonial-details">
+									<h3 class="Testimonial-card-title">I'm Jamandron</h3>
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat.</span>
+								</div>
+							</div>
+							<div class="Testimonial-card swiper-slide">
+								<h3 class="Testimonial-card-title">I'm Jamandron</h3>
+								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.</span>
+							</div>							
+
+						</div>
+						    <div class="swiper-button-next"></div>
+						    <div class="swiper-button-prev"></div>
+						    <div class="swiper-pagination"></div>
+					</div>
+				</div>
+
+			</div>
+		</section>
 	</main>
 	<!-- Custom JS & JQUERY -->
 	<script src="./Assets/Js/admin.js?v=<?php echo time(); ?>"></script>
-<script type="text/javascript" src="swiper.js"></script>
-	<!-- SWIPER HERE -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>	
+	<!-- JS: Swiper -->
+	<script type="text/javascript" src="./Assets/Js/swiper-bundle.min.js"></script>
+
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 	<!-- NO TURNING BACk -->

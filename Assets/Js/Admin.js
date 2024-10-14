@@ -72,6 +72,9 @@ function DeleteConfirmation(){
 function ViewData(){
     return confirm('Are you sure you want to view this record?');
 }
+function AddConfirmation(){
+    return confirm('Confirm if the data is accurate.');
+}
 /*======================*\
 # SIDEBAR
 \*======================*/
@@ -86,3 +89,21 @@ const body = document.querySelector("body"),
 /*======================*\
 # SWIPPER
 \*======================*/
+document.addEventListener("DOMContentLoaded", function() {
+  new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      
+      loop: true,
+    
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+  });
+});
+

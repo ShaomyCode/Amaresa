@@ -4,7 +4,7 @@
 /*======================*\
 	# CUSTOM PROPERTY
 \*======================*/
-	
+
 :root{
 
 	/*======================*\
@@ -128,8 +128,6 @@ body{
 /*======================*\
 	# REUSED SYLE
 \*======================*/
-
-
 .container{padding-inline:15px; }
 button, a {transition: var(--transition);}
 
@@ -326,7 +324,7 @@ button, a {transition: var(--transition);}
 	font-weight: 500px;
 	color: black;
 	padding: 8px 40px;
- }
+}
 
 .sidebar.close ~ .main{
 	left: 70px;
@@ -380,8 +378,7 @@ button, a {transition: var(--transition);}
 }
 .activity .activity-title{
 	text-align: center;
-/*	background: var(--orange-soda);*/
-	padding: 1rem;
+	margin-block: 0 5rem;
 	font-size: var(--fs-1);
 }
 .activity .activity-card-title{
@@ -431,7 +428,66 @@ button, a {transition: var(--transition);}
 /*======================*\
 	# TESTIMONIAL
 \*======================*/
+.Testimonial{
+	margin-block: var(--section-spacing);
+	background: var(--sidebar-color);
+	padding-block: var(--section-spacing);	
+}
+.Testimonial .Testimonial-title{
+	text-align: center;
+	font-size: var(--fs-1);
+	margin-block: 0 5rem;
+	font-weight: var(--fw-700);
+}
+.Testimonial-Container{
+	padding: 5rem;
+	position: relative;
+	width: 80%;
+	margin-inline: auto;
+}
+.Testimonial-swiper{
+	padding: 1rem;
+	width: 100%;
+	overflow-x: hidden;
+	margin-inline: auto;
+	height: 100%;
+}
 
+.Testimonial-wrapper{
+	width: 100%;
+	height: 100%;
+	margin-inline: auto;
+}
+.Testimonial-card{
+	width:100%;
+	height: 100%;
+	text-align: center;
+}
+/*    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }*/
 /*==================================================*\
 				ACCOUNT PHP : ENDS
 \*==================================================*/
@@ -443,7 +499,6 @@ button, a {transition: var(--transition);}
 	max-height: 99vh;
 	overflow-x: hidden;
 	position: relative;
-
 }
 .table{
 	background: var(--sidebar-color);
@@ -453,13 +508,13 @@ button, a {transition: var(--transition);}
 	border-bottom-left-radius:15px;	
 
 	th{
-	font-size: var(--fs-5);
-	position: sticky;
-	top: 5px;
-	color: whitesmoke;
-	background: var(--prussian-blue);
-	backdrop-filter: blur(10.4px);
-	-webkit-backdrop-filter: blur(10.4px);
+		font-size: var(--fs-5);
+		position: sticky;
+		top: 5px;
+		color: whitesmoke;
+		background: var(--prussian-blue);
+		backdrop-filter: blur(10.4px);
+		-webkit-backdrop-filter: blur(10.4px);
 
 	}
 	td,th{
@@ -467,7 +522,7 @@ button, a {transition: var(--transition);}
 		padding: 1rem;
 	}
 	td{
-
+		transition: .1s ease;
 		font-size: var(--fs-5);
 	}
 	.note{
@@ -480,12 +535,22 @@ button, a {transition: var(--transition);}
 	max-width: 20vh;
 }
 .td-action{
+	position: relative;
+	transition: .3s ease;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 	justify-content: space-evenly;
 }
-
+.td-action span{
+	width: fit-content;
+	padding: 4px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: var(--fs-4);
+	opacity: 0;
+}
 .td-action a{
 	font-size: var(--fs-2);
 	padding: 10px;
@@ -493,8 +558,18 @@ button, a {transition: var(--transition);}
 	box-shadow: var(--amaresa-box-shadow);
 	border-radius: 26px;
 	color: black;
+
 }
-.td-action a:is(:hover,:focus){color: var(--orange-soda); transform: scale(1.1);}
+.td-action a:is(:hover,:focus) {
+	color: var(--orange-soda); 
+	transform: scale(1.1);
+
+}
+tr:hover td{
+	background: var(--prussian-blue);
+	color: white;
+	cursor: pointer;
+}
 
 /*======================*\
 	# FLOAT DIAGRAM
@@ -628,68 +703,68 @@ button, a {transition: var(--transition);}
 	# CSS FOR FILE UPLOADER
 \*======================*/
 .custom-file-upload {
-    display: inline-block;
-    padding: 10px 15px;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 /*    border:5px solid greenyellow;*/
-    text-align: center;
- }
- .images-container{
- 	width: 50%;
+text-align: center;
+}
+.images-container{
+	width: 50%;
 /* 	border:2px solid red;*/
- 	display: flex;
- 	flex-direction: column;
- 	justify-content: center;
- 	align-items: center;
- 	gap: 1rem;
- }
- .images{
- 	padding: 1rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+}
+.images{
+	padding: 1rem;
 /* 	border:10px solid black;*/
- }
- .show-text{
- 	color: white;
- 	min-width: 5rem;
- 	overflow-x: hidden;
- 	text-wrap: nowrap;
- }
- .form-items input[type="file"]{
- 	display: none;
- }
+}
+.show-text{
+	color: white;
+	min-width: 5rem;
+	overflow-x: hidden;
+	text-wrap: nowrap;
+}
+.form-items input[type="file"]{
+	display: none;
+}
 
 /*======================*\
 	# CSS FOR FILE UPLOADER
 \*======================*/
 .textarea-container {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-    border-radius: 10px;
- 
+	width: 100%;
+	max-width: 100%;
+	padding: 20px;
+	border-radius: 10px;
+
 }
 
 .textarea-container label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 textarea {
-    width: 100%;
-    color: ;
-    outline: none;
-    max-height:40vh;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-    font-size: 16px;
-    box-sizing: border-box;
-    outline: none;
-    transition: border-color 0.3s ease;
+	width: 100%;
+	color: ;
+	outline: none;
+	max-height:40vh;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+	font-size: 16px;
+	box-sizing: border-box;
+	outline: none;
+	transition: border-color 0.3s ease;
 	/* From https://css.glass */
 	background: rgba(255, 255, 255, 0.67);
 	border-radius: 16px;
@@ -701,7 +776,7 @@ textarea::placeholder{
 	color: white;
 }
 textarea:focus {
-    border-color: #007bff;
+	border-color: #007bff;
 }
 .inquiry-buttons{
 	width: 100%;

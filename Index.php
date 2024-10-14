@@ -11,7 +11,7 @@ include './Assets/Php/Connection.php';
 	<link rel="stylesheet" type="text/css" href="./Assets/Css/Index.css?v=<?php echo time(); ?>">
 	<!-- Link: Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic\.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<!-- Link: Web Icon -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
@@ -201,38 +201,58 @@ include './Assets/Php/Connection.php';
 					<h2 class="h2 section-title"> Featured Listing </h2>
 					<p class="locale-text"> Step into the finest homes available right now. Our featured listings offer a blend of exceptional design, prime locations, and unparalleled value. Don’t miss out on these standout properties </p>
 
-					<ul class="property-features">
+			<!--Section: Featured Card -->
+			<section class="featuredcard" id = "card">
+				<div class="card-container">
 
-						<li class="property-features-card">
-							<figure>
-								<img src="./Assets/Images/Alexandria/Alexandria Exterior.png" alt="Interior features" /> 
-							</figure>
-						</li>						
+    				<div class="card wallet">
+	       				<div class="overlay"></div>
+	           			<div class="first-content">
+	           			<div class="circle">
+							<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
+	       			 	</div>
+	            		</div>
+	            		<h1>Arya Prime</h1>
+	            		<div class="second-content">
+	                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
+	                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
+	                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
+	            		</div>
+	            		<div class="third-content">
+	            			<button onclick="ShowInquiry()">
+	            				<i class="fa-solid fa-expand"></i>
+	            				<span>See more</span>
+	            			</button>
+	            		</div>
+    				</div>    				
 
-						<li class="property-features-card">
-							<figure>
-								<img src="./Assets/Images/Amara Expanded/Amara Exterior.png" alt="Interior features" /> 
-							</figure>
-						</li>						
+    						<div class="card wallet">
+	       				<div class="overlay"></div>
+	           			<div class="first-content">
+	           			<div class="circle">
+							<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
+	       			 	</div>
+	            		</div>
+	            		<h1>Arya Prime</h1>
+	            		<div class="second-content">
+	                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
+	                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
+	                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
+	            		</div>
+	            		<div class="third-content">
+	            			<button onclick="ShowInquiry()">
+	            				<i class="fa-solid fa-expand"></i>
+	            				<span>See more</span>
+	            			</button>
+	            		</div>
+    				</div>
 
-						<li class="property-features-card">
-							<figure>
-								<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
-							</figure>
-						</li>						
-
-						<li class="property-features-card">
-							<figure>
-								<img src="./Assets/Images/Kayla Prime/Kayla Prime.png" alt="Interior features" /> 
-							</figure>
-						</li>
-
-					</ul>
-
-
-
-				</div>
+    			</div>
 			</section>
+	
+	</section>
+
+
 		</article>
 	</main>
 	<!-- Section: Dialogs -->
