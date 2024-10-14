@@ -230,6 +230,7 @@
 				<div class="Testimonial-Container">
 					<div class="Testimonial-swiper mySwiper">
 						<div class="Testimonial-wrapper swiper-wrapper">
+<<<<<<< Updated upstream
 
 							<div class="Testimonial-card swiper-slide">
 								<div class="testimonial-details">
@@ -240,14 +241,32 @@
 									consequat.</span>
 								</div>
 							</div>
+=======
+>>>>>>> Stashed changes
 							<div class="Testimonial-card swiper-slide">
 								<h3 class="Testimonial-card-title">I'm Jamandron</h3>
 								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 								consequat.</span>
+<<<<<<< Updated upstream
 							</div>							
 
+=======
+							</div>							<div class="Testimonial-card swiper-slide">
+								<h3 class="Testimonial-card-title">I'm Jamandron</h3>
+								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.</span>
+							</div>							<div class="Testimonial-card swiper-slide">
+								<h3 class="Testimonial-card-title">I'm Jamandron</h3>
+								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.</span>
+							</div>
+>>>>>>> Stashed changes
 						</div>
 						    <div class="swiper-button-next"></div>
 						    <div class="swiper-button-prev"></div>

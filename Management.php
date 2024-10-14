@@ -145,7 +145,6 @@
 									<td>".$Date."</td>								
 
 									<td class='td-action'>
-										<a href='#'><i class='fa-solid fa-eye'></i></a>
 										<a href='./Assets/Php/Admin.php?archiveID=".$ManagementID."&value=Admin' onclick='return archiveConfirmation()' '>
 										<i class='fa-solid fa-box-archive' ></i>
 
@@ -199,7 +198,7 @@
 					        <option value="Staff">
 					    </datalist>						
 					</div>
-					<button type="submit" name="Submit" value="Admin" class="Submit"><i class="fa-solid fa-user-plus"></i> Add </button> 
+					<button type="submit" name="Submit" onclick="return AddConfirmation()" value="Admin" class="Submit"><i class="fa-solid fa-user-plus"></i> Add </button> 
 				</form>
 
 			</div>

@@ -1084,8 +1084,155 @@ input[type="file"] {
 	vertical-align: bottom;
 }
 /*======================*\
-	Dialog: House
+    Dialog: House
 \*======================*/
+.House-Modal{
+	padding: 1rem;
+	display: none;
+	opacity: 0;
+	translate: 0 25vh;
+	transition-property: overlay display opacity;
+	transition-duration: .5s;
+	transition-behavior:allow-discrete;
+	width: 100%;
+	margin: auto;
+	border-radius: 16px;
+	background: rgba(0, 0, 0, 0.47);
+	border:none;
+	backdrop-filter: blur(9.8px);
+	-webkit-backdrop-filter: blur(9.8px);
+}
+.House-Modal[open]{
+	display: block;
+	translate: 0 0;
+	opacity: 1;
+
+	@starting-style{
+		opacity: 0;
+		translate:-25vh  0 ;
+	}	
+}
+.House-Modal button{
+	font-size: var(--fs-3);
+}
+/*======================*\
+    Section: Image
+\*======================*/
+.Image-Container{
+	background: white;
+	margin-block: 50px 15px;
+	padding: 1rem;
+	gap: 1rem;
+	box-shadow: 3px 3px 4px black;
+	border-radius: 16px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.Image-interior img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.Image-highlights{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.Image-highlights img{
+	width: 100%;
+	object-fit: cover;
+}
+/*======================*\
+    Section: Informations
+\*======================*/
+.Informations-container{
+	width: 100%;
+	margin-inline: auto;
+	gap: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Informations-container > *{
+    height: 150px;
+}
+/*======================*\
+    Div: Description
+\*======================*/
+.Description-container{
+	background: white;
+	box-shadow: 3px 3px 4px black;
+	border-radius: 15px;
+	width: 50%;
+	margin-inline: auto;
+	padding: 2rem;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    justify-content: space-between;
+}
+/*======================*\
+    Div: Details
+\*======================*/
+.Details-container{
+	background: white;
+	box-shadow: 3px 3px 4px black;
+	border-radius: 15px;
+	width: 50%;
+	margin-inline: auto;
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.detail-items-container{
+	display: flex;
+	justify-content: space-evenly;
+	width: 50%;
+	align-items: center;
+}
+.detail-items{
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 25px;
+}
+.detail-items hr{
+	width: 100%;
+}
+.detail-items span{
+	color: darkred;
+	font-size: 15px;
+}
+/*======================*\
+    Section: Highlights
+\*======================*/
+.Highlights-container{
+    margin-block: 15px;
+    width: 100%;
+    margin-inline: auto;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Virtual-container,
+.Map-container{
+    width: 50%;
+
+    > *{
+        width: 100%;
+        height: 550px;
+        background: white;
+        box-shadow: 3px 3px 4px black;
+        border-radius: 15px;
+    }
+}
+
 /*======================*\
 	#FOOTER
 \*======================*/

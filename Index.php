@@ -219,7 +219,7 @@ include './Assets/Php/Connection.php';
 	                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
 	            		</div>
 	            		<div class="third-content">
-	            			<button onclick="ShowInquiry()">
+	            			<button onclick="ShowHouse()">
 	            				<i class="fa-solid fa-expand"></i>
 	            				<span>See more</span>
 	            			</button>
@@ -240,7 +240,7 @@ include './Assets/Php/Connection.php';
 	                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
 	            		</div>
 	            		<div class="third-content">
-	            			<button onclick="ShowInquiry()">
+	            			<button onclick="ShowHouse()">
 	            				<i class="fa-solid fa-expand"></i>
 	            				<span>See more</span>
 	            			</button>
@@ -406,6 +406,80 @@ include './Assets/Php/Connection.php';
 				</form>
 			</dialog>
 		</section>
+		<!-- Dialog: House-Details -->
+		<dialog  id="House-Modal" class="House-Modal">	
+		<button onclick="CloseHouse()" class="closebtn"><i class="fa-solid fa-x"></i></button>		
+			<!-- Section: Images -->
+			<section class="Image-Container">
+				<div class="Image-interior">
+					<img src="./Assets/Images/Amara Expanded/Amara Exterior.png" class="items">
+				</div>
+				<div class="Image-highlights">
+					<img src="./Assets/Images/Amara Expanded/Bedroom.jpeg" class="items">
+					<img src="./Assets/Images/Amara Expanded/Dining and Kitchen Area.jpeg" class="items">
+					<img src="./Assets/Images/Amara Expanded/Living Room.jpeg" class="items">
+					<img src="./Assets/Images/Amara Expanded/Masters Bedroom.jpeg" class="items">
+
+				</div>
+			</section>	
+			<!-- Section: Informations -->
+			<section class="Informations-container">
+				<!-- Div: Description -->
+				<div class="Description-container">
+					<h3 class="h3 description-title"> Description </h3>
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+				</div>
+
+				<!-- Div: Details -->
+				<div class="Details-container">
+
+					<h3 class="house-name">Amaresa House</h3>
+
+					<div class="detail-items-container">
+						<div class="detail-items">
+							<i class="fa-solid fa-bed"></i>
+							<hr/>
+							<span>2</span>
+						</div>				
+
+						<div class="detail-items">
+							<i class="fa-solid fa-bath"></i>
+							<hr/>
+							<span>2</span>
+						</div>				
+
+						<div class="detail-items">
+							<i class="fa-solid fa-cube"></i>
+							<hr/>
+							<span>25sqft</span>
+						</div>				
+
+						<div class="detail-items">
+							<i class="fa-solid fa-money-check-dollar"></i>
+							<hr/>
+							<span>2,244,255</span>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- Section: Highlights -->
+			<section class="Highlights-container">
+				<!-- Figure: Virtual -->
+				<figure class="Virtual-container">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.5369070803104!2d121.01621617574362!3d14.795094872284029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1720251535908!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</figure>
+				<!-- Figure: Map -->
+				<figure class="Map-container">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.5369070803104!2d121.01621617574362!3d14.795094872284029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1720251535908!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</figure>
+			</section>		
+		</dialog>
 	<!-- Section: Footer -->
 	<footer class="footer">
 		<div class="footer-top">

@@ -93,9 +93,13 @@ document.addEventListener("DOMContentLoaded", function() {
   new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 30,
+<<<<<<< Updated upstream
       
       loop: true,
     
+=======
+      loop: true,
+>>>>>>> Stashed changes
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -106,4 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
       },
   });
 });
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

@@ -1,0 +1,135 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 95%;
+	margin: auto;
+	margin-block: 1rem;	
+	background: var(--body-color);
+}
+:root{
+	--spacing: 3rem;
+	--body-color: #E4E9F7;
+}
+/*======================*\
+    Section: Image
+\*======================*/
+.Image-Container{
+	background: white;
+	margin-block: var(--spacing) ;
+	padding: 1rem;
+	gap: 1rem;
+	box-shadow: 3px 3px 4px black;
+	border-radius: 16px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.Image-interior img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.Image-highlights{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.Image-highlights img{
+	width: 100%;
+	object-fit: cover;
+}
+/*======================*\
+    Section: Informations
+\*======================*/
+.Informations-container{
+	width: 100%;
+	margin-inline: auto;
+	gap: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Informations-container > *{
+    height: 150px;
+}
+/*======================*\
+    Div: Description
+\*======================*/
+.Description-container{
+	background: white;
+	box-shadow: 3px 3px 4px black;
+	border-radius: 15px;
+	width: 50%;
+	margin-inline: auto;
+	padding: 2rem;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    justify-content: space-between;
+}
+/*======================*\
+    Div: Details
+\*======================*/
+.Details-container{
+	background: white;
+	box-shadow: 3px 3px 4px black;
+	border-radius: 15px;
+	width: 50%;
+	margin-inline: auto;
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.detail-items-container{
+	display: flex;
+	justify-content: space-evenly;
+	width: 50%;
+	align-items: center;
+}
+.detail-items{
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 25px;
+}
+.detail-items hr{
+	width: 100%;
+}
+.detail-items span{
+	color: darkred;
+	font-size: 15px;
+}
+/*======================*\
+    Section: Highlights
+\*======================*/
+.House-Modal{
+    width: 100%;
+    padding: 1rem;
+}
+.Highlights-container{
+    margin-block: var(--spacing);
+    width: 100%;
+    margin-inline: auto;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Virtual-container,
+.Map-container{
+    width: 50%;
+
+    > *{
+        width: 100%;
+        background: white;
+        box-shadow: 3px 3px 4px black;
+        border-radius: 15px;
+    }
+}

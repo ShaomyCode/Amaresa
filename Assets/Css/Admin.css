@@ -440,14 +440,21 @@ button, a {transition: var(--transition);}
 	font-weight: var(--fw-700);
 }
 .Testimonial-Container{
+<<<<<<< Updated upstream
 	padding: 5rem;
 	position: relative;
 	width: 80%;
 	margin-inline: auto;
+=======
+	height: 250px;
+	position: relative;
+	background: #eee;
+>>>>>>> Stashed changes
 }
 .Testimonial-swiper{
 	padding: 1rem;
 	width: 100%;
+<<<<<<< Updated upstream
 	overflow-x: hidden;
 	margin-inline: auto;
 	height: 100%;
@@ -460,6 +467,17 @@ button, a {transition: var(--transition);}
 }
 .Testimonial-card{
 	width:100%;
+=======
+	border:2px solid black;
+	height: 100%;
+}
+.Testimonial-wrapper{
+
+}
+.Testimonial-card{
+	width: 350px; 
+	border:5px solid black;
+>>>>>>> Stashed changes
 	height: 100%;
 	text-align: center;
 }

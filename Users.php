@@ -142,8 +142,9 @@
 									<td>".$Date."</td>
 
 									<td class='td-action'>
-										<a href='#'><i class='fa-solid fa-eye'></i></a>
+
 									<a href='./Assets/Php/Admin.php?archiveID=".$UserID."&value=User' onclick='return archiveConfirmation()' '>
+
 									<i class='fa-solid fa-box-archive' ></i> 
 									</td>
 								</tr>
@@ -188,7 +189,7 @@
 					<input type="text" name="Address" placeholder="Address" required>
 
 					<!-- <input type="submit" name="Submit" value="Add"> -->
-					<button type="submit" name="Submit" value="User" class="Submit"><i class="fa-solid fa-user-plus"></i> Add User</button> 
+					<button type="submit" name="Submit" onclick="return AddConfirmation()" value="User" class="Submit"><i class="fa-solid fa-user-plus"></i> Add User</button> 
 				</form>
 
 			</div>

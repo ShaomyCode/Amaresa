@@ -35,5 +35,11 @@ $(document).ready(function(){
   });
 });
 /*======================*\
-# SWIPPER
+# Dialog: House 
 \*======================*/
+function ShowHouse(){
+    document.getElementById('House-Modal').showModal();
+}
+function CloseHouse(){
+    document.getElementById('House-Modal').close();
+}
