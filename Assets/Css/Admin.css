@@ -4,7 +4,6 @@
 /*======================*\
 	# CUSTOM PROPERTY
 \*======================*/
-
 :root{
 
 	/*======================*\
@@ -210,10 +209,8 @@ button, a {transition: var(--transition);}
 .card-badge.green { background: var(--yellow-green); }
 
 .card-badge.orange { background: var(--orange-soda); }
-
-
 /*======================*\
-	# SIDEBAR
+#	Section: SIDEBAR
 \*======================*/
 .sidebar{
 	position: fixed;
@@ -307,9 +304,8 @@ button, a {transition: var(--transition);}
 	color: white;
 	border-top-right-radius: 20px;
 }
-
 /*======================*\
-	# MAIN CONTENT:
+# Section: Main Content
 \*======================*/
 .main{
 	position: relative;

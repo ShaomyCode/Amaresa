@@ -200,59 +200,56 @@ include './Assets/Php/Connection.php';
 					<p class="section-subtitle"> Properties </p>
 					<h2 class="h2 section-title"> Featured Listing </h2>
 					<p class="locale-text"> Step into the finest homes available right now. Our featured listings offer a blend of exceptional design, prime locations, and unparalleled value. Don’t miss out on these standout properties </p>
+				<!--Section: Featured Card -->
+				<section class="featuredcard" id = "card">
+					<div class="card-container">
 
-			<!--Section: Featured Card -->
-			<section class="featuredcard" id = "card">
-				<div class="card-container">
+	    				<div class="card wallet">
+		       				<div class="overlay"></div>
+		           			<div class="first-content">
+		           			<div class="circle">
+								<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
+		       			 	</div>
+		            		</div>
+		            		<h1>Arya Prime</h1>
+		            		<div class="second-content">
+		                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
+		                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
+		                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
+		            		</div>
+		            		<div class="third-content">
+		            			<button onclick="ShowHouse()">
+		            				<i class="fa-solid fa-expand"></i>
+		            				<span>See more</span>
+		            			</button>
+		            		</div>
+	    				</div>    				
 
-    				<div class="card wallet">
-	       				<div class="overlay"></div>
-	           			<div class="first-content">
-	           			<div class="circle">
-							<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
-	       			 	</div>
-	            		</div>
-	            		<h1>Arya Prime</h1>
-	            		<div class="second-content">
-	                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
-	                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
-	                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
-	            		</div>
-	            		<div class="third-content">
-	            			<button onclick="ShowHouse()">
-	            				<i class="fa-solid fa-expand"></i>
-	            				<span>See more</span>
-	            			</button>
-	            		</div>
-    				</div>    				
+	    						<div class="card wallet">
+		       				<div class="overlay"></div>
+		           			<div class="first-content">
+		           			<div class="circle">
+								<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
+		       			 	</div>
+		            		</div>
+		            		<h1>Arya Prime</h1>
+		            		<div class="second-content">
+		                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
+		                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
+		                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
+		            		</div>
+		            		<div class="third-content">
+		            			<button onclick="ShowHouse()">
+		            				<i class="fa-solid fa-expand"></i>
+		            				<span>See more</span>
+		            			</button>
+		            		</div>
+	    				</div>
 
-    						<div class="card wallet">
-	       				<div class="overlay"></div>
-	           			<div class="first-content">
-	           			<div class="circle">
-							<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
-	       			 	</div>
-	            		</div>
-	            		<h1>Arya Prime</h1>
-	            		<div class="second-content">
-	                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
-	                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
-	                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
-	            		</div>
-	            		<div class="third-content">
-	            			<button onclick="ShowHouse()">
-	            				<i class="fa-solid fa-expand"></i>
-	            				<span>See more</span>
-	            			</button>
-	            		</div>
-    				</div>
-
-    			</div>
+	    			</div>
+				</section>
+				</div>
 			</section>
-	
-	</section>
-
-
 		</article>
 	</main>
 	<!-- Section: Dialogs -->
@@ -292,8 +289,7 @@ include './Assets/Php/Connection.php';
 					<input type="submit" name="login-btn" value="Login">
 				</form>
 				<button onclick="ShowSignup()" class="lowerbuttons">Dont have account</button>				
-			</div>
-			
+			</div>		
 		</dialog>
 		<!-- Dialog: Inquiry -->
 		<dialog id="Inquiry-Modal" class="dialog">
@@ -487,7 +483,7 @@ include './Assets/Php/Connection.php';
 
 			<ul class="footer-list help">
 				<h3 class="h3 list-title"> Get Help </h3>
-				<li><a href="#"> Payment Process </a></li>
+				<li><a href="#"> Inquire Process </a></li>
 				<li><a href="#"> Pending Process </a></li>
 
 			</ul>					

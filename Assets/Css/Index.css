@@ -1,8 +1,9 @@
 /*======================*\
-	# CUSTOM STYLE CSS
+#	CUSTOM STYLE CSS
 \*======================*/
+
 /*======================*\
-	# CUSTOM PROPERTY
+#	CUSTOM PROPERTY
 \*======================*/
 :root{
 
@@ -69,7 +70,7 @@
 }
 
 /*======================*\
-	# RESET
+# RESET
 \*======================*/
 
 *,*::before, *::after{
@@ -122,9 +123,8 @@ body{
 	border-left: 2px solid var(--white);
 }
 /*======================*\
-	# REUSED SYLE
+# REUSED SYLE
 \*======================*/
-
 .container{padding-inline:15px; }
 button, a {transition: var(--transition);}
 
@@ -193,9 +193,8 @@ button, a {transition: var(--transition);}
 	margin-bottom: var(--margin-bottom, 50px);
 }
 
-
 /*======================*\
-	# HEADER
+# HEADER
 \*======================*/
 .header{
 	position: relative;
@@ -281,7 +280,7 @@ button, a {transition: var(--transition);}
 	align-items: center;	
 }
 /*======================*\
-	# HERO
+# Section: HERO
 \*======================*/
 .hero{
 	background: var(--cultured-2);
@@ -310,7 +309,7 @@ button, a {transition: var(--transition);}
 }
 
 /*======================*\
-	# ABOUT
+# Section: ABOUT
 \*======================*/
 .about { padding-block:var(--section-spacing); }
 .about-banner{
@@ -380,7 +379,7 @@ button, a {transition: var(--transition);}
 	--text-transform: uppercase;
 }
 /*======================*\
-	# LOCALE
+# Section: LOCALE
 \*======================*/
 .location {
 	padding-block:var(--section-spacing); 
@@ -401,10 +400,8 @@ button, a {transition: var(--transition);}
 	text-align: center;
 	margin-bottom: 30px;
 }
-
-
 /*======================*\
-	# SERVICE
+# Section: SERVICE
 \*======================*/
 .service{
 /*	background: var(--cultured-2);*/
@@ -470,10 +467,8 @@ padding-block: var(--section-spacing);
 	transition: var(--transition);
 }
 .service-card:is(:hover, :focus)::after{width: 100%;}
-
-
 /*======================*\
-	# PROPERTY
+# Section: PROPERTY
 \*======================*/
 .property { 
 	padding-block:var(--section-spacing); 
@@ -561,11 +556,9 @@ padding-block: var(--section-spacing);
 	width: 5rem;
 	border-top-left-radius: 16px ;
 }
-
 /*======================*\
-	Featured Card
+# Section: Featured Card
 \*======================*/
-
 .card-container {
 	display: flex;                   
 	justify-content: center;     
@@ -575,7 +568,6 @@ padding-block: var(--section-spacing);
 	cursor: pointer;
 
 }
-
 .card {
 	width: 320px;                   
 	height: 321px;                  
@@ -773,11 +765,8 @@ padding-block: var(--section-spacing);
 	z-index: 0;
 	transition: transform 0.3s ease-out;
 }
-
-
-
 /*======================*\
-	DIALOG MODAL HERE
+# Section: Dialogs
 \*======================*/
 .form{
 	white-space: nowrap;
@@ -935,8 +924,9 @@ textarea:focus {
 	text-align: center;
 	font-size: var(--fs-5);
 }
-
-/*PANEL FOR REQUIREMENTS*/
+/*======================*\
+# Dialog: Panel
+\*======================*/
 #panel{
 	background: rgba(0, 0, 0, 0.47);
 	border:none;
@@ -1036,17 +1026,11 @@ textarea:focus {
 	transition-delay: 0.15s;
 }
 .payments {
-	/* From https://css.glass */
-	background: rgba(255, 255, 255, 0.67);
-	border-radius: 16px;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(9.2px);
-	-webkit-backdrop-filter: blur(9.2px); 
+	background: white;
 	margin-top: 1rem;
 	border-radius: 15px;
 	padding: 1rem;
 	text-align: center;
-	width: 90%;
 	display: none;
 	transition: 1s ease;
 }
@@ -1059,8 +1043,7 @@ textarea:focus {
 	color: var(--prussian-blue);
 }
 .payments img{
-	width: 50%;
-	margin-inline: auto;
+	border-radius: 16px;
 }
 
 input[type="file"] {
@@ -1084,7 +1067,7 @@ input[type="file"] {
 	vertical-align: bottom;
 }
 /*======================*\
-    Dialog: House
+#	Dialog: House
 \*======================*/
 .House-Modal{
 	padding: 1rem;
@@ -1116,7 +1099,7 @@ input[type="file"] {
 	font-size: var(--fs-3);
 }
 /*======================*\
-    Section: Image
+#	Section: Image
 \*======================*/
 .Image-Container{
 	background: white;
@@ -1143,7 +1126,7 @@ input[type="file"] {
 	object-fit: cover;
 }
 /*======================*\
-    Section: Informations
+#	Section: Informations
 \*======================*/
 .Informations-container{
 	width: 100%;
@@ -1157,7 +1140,7 @@ input[type="file"] {
     height: 150px;
 }
 /*======================*\
-    Div: Description
+#	Div: Description
 \*======================*/
 .Description-container{
 	background: white;
@@ -1173,7 +1156,7 @@ input[type="file"] {
     justify-content: space-between;
 }
 /*======================*\
-    Div: Details
+#	Div: Details
 \*======================*/
 .Details-container{
 	background: white;
@@ -1209,7 +1192,7 @@ input[type="file"] {
 	font-size: 15px;
 }
 /*======================*\
-    Section: Highlights
+#	Section: Highlights
 \*======================*/
 .Highlights-container{
     margin-block: 15px;
@@ -1234,7 +1217,7 @@ input[type="file"] {
 }
 
 /*======================*\
-	#FOOTER
+#	Section: FOOTER
 \*======================*/
 .footer{
 	background: rgba(255, 255, 255, 0.66);
@@ -1333,7 +1316,7 @@ margin-bottom: 1rem;
 	}
 }
 /*======================*\
-	TABLET
+#	Media: For TABLET
 \*======================*/
 @media only screen and (min-width: 768px) {
 	.hero-logo {
@@ -1360,7 +1343,7 @@ margin-bottom: 1rem;
 	}
 }
 /*======================*\
-	LAPTOP
+#	Media: For LAPTOP
 \*======================*/
 @media only screen and (min-width: 1024px) {
 	.hero-logo {
@@ -1386,7 +1369,7 @@ margin-bottom: 1rem;
 	}
 }
 /*======================*\
-	DESKTOP
+#	Media: For DESKTOP
 \*======================*/
 @media only screen and (min-width: 1629px) {
 	.hero-logo {
