@@ -39,8 +39,27 @@ body {
 
 .pass-field i {
     right: 18px;
-    
+
     transform: translateY(-50%);
     cursor: pointer;
 }
+.Password-field{
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-items: center;
+/*    border:2px solid red;*/
+    justify-content: center;
+}
+.Password-field i{
+    position: absolute;
+    top: 50%;
+}
 
+.content {
+    margin: 10px 0 3px;
+}
+
+.content p{
+    padding: 10px;
+}

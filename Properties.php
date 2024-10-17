@@ -132,9 +132,6 @@
 								$Area_sqft = $row['Area_sqft'];
 								$Date = $row['Date'];
 								$Status = $row['Status'];	
-	
-							
-
 								echo "
 
 								<tr>

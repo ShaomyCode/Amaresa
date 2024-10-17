@@ -101,10 +101,10 @@ function AddManagement($conn){
 function uploadImage($inputName, &$newFileName) {
     $file = $_FILES[$inputName]["name"];
     $tempFile = $_FILES[$inputName]["tmp_name"];
-    $newFileName = uniqid() . "-" . $file;
-    $uploadPath = '../Assets/Images' . $newFileName;
+    $newFileName = uniqid() . "-" .$file;
+    $uploadPath = realpath('../../Images') . DIRECTORY_SEPARATOR . $newFileName;
     move_uploaded_file($tempFile, $uploadPath);
-}
+}   
 function AddProperty($conn){
     //INPUT NAMES
     $Property = $_POST['Property'];
@@ -125,9 +125,17 @@ function AddProperty($conn){
 
     $stmt = "
     INSERT INTO properties(Property, Description, Price, Bedrooms, Bathrooms, Area_sqft, Status, IExterior,IBedroom,IBathroom,IAttic,IDining,Role) 
-    VALUES ('$Property', '$Message', '$Price', '$Bedroom', '$Bathroom', '$Area','$Status','$Newfile_Exterior','$Newfile_Bedroom','$Newfile_Livingroom','$Newfile_Diningroom','$Newfile_Bathroom','$Role')";
-    mysqli_query($conn, $stmt); 
-  
+    VALUES ('$Property', '$Message', '$Price', '$Bedroom', '$Bathroom', '$Area','$Status','$Newfile_Exterior','$Newfile_Bedroom','$Newfile_Livingroom','$Newfile_Diningroom','$Newfile_Bathroom','$Role')
+    ";
+    mysqli_query($conn,$stmt);
+
+    echo "
+    <script>
+        alert('Property Successfully Added');
+     setTimeout(function(){
+        window.location.href = '../../Properties.php';
+        }, 50); 
+    </script>"; 
 }
 
 /***********************************************
@@ -310,9 +318,6 @@ function ArchiveUser($conn){
     $stmtInsert->close(); 
     $stmtDelete->close(); 
 }
-/***********************************************
-
-************************************************/
 
 
 
