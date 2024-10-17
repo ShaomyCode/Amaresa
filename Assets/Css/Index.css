@@ -1192,9 +1192,24 @@ input[type="file"] {
 	font-size: 15px;
 }
 /*======================*\
+#	Div: Float-Button
+\*======================*/
+.Float-button-container{
+	position: fixed;
+	top: 4.1rem;
+	left: 16px;
+	padding: 1rem;
+	width: fit-content;
+
+	button{
+		font-size: var(--fs-4);
+	}
+}
+/*======================*\
 #	Section: Highlights
 \*======================*/
 .Highlights-container{
+	position: relative;
     margin-block: 15px;
     width: 100%;
     margin-inline: auto;

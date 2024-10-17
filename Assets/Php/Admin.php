@@ -9,10 +9,11 @@ if(isset($_POST['Submit'])){
 		AddUser($conn);
 	}elseif($_POST['Submit'] == "Admin"){
 		AddManagement($conn);
-	}elseif($_POST['Submit' == "Property"]){
-        AddProperties($conn);    
-    }   
+	}else{
+        AddProperty($conn);
+    } 
 }
+
 /***********************************************
 FOR DELETING: USERS - MANAGEMENTS - PROPERTIES
 ************************************************/
@@ -34,6 +35,10 @@ if(isset($_GET['archiveID']) && isset($_GET['value'])){
         ArchivePending($conn);
      }elseif($value == "User"){
         ArchiveUser($conn);
+     }elseif($value == "Property"){
+        ArchiveProperty($conn);
+     }else{
+        echo "Cannot found!";
      }
 }
 /***********************************************
@@ -76,9 +81,9 @@ function AddManagement($conn){
         $Role = $_POST['Role'];
         $Hash = password_hash($Password, PASSWORD_DEFAULT);
       	
-
-
-        $stmt = "INSERT INTO management(Lastname, Firstname, Email, Phone, Address, Password, Role)VALUES('$Lastname','$Firstname','$Email', '$Phone', '$Address', '$Hash','$Role')";
+        $stmt = "
+        INSERT INTO management(Lastname, Firstname, Email, Phone, Address, Password, Role)
+        VALUES('$Lastname','$Firstname','$Email', '$Phone', '$Address', '$Hash','$Role')";
 
          mysqli_query($conn, $stmt); 
 
@@ -90,64 +95,41 @@ function AddManagement($conn){
                 </script>";          
 }
 
-function AddProperties($conn){
-    // List of input names 
+/***********************************************
+   UPLOAD IMAGE  
+************************************************/
+function uploadImage($inputName, &$newFileName) {
+    $file = $_FILES[$inputName]["name"];
+    $tempFile = $_FILES[$inputName]["tmp_name"];
+    $newFileName = uniqid() . "-" . $file;
+    $uploadPath = '../Assets/Images' . $newFileName;
+    move_uploaded_file($tempFile, $uploadPath);
+}
+function AddProperty($conn){
+    //INPUT NAMES
     $Property = $_POST['Property'];
     $Price = $_POST['Price'];
     $Bedroom = $_POST['Bedroom'];
     $Bathroom = $_POST['Bathroom'];
     $Area = $_POST['Area'];
     $Message = $_POST['Message'];
-    // List of input names and corresponding database columns
-    $inputNamesToColumns = [
-        'Exterior' => 'IExterior',
-        'Bedroom' => 'IBedroom',
-        'Bathroom' => 'IBathroom',
-        'Livingroom' => 'IAttic',
-        'Diningroom' => 'IDining',
-    ];
+    $Status = "Sale";
+    $Role = "Property";
+    
+    // Usage
+    uploadImage('Exterior', $Newfile_Exterior);
+    uploadImage('Bedroom', $Newfile_Bedroom);  
+    uploadImage('Livingroom', $Newfile_Livingroom);  
+    uploadImage('Diningroom', $Newfile_Diningroom);  
+    uploadImage('Bathroom', $Newfile_Bathroom);  
 
-    // Prepare an array to hold the image paths for each column
-    $imagePaths = [];
-
-    // Loop through each input name and handle the file upload
-    foreach ($inputNamesToColumns as $inputName => $columnName) {
-        if (isset($_FILES[$inputName]) && $_FILES[$inputName]['error'] === UPLOAD_ERR_OK) {
-            $filename = $_FILES[$inputName]["name"];
-            $tmpname = $_FILES[$inputName]["tmp_name"];
-            $newFile = uniqid() . "-" . $filename;
-            $uploadPath = "Images/" . $newFile;
-
-            // Move the uploaded file to the desired location
-            if (move_uploaded_file($tmpname, $uploadPath)) {
-                // Store the file path in the imagePaths array with the corresponding column name
-                $imagePaths[$columnName] = $uploadPath;
-            }
-        } else {    
-            // Handle cases where the file is not uploaded (optional)
-            $imagePaths[$columnName] = null;
-        }
-    }
-
-    // Prepare the SQL query dynamically
-    $query = "
-        INSERT INTO Property (Property, Description, Price, Bedrooms, Bathrooms, Area_sqft, IExterior, IBedroom, IBathroom, IAttic, IDining)
-        VALUES ('$Property', '$Message', '$Price', '$Bedroom', '$Bathroom', '$Area', 
-            '{$imagePaths['IExterior']}', 
-            '{$imagePaths['IBedroom']}', 
-            '{$imagePaths['IBathroom']}', 
-            '{$imagePaths['IAttic']}', 
-            '{$imagePaths['IDining']}')
-    ";
-
-    // Execute the query (assuming you have a connection to the database)
-    if (mysqli_query($connection, $query)) {
-        echo "Property data inserted successfully.";
-    } else {
-        echo "Error: " . mysqli_error($connection);
-    }
-
+    $stmt = "
+    INSERT INTO properties(Property, Description, Price, Bedrooms, Bathrooms, Area_sqft, Status, IExterior,IBedroom,IBathroom,IAttic,IDining,Role) 
+    VALUES ('$Property', '$Message', '$Price', '$Bedroom', '$Bathroom', '$Area','$Status','$Newfile_Exterior','$Newfile_Bedroom','$Newfile_Livingroom','$Newfile_Diningroom','$Newfile_Bathroom','$Role')";
+    mysqli_query($conn, $stmt); 
+  
 }
+
 /***********************************************
 FUNCTION FOR EDITING 
 ************************************************/
@@ -212,6 +194,46 @@ function ArchiveManagement($conn){
     $stmtInsert->close(); 
     $stmtDelete->close(); 
 }
+
+function ArchiveProperty($conn){
+
+    $ID = $_GET['archiveID'];
+
+    $InsertArchive = "INSERT INTO archive(Name, Description)
+            SELECT Property, Role
+            FROM properties
+            WHERE PropertyID = ? ";
+
+    $stmtInsert = $conn->prepare($InsertArchive);
+    $stmtInsert->bind_param("i", $ID);
+
+    if (!$stmtInsert->execute()) {
+            throw new Exception("Error copying record to archive: " . $stmtInsert->error);
+    }  
+
+    $sqlDelete = "
+    DELETE FROM properties 
+    WHERE PropertyID = ?
+    ";
+
+    $stmtDelete = $conn->prepare($sqlDelete);
+    $stmtDelete->bind_param("i", $ID);    
+
+    if (!$stmtDelete->execute()) {
+        throw new Exception("Error deleting record from management: " . $stmtDelete->error);
+    }
+
+         echo "<script>
+                    alert('Archive Successfully');
+                    setTimeout(function(){
+                        window.location.href = '../../Archieve.php';
+                    }, 50); 
+                </script>";     
+
+    $stmtInsert->close(); 
+    $stmtDelete->close(); 
+}
+
 function ArchivePending($conn){
 
     $ID = $_GET['archiveID'];
@@ -289,7 +311,7 @@ function ArchiveUser($conn){
     $stmtDelete->close(); 
 }
 /***********************************************
-SORT 
+
 ************************************************/
 
 

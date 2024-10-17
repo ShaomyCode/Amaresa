@@ -250,6 +250,10 @@ include './Assets/Php/Connection.php';
 				</section>
 				</div>
 			</section>
+			<section class="display">
+
+
+			</section>
 		</article>
 	</main>
 	<!-- Section: Dialogs -->
@@ -258,7 +262,7 @@ include './Assets/Php/Connection.php';
 		<dialog id="Signup-Modal" class="dialog">
 			<button onclick="CloseSignup()" class="closebtn"><i class="fa-solid fa-x"></i></button>	
 			<div class="container">
-				<form  method="POST" class="form signup" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+				<form  method="POST" class="form signup" enctype="multipart/form-data" action="./Assets/Php/Index.php"  autocomplete="on">
 					<div class="form-items">
 						<input type="text" name="Firstname" placeholder="First Name" required>
 						<input type="text" name="Lastname" placeholder="Last Name" required> 						
@@ -266,7 +270,7 @@ include './Assets/Php/Connection.php';
 					<input type="email" name="Email" placeholder="Email Address" required>
 					<div class="form-items">
 
-						<input type="phone" name="Phone" placeholder="Phone number" required>
+						<input type="tel" maxlength="11" name="Phone" class="PhoneInput" id="phoneInput" placeholder="Contact Number" required autocomplete="off">	
 						<input type="text" name="Address" placeholder="Address" required>
 					</div>
 					<div class="form-items">
@@ -297,7 +301,7 @@ include './Assets/Php/Connection.php';
 
 			<div class="container">
 
-				<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php">
+				<form class="form Inquiry" method="POST" enctype="multipart/form-data" action="./Assets/Php/Index.php" autocomplete="on">
 					<?php 
 
 					$query = "SELECT *
@@ -315,7 +319,8 @@ include './Assets/Php/Connection.php';
 					";
 
 					?>
-					<input type="number"  name="Phone" placeholder="Contact Number" required>
+					
+					<input type="tel" maxlength="11" name="Phone"  class="PhoneInput" id="PhoneInput" placeholder="Contact Number" required autocomplete="off">		
 						<div class="form-items">
 							<input type="text" name="Address" placeholder="Address" required>
 							<input list="options" id="Role" name="Property" placeholder="Select Property" required>
@@ -407,7 +412,6 @@ include './Assets/Php/Connection.php';
 					<img src="./Assets/Images/Amara Expanded/Dining and Kitchen Area.jpeg" class="items">
 					<img src="./Assets/Images/Amara Expanded/Living Room.jpeg" class="items">
 					<img src="./Assets/Images/Amara Expanded/Masters Bedroom.jpeg" class="items">
-
 				</div>
 			</section>	
 			<!-- Section: Informations -->
@@ -466,7 +470,14 @@ include './Assets/Php/Connection.php';
 				<figure class="Map-container">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.5369070803104!2d121.01621617574362!3d14.795094872284029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1720251535908!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</figure>
-			</section>		
+				<div class="Float-button-container">
+					<button onclick="ShowInquiry()" class="btn">
+						<i class="fa-regular fa-handshake"></i> Make an Inquiry
+
+					</button>
+				</div>				
+			</section>
+		
 		</dialog>
 	<!-- Section: Footer -->
 	<footer class="footer">
@@ -587,6 +598,7 @@ include './Assets/Php/Connection.php';
 	</footer>
 	<!-- Script: Custom -->
 	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
+	<script src="./Assets/Js/PhoneValidation.js?v=<?php echo time(); ?>"></script>
 	<!-- Script: Fontawesome -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
 	

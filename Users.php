@@ -178,16 +178,14 @@
 					
 					<div class="form-items">
 						<input type="email" name="Email" placeholder="Email Address" required>
-						<input type="tel" maxlength="11" name="Phone" id="phoneInput" placeholder="Phone" required>	
+						<input type="tel" maxlength="11" name="Phone" class="PhoneInput" id="PhoneInput" placeholder="Contact Number" required>	
 					</div>					
+					<input type="text" name="Address" placeholder="Address" required>
 
 					<div class="form-items">
 						<input type="password" name="Password" placeholder="Password" required>
 						<input type="password" name="ConfirmPassword" placeholder="Confirm Password" required>	
 					</div>
-
-					<input type="text" name="Address" placeholder="Address" required>
-
 					<!-- <input type="submit" name="Submit" value="Add"> -->
 					<button type="submit" name="Submit" onclick="return AddConfirmation()" value="User" class="Submit"><i class="fa-solid fa-user-plus"></i> Add User</button> 
 				</form>
@@ -199,6 +197,7 @@
 
 	<!-- Custom JS & JQUERY -->
 	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>
+	<script src="./Assets/Js/PhoneValidation.js?v=<?php echo time(); ?>"></script>
 	<!-- Fontawesome Link -->
 	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>	
 </body>

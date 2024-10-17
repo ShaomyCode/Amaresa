@@ -262,6 +262,7 @@
 	</main>
 	<!-- Custom JS & JQUERY -->
 	<script src="./Assets/Js/Admin.js?v=<?php echo time(); ?>"></script>
+	<script src="./Assets/Js/Swiper.js?v=<?php echo time(); ?>"></script>
 	<!-- JS: Swiper -->
 	<script type="text/javascript" src="./Assets/Js/swiper-bundle.min.js"></script>
 
