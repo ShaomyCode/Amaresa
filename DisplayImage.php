@@ -21,7 +21,6 @@ include './Assets/Php/Connection.php';
 						<img src='$ImagePath' >
 					";
 		}	
-
 	}
 
 	?>

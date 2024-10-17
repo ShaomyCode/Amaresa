@@ -204,7 +204,7 @@ include './Assets/Php/Connection.php';
 				<section class="featuredcard" id = "card">
 					<div class="card-container">
 
-	    				<div class="card wallet">
+<!-- 	    				<div class="card wallet">
 		       				<div class="overlay"></div>
 		           			<div class="first-content">
 		           			<div class="circle">
@@ -223,28 +223,77 @@ include './Assets/Php/Connection.php';
 		            				<span>See more</span>
 		            			</button>
 		            		</div>
-	    				</div>    				
+	    				</div> -->    				
 
-	    						<div class="card wallet">
-		       				<div class="overlay"></div>
-		           			<div class="first-content">
-		           			<div class="circle">
-								<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
-		       			 	</div>
-		            		</div>
-		            		<h1>Arya Prime</h1>
-		            		<div class="second-content">
-		                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
-		                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
-		                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
-		            		</div>
-		            		<div class="third-content">
-		            			<button onclick="ShowHouse()">
-		            				<i class="fa-solid fa-expand"></i>
-		            				<span>See more</span>
-		            			</button>
-		            		</div>
-	    				</div>
+	    				<?php
+
+	    					$sql = "SELECT * FROM Properties";
+	    					$rs = mysqli_query($conn,$sql);
+	    					if($rs){
+	    						while ($row = mysqli_fetch_assoc($rs)) {
+
+	    							$ImageExterior = './Images/'.$row['IExterior'];
+	    							$Bed = $row['Bedrooms'];
+	    							$Bath = $row['Bathrooms'];
+	    							$Property = $row['Property'];
+
+
+										$BathList = [
+									    1 => "One Bath",
+									    2 => "Two Baths",
+									    3 => "Three Baths",
+									    4 => "Four Baths",
+									    5 => "Five Baths",
+									    6 => "Six Baths",
+									    7 => "Seven Baths",
+									    8 => "Eight Baths",
+									    9 => "Nine Baths",
+									    10 => "Ten Baths"
+									    ];									
+									    $BedList = [
+									    1 => "One Bed",
+									    2 => "Two Beds",
+									    3 => "Three Beds",
+									    4 => "Four Beds",
+									    5 => "Five Beds",
+									    6 => "Six Beds",
+									    7 => "Seven Beds",
+									    8 => "Eight Beds",
+									    9 => "Nine Beds",
+									    10 => "Ten Beds"
+									    ];
+									$Bath = $BathList[$Bath] ?? $Bath;
+									$Bed = $BedList[$Bed] ?? $Bed;   							
+	    							echo "
+				    					<div class='card wallet'>
+					       					<div class='overlay'></div>
+					           				<div class='first-content'>
+							           			<div class='circle'>
+													<img src='$ImageExterior' /> 
+							       			 	</div>
+					            			</div>
+					            			<h1>$Property</h1>
+
+						            		<div class='second-content'>
+						                		<p><i class='fa-solid fa-house'></i> Two Storey</p>
+						                		<p><i class='fa-solid fa-bed'></i>: $Bed</p>
+						                		<p><i class='fa-solid fa-shower'></i>: $Bath </p>
+						            		</div>
+						            		
+						            		<div class='third-content'>
+						            			<button onclick='ShowHouse()'>
+						            				<i class='fa-solid fa-expand'></i>
+						            				<span>See more</span>
+						            			</button>
+						            		</div>
+				    					</div>
+	    							";
+	    							
+	    						}
+	    					}
+
+	    				?>
+
 
 	    			</div>
 				</section>
