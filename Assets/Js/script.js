@@ -37,9 +37,35 @@ $(document).ready(function(){
 /*======================*\
 # Dialog: House 
 \*======================*/
-function ShowHouse(){
-    document.getElementById('House-Modal').showModal();
+function ShowHouse(HouseID){
+
+    var request = new XMLHttpRequest();
+    request.open('GET','fetch.php?HousesID = ' + HouseID, true);
+    request.onload = function(){
+        if (request.status === 200) {
+            document.getElementById('House-Modal').showModal();
+            document.getElementById('propertyDetails').innerHTML = HouseID;
+
+        } else {
+            console.error('Failed to retrieve data');
+        }
+    };
+    request.send();
+}
+function fetchHouseDetails(HouseID) {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'fetch.php?HouseID=' + HouseID, true);
+    request.onload = function() {
+        if (request.status === 200) {
+            document.getElementById('propertyDetails').innerHTML = request.responseText;
+            document.getElementById('House-Modal').showModal();
+        } else {
+            console.error('Failed to fetch house details.');
+        }
+    };
+    request.send();
 }
 function CloseHouse(){
     document.getElementById('House-Modal').close();
 }
+

@@ -13,7 +13,9 @@ if(isset($_POST['Submit'])){
         AddProperty($conn);
     } 
 }
-
+if(isset($_GET['HouseID'])){
+     
+}
 /***********************************************
 FOR DELETING: USERS - MANAGEMENTS - PROPERTIES
 ************************************************/

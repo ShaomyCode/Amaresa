@@ -457,10 +457,6 @@ button, a {transition: var(--transition);}
 	margin-inline: auto;
 
 }
-.Testimonial-card{
-	width:100%;
-	height: 100%;
-}
 
 .Testimonial-card{
 	width: 350px; 

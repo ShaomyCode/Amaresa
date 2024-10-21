@@ -1,5 +1,5 @@
 <?php
-include './Assets/Php/Connection.php';
+	include './Assets/Php/Connection.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,7 @@ include './Assets/Php/Connection.php';
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
 </head>
 <body>
+
 	<!-- Section: Header -->
 	<header class="header">
 		<div class="header-top"> 
@@ -203,30 +204,7 @@ include './Assets/Php/Connection.php';
 				<!--Section: Featured Card -->
 				<section class="featuredcard" id = "card">
 					<div class="card-container">
-
-<!-- 	    				<div class="card wallet">
-		       				<div class="overlay"></div>
-		           			<div class="first-content">
-		           			<div class="circle">
-								<img src="./Assets/Images/Arya Prime/Arya Exterior.png" alt="Interior features" /> 
-		       			 	</div>
-		            		</div>
-		            		<h1>Arya Prime</h1>
-		            		<div class="second-content">
-		                		<p><i class="fa-solid fa-house"></i> Two Storey</p>
-		                		<p><i class="fa-solid fa-bed"></i>Three Bedroom</p>
-		                		<p><i class="fa-solid fa-signs-post"></i>Two Bathroom</p>
-		            		</div>
-		            		<div class="third-content">
-		            			<button onclick="ShowHouse()">
-		            				<i class="fa-solid fa-expand"></i>
-		            				<span>See more</span>
-		            			</button>
-		            		</div>
-	    				</div> -->    				
-
 	    				<?php
-
 	    					$sql = "SELECT * FROM Properties";
 	    					$rs = mysqli_query($conn,$sql);
 	    					if($rs){
@@ -236,8 +214,8 @@ include './Assets/Php/Connection.php';
 	    							$Bed = $row['Bedrooms'];
 	    							$Bath = $row['Bathrooms'];
 	    							$Property = $row['Property'];
-
-
+	    							$ID = $row['PropertyID'];
+	    							// $_SESSION['HouseID'] = $ID;
 										$BathList = [
 									    1 => "One Bath",
 									    2 => "Two Baths",
@@ -275,23 +253,22 @@ include './Assets/Php/Connection.php';
 					            			<h1>$Property</h1>
 
 						            		<div class='second-content'>
-						                		<p><i class='fa-solid fa-house'></i> Two Storey</p>
+						                		<p><i class='fa-solid fa-house'></i>: $ID </p>
 						                		<p><i class='fa-solid fa-bed'></i>: $Bed</p>
 						                		<p><i class='fa-solid fa-shower'></i>: $Bath </p>
 						            		</div>
-						            		
-						            		<div class='third-content'>
-						            			<button onclick='ShowHouse()'>
-						            				<i class='fa-solid fa-expand'></i>
-						            				<span>See more</span>
-						            			</button>
-						            		</div>
+
+						               <div class='third-content'>
+						                        <button data-id='$ID' onclick='ShowHouse($ID)'>
+						                            <i class='fa-solid fa-expand'></i>
+						                            <span>See more</span>
+						                        </button>
+						                </div>
 				    					</div>
 	    							";
-	    							
 	    						}
-	    					}
 
+	    					}
 	    				?>
 
 
@@ -299,9 +276,8 @@ include './Assets/Php/Connection.php';
 				</section>
 				</div>
 			</section>
-			<section class="display">
-
-
+			<section>
+								
 			</section>
 		</article>
 	</main>
@@ -449,25 +425,57 @@ include './Assets/Php/Connection.php';
 			</dialog>
 		</section>
 		<!-- Dialog: House-Details -->
-		<dialog  id="House-Modal" class="House-Modal">	
+		<dialog  id="House-Modal" class="House-Modal">
+				
 			<button onclick="CloseHouse()" class="closebtn"><i class="fa-solid fa-x"></i></button>		
 			<!-- Section: Images -->
 			<section class="Image-Container">
-				<div class="Image-interior">
-					<img src="./Assets/Images/Amara Expanded/Amara Exterior.png" class="items">
-				</div>
-				<div class="Image-highlights">
-					<img src="./Assets/Images/Amara Expanded/Bedroom.jpeg" class="items">
-					<img src="./Assets/Images/Amara Expanded/Dining and Kitchen Area.jpeg" class="items">
-					<img src="./Assets/Images/Amara Expanded/Living Room.jpeg" class="items">
-					<img src="./Assets/Images/Amara Expanded/Masters Bedroom.jpeg" class="items">
-				</div>
+
+			<?php 
+
+				if(isset($_GET['HouseID'])){
+					$HouseID = $_GET['HouseID'];
+					$stmt = "SELECT * FROM Properties WHERE PropertyID = $HouseID ";
+					$rs = mysqli_query($conn,$stmt);
+					if($rs){
+						while($row = mysqli_fetch_assoc($rs)){
+							$ImageExterior = './Images/'.$row['IExterior'];
+							$ImageBedrooms = './Images/'.$row['IBedroom'];
+							$IBathroom = './Images/'.$row['IBathroom'];
+							$IAtticImg = './Images/'.$row['IAttic'];
+							$IDining = './Images/'.$row['IDining'];
+							echo "
+
+							<div class='Image-interior'>
+
+								<img src='$ImageExterior' class='items'>
+							</div>	
+
+							<div class='Image-highlights'>
+								<img src='$ImageBedrooms' class='items'>
+								<img src='$IBathroom' class='items'>
+								<img src='$IBathroom' class='items'>
+								<img src='$IDining' class='items'>
+							</div>					
+							";
+						}
+					}
+
+				}
+			?>				
+
+			<?php 
+				
+				
+			?>				
+
 			</section>	
 			<!-- Section: Informations -->
 			<section class="Informations-container">
 				<!-- Div: Description -->
-				<div class="Description-container">
-					<h3 class="h3 description-title"> Description </h3>
+
+				<div class='Description-container'>
+					<h3 class='h3 description-title'> Description </h3>
 					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -475,7 +483,7 @@ include './Assets/Php/Connection.php';
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 				</div>
-
+				
 				<!-- Div: Details -->
 				<div class="Details-container">
 
@@ -522,7 +530,6 @@ include './Assets/Php/Connection.php';
 				<div class="Float-button-container">
 					<button onclick="ShowInquiry()" class="btn">
 						<i class="fa-regular fa-handshake"></i> Make an Inquiry
-
 					</button>
 				</div>				
 			</section>
