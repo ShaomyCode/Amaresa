@@ -1,5 +1,5 @@
 <?php
-	include './Assets/Php/Connection.php';
+include './Assets/Php/Connection.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,9 @@
 	<!-- Link: Web Icon -->
 	<link rel="website icon" type="png" href="./Assets/Images/Icon.png">
 	<!-- Script: JQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<!-- Link: Swiper -->
+	<link rel="stylesheet" type="text/css" href="./Assets/Css/swiper-bundle.min.css">		
 </head>
 <body>
 
@@ -65,7 +67,7 @@
 						</li>																							
 					</ul>
 
-					<button class="header-top-btn" onclick="ShowSignup()" > <i class="fa-solid fa-user-tie"></i> <span> Sign in </span></button>
+					<button class="header-top-btn" onclick="ShowSignup()" > <i class="fa-solid fa-user-tie"></i> <span> Sign up </span></button>
 				</div>
 			</div>
 
@@ -77,28 +79,37 @@
 			<!-- Section: Hero -->
 			<section class="hero" id="home">
 				<div class="container">
-					<div class="hero-logo">
-						<img src="./Assets/Images/Amaresa-Logo.png" alt="Amaresa Logo" >
+
+					<div class="hero-top-part">
+						<div class="hero-logo">
+							<img src="./Assets/Images/Amaresa-Logo.png" alt="Amaresa Logo" >
+						</div>	
+						<div class="hero-top-details">
+
+							<h2 class="h1 hero-title">Find Your Dream House By Us!</h2>
+							<p class="hero-text">
+								At Amaresa, we are committed to helping you find your dream home with ease and confidence. Whether you're a first-time homebuyer or looking to upgrade, we guide you through every step of the process, ensuring a seamless and stress-free experience. Trust us to turn your dream of homeownership into a reality.
+							</p>						
+						</div>						
 					</div>
-					<h2 class="h1 hero-title">Find Your Dream House By Us!</h2>
-					<p class="hero-text">
-						Discover your perfect home with our expert guidance and curated property listings. From cozy apartments to spacious estates, we’ll help you find a place that truly feels like yours. Start your journey today!
-					</p>						
-				
-				<button class="btn" onclick="ShowInquiry()">Make an Inquiry</button>
-				<figure class="hero-banner">
-					<img src="./Assets/Images/Amaresa Marilao.png" alt="Amaresa Marilao" class="w-100">
-				</figure>
+
+					<figure class="hero-banner">
+
+						<div class="swiper mySwiper-autoplay">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="./Assets/Images/Amaresa Marilao.png" alt="Amaresa Marilao" class="w-100"></div>
+								<div class="swiper-slide"><img src="./Assets/Images/Amaresa about us .png" alt="Amaresa Marilao" class="w-100"></div>
+								<div class="swiper-slide"><img src="./Assets/Images/Drop-shot-buy.jpg" alt="Amaresa Marilao" class="w-100"></div>
+
+							</div>
+						</div>
+					</figure>
 				</div>
 			</section>
 			<!-- Section: About -->
 			<section class="about" id="about">
-				<figure class="about-banner">
-					<img src="./assets/images/Amaresa about us .png" alt="House interior">
-				</figure>
 				<div class="container"> 
 					<div class="about-content"> 
-
 						<p class="section-subtitle"> About Us! </p>
 						<h2 class="h2 section-title"> The Faces Behind Your Dream Home</h2>
 						<p class="about-text">
@@ -144,7 +155,15 @@
 							Discover the passion and expertise that make your home search special.
 						</p>
 
-						<a href="#service" class="btn"> Our service </a>
+					</div>
+					<div class="about-banner">
+						<div class="swiper mySwiper-autoplay">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"> <img src="./Assets/Images/AlexandriaBanner.png"></div>
+								<div class="swiper-slide"> <img src="./Assets/Images/AmaraBanner.png"></div>
+								<div class="swiper-slide"> <img src="./Assets/Images/AryaBanner.png"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -152,13 +171,24 @@
 			<section class="location" id="location">
 
 				<div class="container">
-					<p class="section-subtitle"> Location </p>
-					<h2 class="h2 section-title"> Family-Friendly Neighborhood </h2>
-					<p class="locale-text"> Set in the welcoming community of Marilao Bulacan, our homes are ideal for families. Benefit from nearby parks, excellent schools, and a variety of family-friendly amenities. It’s a safe and nurturing environment where you can watch your family grow and thrive. </p>
+					<figure class="location-banner">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d241.09605306750007!2d121.01878519274672!3d14.795098133967587!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1729579498328!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>					
+					</figure>	
+
+					<div class="location-wrapper">
+						<p class="section-subtitle"> Location </p>
+						<h2 class="h2 section-title"> Family-Friendly Neighborhood </h2>
+
+						<p class="locale-text"> Set in the welcoming community of Marilao Bulacan, our homes are ideal for families. Benefit from nearby parks, excellent schools, and a variety of family-friendly amenities. It’s a safe and nurturing environment where you can watch your family grow and thrive. </p>	
+
+						<p class="locale-text">Marilao is not just a place to live, but a place to thrive. With its combination of natural beauty, convenience, and a family-oriented lifestyle, it's an ideal setting for creating lifelong memories. This is where comfort meets community, where safety and family values come together, offering you the perfect place to plant your roots and watch your family flourish.</p>		
+						<p class="callout">
+							Explore Neighborhoods That Align with Your Dreams and Daily Needs
+						</p>		
+					</div>
+					
 				</div>
-				<figure class="location-banner">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.5369070803104!2d121.01621617574362!3d14.795094872284029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b38da5906293%3A0x8b01e358c47a7685!2sAmaresa%20Marilao!5e0!3m2!1sen!2sph!4v1720251535908!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>						
-				</figure>		
+
 			</section>
 			<!-- Section: Service -->
 			<section class="service" id="service">
@@ -201,83 +231,117 @@
 					<p class="section-subtitle"> Properties </p>
 					<h2 class="h2 section-title"> Featured Listing </h2>
 					<p class="locale-text"> Step into the finest homes available right now. Our featured listings offer a blend of exceptional design, prime locations, and unparalleled value. Don’t miss out on these standout properties </p>
-				<!--Section: Featured Card -->
-				<section class="featuredcard" id = "card">
-					<div class="card-container">
-	    				<?php
-	    					$sql = "SELECT * FROM Properties";
-	    					$rs = mysqli_query($conn,$sql);
-	    					if($rs){
-	    						while ($row = mysqli_fetch_assoc($rs)) {
+					<!--Section: Featured Card -->
+					<section class="featuredcard" id = "card">
+						<div class="card-container">
+							<?php
+							$sql = "SELECT * FROM Properties";
+							$rs = mysqli_query($conn,$sql);
+							if($rs){
+								while ($row = mysqli_fetch_assoc($rs)) {
 
-	    							$ImageExterior = './Images/'.$row['IExterior'];
-	    							$Bed = $row['Bedrooms'];
-	    							$Bath = $row['Bathrooms'];
-	    							$Property = $row['Property'];
-	    							$ID = $row['PropertyID'];
+									$ImageExterior = './Images/'.$row['IExterior'];
+									$Bed = $row['Bedrooms'];
+									$Bath = $row['Bathrooms'];
+									$Property = $row['Property'];
+									$ID = $row['PropertyID'];
 	    							// $_SESSION['HouseID'] = $ID;
-										$BathList = [
-									    1 => "One Bath",
-									    2 => "Two Baths",
-									    3 => "Three Baths",
-									    4 => "Four Baths",
-									    5 => "Five Baths",
-									    6 => "Six Baths",
-									    7 => "Seven Baths",
-									    8 => "Eight Baths",
-									    9 => "Nine Baths",
-									    10 => "Ten Baths"
-									    ];									
-									    $BedList = [
-									    1 => "One Bed",
-									    2 => "Two Beds",
-									    3 => "Three Beds",
-									    4 => "Four Beds",
-									    5 => "Five Beds",
-									    6 => "Six Beds",
-									    7 => "Seven Beds",
-									    8 => "Eight Beds",
-									    9 => "Nine Beds",
-									    10 => "Ten Beds"
-									    ];
+									$BathList = [
+										1 => "One Bath",
+										2 => "Two Baths",
+										3 => "Three Baths",
+										4 => "Four Baths",
+										5 => "Five Baths",
+										6 => "Six Baths",
+										7 => "Seven Baths",
+										8 => "Eight Baths",
+										9 => "Nine Baths",
+										10 => "Ten Baths"
+									];									
+									$BedList = [
+										1 => "One Bed",
+										2 => "Two Beds",
+										3 => "Three Beds",
+										4 => "Four Beds",
+										5 => "Five Beds",
+										6 => "Six Beds",
+										7 => "Seven Beds",
+										8 => "Eight Beds",
+										9 => "Nine Beds",
+										10 => "Ten Beds"
+									];
 									$Bath = $BathList[$Bath] ?? $Bath;
 									$Bed = $BedList[$Bed] ?? $Bed;   							
-	    							echo "
-				    					<div class='card wallet'>
-					       					<div class='overlay'></div>
-					           				<div class='first-content'>
-							           			<div class='circle'>
-													<img src='$ImageExterior' /> 
-							       			 	</div>
-					            			</div>
-					            			<h1>$Property</h1>
+									echo "
+									<div class='card wallet'>
+									<div class='overlay'></div>
+									<div class='first-content'>
+									<div class='circle'>
+									<img src='$ImageExterior' /> 
+									</div>
+									</div>
+									<h1>$Property</h1>
 
-						            		<div class='second-content'>
-						                		<p><i class='fa-solid fa-house'></i>: $ID </p>
-						                		<p><i class='fa-solid fa-bed'></i>: $Bed</p>
-						                		<p><i class='fa-solid fa-shower'></i>: $Bath </p>
-						            		</div>
+									<div class='second-content'>
+									<p><i class='fa-solid fa-house'></i>: $ID </p>
+									<p><i class='fa-solid fa-bed'></i>: $Bed</p>
+									<p><i class='fa-solid fa-shower'></i>: $Bath </p>
+									</div>
 
-						               <div class='third-content'>
-						                        <button data-id='$ID' onclick='ShowHouse($ID)'>
-						                            <i class='fa-solid fa-expand'></i>
-						                            <span>See more</span>
-						                        </button>
-						                </div>
-				    					</div>
-	    							";
-	    						}
+									<div class='third-content'>
+									<button data-id='$ID' onclick='ShowHouse($ID)'>
+									<i class='fa-solid fa-expand'></i>
+									<span>See more</span>
+									</button>
+									</div>
+									</div>
 
-	    					}
-	    				?>
+									";
+								}
+
+							}
 
 
-	    			</div>
-				</section>
+							echo "
+
+								<div class='swiper MySwiper'>
+									<div class='swiper-wrapper'>
+									<div class='card wallet'>
+									<div class='overlay'></div>
+									<div class='first-content'>
+									<div class='circle'>
+									<img src='$ImageExterior' /> 
+									</div>
+									</div>
+									<h1>$Property</h1>
+
+									<div class='second-content'>
+									<p><i class='fa-solid fa-house'></i>: $ID </p>
+									<p><i class='fa-solid fa-bed'></i>: $Bed</p>
+									<p><i class='fa-solid fa-shower'></i>: $Bath </p>
+									</div>
+
+									<div class='third-content'>
+									<button data-id='$ID' onclick='ShowHouse($ID)'>
+									<i class='fa-solid fa-expand'></i>
+									<span>See more</span>
+									</button>
+									</div>
+									</div>
+									</div>
+								</div>
+
+							";
+
+							?>
+
+
+						</div>
+					</section>
 				</div>
 			</section>
-			<section>
-								
+			<section class="swiper">
+
 			</section>
 		</article>
 	</main>
@@ -346,14 +410,14 @@
 					?>
 					
 					<input type="tel" maxlength="11" name="Phone"  class="PhoneInput" id="PhoneInput" placeholder="Contact Number" required autocomplete="off">		
-						<div class="form-items">
-							<input type="text" name="Address" placeholder="Address" required>
-							<input list="options" id="Role" name="Property" placeholder="Select Property" required>
-							<datalist id="options">
-								<option value="Kalya House">
+					<div class="form-items">
+						<input type="text" name="Address" placeholder="Address" required>
+						<input list="options" id="Role" name="Property" placeholder="Select Property" required>
+						<datalist id="options">
+							<option value="Kalya House">
 								<option value="Aria House">
-							</datalist>	
-						</div>	
+								</datalist>	
+							</div>	
 							<input type="email" name="Email" placeholder="Email Address" required>
 							<div class="textarea-container">
 								<textarea id="message" rows="5" name="Message" placeholder="I'd like to inquire about this property..."></textarea>
@@ -426,12 +490,12 @@
 		</section>
 		<!-- Dialog: House-Details -->
 		<dialog  id="House-Modal" class="House-Modal">
-				
+
 			<button onclick="CloseHouse()" class="closebtn"><i class="fa-solid fa-x"></i></button>		
 			<!-- Section: Images -->
 			<section class="Image-Container">
 
-			<?php 
+				<?php 
 
 				if(isset($_GET['HouseID'])){
 					$HouseID = $_GET['HouseID'];
@@ -448,26 +512,26 @@
 
 							<div class='Image-interior'>
 
-								<img src='$ImageExterior' class='items'>
+							<img src='$ImageExterior' class='items'>
 							</div>	
 
 							<div class='Image-highlights'>
-								<img src='$ImageBedrooms' class='items'>
-								<img src='$IBathroom' class='items'>
-								<img src='$IBathroom' class='items'>
-								<img src='$IDining' class='items'>
+							<img src='$ImageBedrooms' class='items'>
+							<img src='$IBathroom' class='items'>
+							<img src='$IBathroom' class='items'>
+							<img src='$IDining' class='items'>
 							</div>					
 							";
 						}
 					}
 
 				}
-			?>				
+				?>				
 
-			<?php 
+				<?php 
 				
 				
-			?>				
+				?>				
 
 			</section>	
 			<!-- Section: Informations -->
@@ -533,130 +597,93 @@
 					</button>
 				</div>				
 			</section>
-		
+
 		</dialog>
-	<!-- Section: Footer -->
-	<footer class="footer">
-		<div class="footer-top">
-			<ul class="footer-list">
-				<li>
-					<figure class="footer-top-list-logo">
-						<img src="./Assets/Images/Amaresa-Logo.png">
-					</figure>
-				</li>
+		<!-- Section: Footer -->
+		<footer class="footer">
+			<div class="footer-top">
+				<ul class="footer-list">
+					<li>
+						<figure class="footer-top-list-logo">
+							<img src="./Assets/Images/Amaresa-Logo.png">
+						</figure>
+					</li>
 
 
-			</ul>				
+				</ul>				
 
-			<ul class="footer-list help">
-				<h3 class="h3 list-title"> Get Help </h3>
-				<li><a href="#"> Inquire Process </a></li>
-				<li><a href="#"> Pending Process </a></li>
+				<ul class="footer-list help">
+					<h3 class="h3 list-title"> Get Help </h3>
+					<li><a href="#"> Inquire Process </a></li>
+					<li><a href="#"> Pending Process </a></li>
 
-			</ul>					
+				</ul>					
 
-			<ul class="footer-list company">
-				<h3 class="h3 list-title">	Company </h3>
-				<li><a href="#"> About us </a></li>
-				<li><a href="#"> Service </a></li>
-				<li><a href="#"> Privacy Policy </a></li>
-
-
-			</ul>					
-
-			<ul class="footer-list social">
-				<h3 class="h3 list-title"> Follow us </h3>
-				<li>
-					<a href="#" class="list-item"> 
-						<i class="fa-brands fa-facebook"></i>
-						<span>Facebook </span>
-					</a>
-				</li>				
-
-				<li>
-					<a href="#" class="list-item"> 
-						<i class="fa-brands fa-instagram"></i>
-						<span>Instagram </span>
-					</a>
-				</li>				
-
-				<li>
-					<a href="#" class="list-item"> 
-						<i class="fa-brands fa-x-twitter"></i>
-						<span>Twitter </span>
-					</a>
-				</li>				
-
-				<li>
-					<a href="#" class="list-item"> 
-						<i class="fa-brands fa-linkedin"></i>
-						<span>LinkIn </span>
-					</a>
-				</li>
+				<ul class="footer-list company">
+					<h3 class="h3 list-title">	Company </h3>
+					<li><a href="#"> About us </a></li>
+					<li><a href="#"> Service </a></li>
+					<li><a href="#"> Privacy Policy </a></li>
 
 
-			</ul>			
+				</ul>					
 
-			<ul class="footer-list Developer">
-				<h3 class="h3 list-title"> Developer </h3>
-				<li><a href="#"> FAQ </a></li>
-				<li><a href="#"> Payment Process </a></li>
-				<li><a href="#"> Pending Process </a></li>
+				<ul class="footer-list social">
+					<h3 class="h3 list-title"> Follow us </h3>
+					<li>
+						<a href="#" class="list-item"> 
+							<i class="fa-brands fa-facebook"></i>
+							<span>Facebook </span>
+						</a>
+					</li>				
 
-			</ul>		
-		</div>		
+					<li>
+						<a href="#" class="list-item"> 
+							<i class="fa-brands fa-instagram"></i>
+							<span>Instagram </span>
+						</a>
+					</li>				
 
-		<div class="footer-bottom">
-			<div class="footer-bottom-card">
-				<figure class="card-logo">
-					<img src="./Assets/Images/RedOak.png" alt="Partnership">
-				</figure>
+					<li>
+						<a href="#" class="list-item"> 
+							<i class="fa-brands fa-x-twitter"></i>
+							<span>Twitter </span>
+						</a>
+					</li>				
 
-				<div class="card-description">
-					<h3 class="h3 card-title">RED OAK PROPERTIES, INC. </h3>
-					<p class="card-subtitle"> 
-						We are a real estate development company established in 2010 with a vision to become a significant player in the mid-end Philippine housing industry. We aim to develop quality and value-added communities that exceed our clients’ expectations and enhance the quality of their lives.
-					</p>
-				</div>
-			</div>			
+					<li>
+						<a href="#" class="list-item"> 
+							<i class="fa-brands fa-linkedin"></i>
+							<span>LinkIn </span>
+						</a>
+					</li>
 
-			<div class="footer-bottom-card">
-				<figure class="card-logo">
-					<img src="./Assets/Images/RedOak.png" alt="Partnership">
-				</figure>
 
-				<div class="card-description">
-					<h3 class="h3 card-title">RED OAK PROPERTIES, INC. </h3>
-					<p class="card-subtitle"> 
-						We are a real estate development company established in 2010 with a vision to become a significant player in the mid-end Philippine housing industry. We aim to develop quality and value-added communities that exceed our clients’ expectations and enhance the quality of their lives.
-					</p>
-				</div>
-			</div>			
+				</ul>			
 
-			<div class="footer-bottom-card">
-				<figure class="card-logo">
-					<img src="./Assets/Images/RedOak.png" alt="Partnership">
-				</figure>
+				<ul class="footer-list Developer">
+					<h3 class="h3 list-title"> Developer </h3>
+					<li><a href="#"> FAQ </a></li>
+					<li><a href="#"> Payment Process </a></li>
+					<li><a href="#"> Pending Process </a></li>
 
-				<div class="card-description">
-					<h3 class="h3 card-title">RED OAK PROPERTIES, INC. </h3>
-					<p class="card-subtitle"> 
-						We are a real estate development company established in 2010 with a vision to become a significant player in the mid-end Philippine housing industry. We aim to develop quality and value-added communities that exceed our clients’ expectations and enhance the quality of their lives.
-					</p>
-				</div>
+				</ul>		
+			</div>		
+
+
+			<div class="terms">
+				<button > <span>Terms of Service</span></button>
+				<button >Privacy Polocy</button>
 			</div>
-		</div>
+		</footer>
+		<!-- Script: Custom -->
+		<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
+		<script src="./Assets/Js/Swiper.js?v=<?php echo time(); ?>"></script>
+		<!-- JS: Swiper -->
+		<script type="text/javascript" src="./Assets/Js/swiper-bundle.min.js"></script> 	
+		<script src="./Assets/Js/PhoneValidation.js?v=<?php echo time(); ?>"></script>
+		<!-- Script: Fontawesome -->
+		<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
 
-		<div class="terms">
-			<button > <span>Terms of Service</span></button>
-			<button >Privacy Polocy</button>
-		</div>
-	</footer>
-	<!-- Script: Custom -->
-	<script src="./Assets/Js/script.js?v=<?php echo time(); ?>"></script>
-	<script src="./Assets/Js/PhoneValidation.js?v=<?php echo time(); ?>"></script>
-	<!-- Script: Fontawesome -->
-	<script src="https://kit.fontawesome.com/83786b8894.js" crossorigin="anonymous"></script>
-	
-</body>
-</html>
+	</body>
+	</html>

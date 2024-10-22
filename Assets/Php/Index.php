@@ -5,17 +5,7 @@
 /***********************************************
     CALLING FOR FUNCTIONS
 ************************************************/
-    if(isset($_POST['SentInquiry'])){
-        inquiry($conn);
-    }
-    if(isset($_POST['login-btn'])){
-        Login($conn);
-
-    }    
-    if(isset($_POST['Signin-btn'])){
-        Signup($conn);
-
-    }
+i
 /***********************************************
     ADDING INQUIRY
 ************************************************/
