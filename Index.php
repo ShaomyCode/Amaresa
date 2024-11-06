@@ -38,7 +38,7 @@ include './Assets/Php/Connection.php';
 					<li> 
 						<a href="https://www.google.com/maps/dir//Amaresa+Marilao,+3019+M.+Villarica+Rd,+Marilao,+3019+Bulacan/@14.7950949,121.0162162,17z/data=!4m17!1m7!3m6!1s0x3397b38da5906293:0x8b01e358c47a7685!2sAmaresa+Marilao!8m2!3d14.7950897!4d121.0187911!16s%2Fg%2F11gpnfmdlb!4m8!1m0!1m5!1m1!1s0x3397b38da5906293:0x8b01e358c47a7685!2m2!1d121.0188034!2d14.7951434!3e2?entry=ttu"  class="header-top-link">
 							<i class="fa-solid fa-map-location-dot"></i>
-							<span>3019 M. Villarica Rd, Marilao, 3019 Bulacan</span>
+							<span>3019 M. Villarica Rd, Marilao, 3019 Bulacan </span>
 						</a>
 					</li>
 				</ul>
